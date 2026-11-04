@@ -254,7 +254,7 @@ body {
   border-top: 1px solid var(--border); line-height: 1.55;
 }
 
-/* ---------------- 角色视角切换 + 维度导航（吸顶） ---------------- */
+/* ---------------- 维度导航（吸顶） ---------------- */
 .review-nav {
   position: sticky; top: 62px; z-index: 40;
   background: rgba(13,15,20,.93);
@@ -263,22 +263,6 @@ body {
   padding: 10px 0;
   margin: 0 0 26px;
 }
-.viewswitch {
-  display: flex; gap: 8px; align-items: center; flex-wrap: wrap;
-  margin: 0 0 9px;
-}
-.vsbtn {
-  background: var(--bg-card); color: var(--fg-dim);
-  border: 1px solid var(--border); border-radius: 999px;
-  padding: 5px 14px; font-size: 12.5px; font-family: inherit; cursor: pointer;
-  transition: .15s;
-}
-.vsbtn:hover { color: var(--fg); border-color: var(--border-lit); }
-.vsbtn.active {
-  background: rgba(255,207,74,.13); color: var(--accent);
-  border-color: rgba(255,207,74,.45);
-}
-.vsnote { font-size: 11.5px; color: var(--fg-faint); margin-left: 4px; }
 
 /* 维度导航：按测评框架的模块划分，点哪跳哪 */
 .dimnav { display: flex; gap: 4px; flex-wrap: wrap; }
@@ -295,8 +279,6 @@ body {
   color: var(--accent); background: rgba(255,207,74,.12);
   border-color: rgba(255,207,74,.4);
 }
-/* 当前视角下看不到的锚点：淡化 + 虚线，点它会自动切视角 */
-.dimnav a.unreachable { color: var(--fg-faint); opacity: .55; border-style: dashed; }
 
 /* 锚点滚动时留出吸顶导航的高度，避免标题被挡住。
    具体数值由 JS 按实际高度写进 --nav-h（导航高度会随宽度变化）。 */
@@ -574,8 +556,6 @@ body {
 
   /* 窄屏：维度导航改成单行横向滚动，不要换成 4 行把吸顶区撑到 190px */
   .review-nav { padding: 8px 0; }
-  .viewswitch { margin: 0 0 7px; }
-  .vsnote { display: none; }
   .dimnav {
     flex-wrap: nowrap; overflow-x: auto;
     -webkit-overflow-scrolling: touch;
