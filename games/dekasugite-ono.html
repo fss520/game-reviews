@@ -71,8 +71,7 @@
       <a href="#sec-shot" data-sec="sec-shot">游戏截图</a>
       <a href="#sec-sys" data-sec="sec-sys">系统清单</a>
       <a href="#sec-bench" data-sec="sec-bench">系统对标</a>
-      <a href="#sec-commerce" data-sec="sec-commerce">商业化体检</a>
-      <a href="#sec-green" data-sec="sec-green">立项速览</a>
+      <a href="#sec-commerce" data-sec="sec-commerce">商业化体验</a>
       <a href="#sec-bugs" data-sec="sec-bugs">缺陷清单</a>
     </nav>
   </div>
@@ -453,7 +452,7 @@
   
   
   <section class="panel" id="sec-commerce">
-    <h3>商业化体检 <span class="cnt">零变现（作品，非产品）</span></h3>
+    <h3>商业化体验 <span class="cnt">零变现（作品，非产品）</span></h3>
     <div class="tbl-wrap">
     <table class="dt">
       <thead><tr><th>指标</th><th>实测值</th><th>状态</th></tr></thead>
@@ -521,30 +520,6 @@
   
 
   
-  
-  <section class="panel" id="sec-green">
-    <h3>立项速览 <span class="cnt">做不做、给谁做</span></h3>
-    <ul class="gl-list">
-      
-      <li>结论：不可直接立项，但有一处值得抄 —— 「把一个动作的精度窗口做成技巧曲线」的设计手法，零成本提升产品记忆点。</li>
-      
-      <li>赛道位置：网页放置/点击小品赛道，无账号无变现，不与任何商业产品正面竞争。</li>
-      
-      <li>最值得学：36ms 满力窗口 + 随进度收紧的判定阈值 + 渐进式教学（把 UI 本身当教程）。这套组合让一个纯数值游戏有了技巧深度。</li>
-      
-      <li>最该修：分享卡与结果页读同一个被归零的字段，导致玩家截图发社交平台时最想看到的那行数字是错的。</li>
-      
-      <li>不可直接用的原因：无局外系统、无留存内容、无商业化闭环，单局通关后玩家没有理由回来。</li>
-      
-      <li>若要做：先补「局外系统 + 每日目标」让玩家有理由回来，再考虑变现；反馈系统那一套可以直接照抄量级。</li>
-      
-      <li>需要补的数据：商业化方向无数据可补（源码确认零变现）；若要评估留存设计，需重新定义产品形态后再测。</li>
-      
-    </ul>
-  </section>
-  
-
-  
   <section class="prose">
 <h1 id="_1">まじブンブンブンデカすぎて斧 —— 把时机做成唯一技巧的网页小品</h1>
 <p>先说结论：<strong>这是一个设计密度极高的网页单机游戏</strong>。它只用 1 个 HTML 文件 + 1 个 three.js CDN 就实现了从森林砍到地球劈成两半的完整弧线，音效全部用 WebAudio 实时合成、美术全部程序生成，零素材文件。它甚至内置了给我这种自动化玩家准备的调试接口 <code>window.__dekasugi</code>。</p>
@@ -585,7 +560,7 @@
 <p><strong>舒适区画像：短时爽感型</strong> —— 通勤、摸鱼、睡前 2.5 分钟要一把即时反馈的人。<br />
 - ✅ 适合：喜欢纯爽感与操作手感、喜欢日式荒诞喜剧、不想注册账号也不想被广告打扰的人<br />
 - ❌ 不适合：追求长期养成与系统深度、不愿练手速、期待持续内容或社交的人</p>
-<p>最后一条尤其要说明：<strong>通关后没有理由回来</strong>。localStorage 只记 10 个字段（total/bestOne/plays/axe/cleared/perfects/bgm/swings/bestClear），没有签到、没有每日任务、没有活动、没有商城。所以 8.5 分评的是「作品完成度」，不是「产品完成度」—— 这一点在后面的商业化体检里会再展开。</p>
+<p>最后一条尤其要说明：<strong>通关后没有理由回来</strong>。localStorage 只记 10 个字段（total/bestOne/plays/axe/cleared/perfects/bgm/swings/bestClear），没有签到、没有每日任务、没有活动、没有商城。所以 8.5 分评的是「作品完成度」，不是「产品完成度」—— 这一点在后面的商业化体验里会再展开。</p>
 <hr />
 <h2 id="_3">一、核心机制：把「时机」做成唯一的技巧</h2>
 <p>游戏只有<strong>一个输入</strong>：长按蓄力、松手挥斧。看起来 clicker 味十足，但源码里藏着一个精巧的设计：</p>
@@ -781,7 +756,8 @@ $('rNext').textContent = fmtLen(nowL);   // ← 应该是 nextL
 <li>作品 = 表达完整：世界观、反馈、文案、演出都到位了 ✅</li>
 <li>产品 = 留存 + 变现闭环：签到、每日任务、活动、商城一个都没有，分享不带任何回流奖励，通关即终点 ❌</li>
 </ul>
-<p>这不扣「作品分」，但它决定了<strong>这个游戏不能被立项</strong> —— 除非先补上局外系统与每日目标。源码层面这一栏是空的，不是「我没测」，是「确实没有」。</p>
+<p><strong>不可直接立项</strong>，除非先补上局外系统与每日目标，让玩家有理由回来。源码层面这一栏是空的，不是「我没测」，是「确实没有」。</p>
+<p>不过有一处<strong>值得直接抄</strong>：「把一个动作的精度窗口做成技巧曲线」的设计手法 —— 36ms 满力窗口 + 随进度收紧的判定阈值 + 渐进式教学（把 UI 本身当教程），零成本把一个纯数值游戏做出了技巧深度。反馈系统那一套的投入量级也可以照抄。</p>
 <hr />
 <h2 id="_10">附：我的实测方法</h2>
 <div class="tbl-wrap"><table>

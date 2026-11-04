@@ -427,18 +427,6 @@ body {
   border: 1px solid var(--border); border-radius: 9px;
 }
 
-/* ---------------- 立项速览 ---------------- */
-.gl-list {
-  margin: 0; padding: 0; list-style: none;
-  display: flex; flex-direction: column; gap: 9px;
-}
-.gl-list li {
-  background: var(--bg-card); border: 1px solid var(--border);
-  border-left: 3px solid var(--accent);
-  border-radius: 0 9px 9px 0;
-  padding: 11px 15px; font-size: 13.5px; color: var(--fg-dim); line-height: 1.7;
-}
-
 /* prose */
 .prose { font-size: 15px; line-height: 1.85;
   /* 段落里可能出现 localStorage 键名、字段列表这类无空格的长串拉丁文本，
