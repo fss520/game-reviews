@@ -136,7 +136,7 @@
       
       <div class="st-row st-row-col">
         <span class="st-k">判读依据</span>
-        <span class="st-v st-dim">这是「极简≠低完成度」的正面案例。低多边形 + 程序生成在此不是省事，而是为了把全部产能压到反馈系统上：hitstop、震屏、FOV 冲击、17 种 WebAudio 合成音效、7 套打击台词、3 张 Canvas 现画的表情贴图。对标同一赛道的头部极简小品，它的完成度在**反馈密度**这一项上是碾压级的。反过来看它的短板也很清楚：功能承载力单一（除了挥斧几乎没有别的交互），系统树完全不存在。</span>
+        <span class="st-v st-dim">这是「极简≠低完成度」的正面案例。低多边形 + 程序生成在此不是省事，而是为了把全部产能压到反馈系统上：hitstop、震屏、FOV 冲击、16 种 WebAudio 合成音效、6 条打击台词、3 张 Canvas 现画的表情贴图。对标同一赛道的头部极简小品，它的完成度在**反馈密度**这一项上是碾压级的。反过来看它的短板也很清楚：功能承载力单一（除了挥斧几乎没有别的交互），系统树完全不存在。</span>
       </div>
       
     </div>
@@ -420,7 +420,7 @@
             
           </td>
           <td class="dt-dim">
-            hitstop 出现 27 处、G.shake 37 处、buzz() 24 处、fovKick 13 处；17 种 WebAudio 合成音效；3 张 Canvas 现画的表情贴图；会心 0.04 倍速 cutin + 速度线 + 闪白 + BGM 切换
+            hitstop 出现 27 处、G.shake 37 处、buzz() 24 处、fovKick 13 处；16 种 WebAudio 合成音效；6 条打击台词；3 张 Canvas 现画的表情贴图；会心 0.04 倍速 cutin + 速度线 + 闪白 + BGM 切换
             
           </td>
         </tr>
@@ -537,7 +537,7 @@
 <p>这个赛道的头部不是《咸鱼之王》那类重度放置卡牌，而是<strong>「单机制做到极致」的极简网页小品</strong>。在这个坐标系里，比的不是谁系统多，而是<strong>一个机制被打磨到什么程度</strong>。</p>
 <p><strong>美术坐标系</strong>：日式荒诞喜剧 —— low-poly 程序生成几何 + 漫画速度线 + 竖版海报排版（Dela Gothic One）。</p>
 <p>这里正好可以对照《正中靶心》：同样是「画面简单」，《正中靶心》走的是<strong>极简美术 + 极深系统</strong>（涂鸦画风背后藏了宝石/城墙/学徒/图鉴四套局外系统）；本作走的是<strong>极简美术 + 极深单点</strong>（画面同样简单，但把全部产能压进了反馈系统）。</p>
-<p>两条路都成立，判据是：<strong>简单有没有换来功能完整</strong>。《正中靶心》用简单画面换系统深度，本作用简单画面换反馈密度 —— 27 处 hitstop、37 处震屏、13 处 FOV 冲击、24 处震动调用、17 种 WebAudio 合成音效、3 张 Canvas 现画的表情贴图。<strong>它的美术低多边形 + 程序生成不是省事，是主动选择把预算全砸在手感上。</strong> 所以它在这条赛道的<strong>反馈密度</strong>一项上是碾压级的。</p>
+<p>两条路都成立，判据是：<strong>简单有没有换来功能完整</strong>。《正中靶心》用简单画面换系统深度，本作用简单画面换反馈密度 —— 27 处 hitstop、37 处震屏、13 处 FOV 冲击、24 处震动调用、16 种 WebAudio 合成音效、6 条打击台词、3 张 Canvas 现画的表情贴图。<strong>它的美术低多边形 + 程序生成不是省事，是主动选择把预算全砸在手感上。</strong> 所以它在这条赛道的<strong>反馈密度</strong>一项上是碾压级的。</p>
 <p><strong>玩法分层</strong>：</p>
 <div class="tbl-wrap"><table>
 <thead>
@@ -612,8 +612,8 @@ power = t &lt; PW_UP               ? t / PW_UP                    // 0→1 爬�
 <li><strong>震屏</strong>：会心 2.4，普通 1.5，随砍中数量递增</li>
 <li><strong>视野冲击</strong>（fovKick）：镜头猛拉</li>
 <li><strong>震动反馈</strong>（<code>navigator.vibrate</code>）：移动端物理震动</li>
-<li><strong>17 种程序化音效</strong>：<code>sfx.chop/crunch/shing/megaBoom/laugh/rumble/...</code> 全部 WebAudio 实时合成，无音频文件</li>
-<li><strong>7 套打击台词</strong>：<code>ガキィン!! 山が硬い…</code> / <code>ズガァァァン!!!</code> / <code>ボイ〜ン!! 地球は硬い…</code> / <code>地球、両断!!!!</code></li>
+<li><strong>16 种程序化音效</strong>：<code>sfx.chop/crunch/shing/megaBoom/laugh/rumble/...</code> 全部 WebAudio 实时合成，无音频文件</li>
+<li><strong>6 条打击台词</strong>：<code>ガキィン!! 山が硬い…</code> / <code>ジーン…</code> / <code>ズガァァァン!!!</code> / <code>ボイ〜ン!! 地球は硬い…</code> / <code>海が、割れた!!!</code> / <code>地球、両断!!!!</code></li>
 <li><strong>表情贴图</strong>：源码里用 Canvas 现画了 3 张 <code>FACE_TEX</code>，树会对你做鬼脸</li>
 </ul>
 <p>会心时更夸张：进入 0.04 倍速的 <code>cutin</code> 演出、漫画式速度线横切画面、全屏闪白、专属 BGM 切换。<strong>这是全游戏最爽的一段</strong>。</p>
@@ -758,7 +758,64 @@ $('rNext').textContent = fmtLen(nowL);   // ← 应该是 nextL
 </table></div>
 <p><strong>它最值得学的一件事</strong>：把一个「数值变大」的骨架，用<strong>一个 36 毫秒的时机窗口</strong>变成了有技巧深度的游戏。绝大多数 clicker 把成长曲线当全部设计，而它把「你能不能稳定打出满力」变成了真正的技巧曲线——这也正是我能两次都打出理论最优 13 振的原因。</p>
 <p><strong>它最该修的一件事</strong>：<code>earthClear()</code> 归零 <code>save.swings</code> 之后，分享卡和结果页还在读它。<strong>通关那一刻的数据明明已经被正确捕获到 <code>G.endStats</code> 里了，只是没让它们用。</strong> 修一行引用的事，但偏偏是玩家截图发社交平台时最想看到对的那行数字。</p>
-<h3 id="_9">作为产品，它缺的是一整层</h3>
+<h3 id="_9">这份测评的置信边界</h3>
+<div class="tbl-wrap"><table>
+<thead>
+<tr>
+<th>结论</th>
+<th>置信度</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>13 振通关、斧长 26,000 km</td>
+<td><strong>高</strong></td>
+<td>两遍独立实打，且与源码公式反推的理论下限完全吻合</td>
+</tr>
+<tr>
+<td>36ms 满力窗口、阈值随进度收紧</td>
+<td><strong>高</strong></td>
+<td>源码常量与函数直接读出（<code>PW_TOP=0.036</code> / <code>CZ()</code>），非体感估计</td>
+</tr>
+<tr>
+<td>反馈系统投入量级（hitstop 27 / shake 37 / buzz 24 / fovKick 13 处）</td>
+<td><strong>高</strong></td>
+<td>源码全文计数</td>
+</tr>
+<tr>
+<td>音效 16 种、台词 6 条、表情贴图 3 张</td>
+<td><strong>高</strong></td>
+<td>源码穷举 <code>sfx.*</code> 与 <code>showWord()</code> 全部条目</td>
+</tr>
+<tr>
+<td>三个 Bug 的存在与成因</td>
+<td><strong>高</strong></td>
+<td>均为通关后同页 DOM + localStorage 实测读数并排比对，非静态推演</td>
+</tr>
+<tr>
+<td>零变现</td>
+<td><strong>高</strong></td>
+<td>源码全文检索无广告/内购/货币实现，外部请求仅 three.js CDN / Google Fonts / X / LINE</td>
+</tr>
+<tr>
+<td><strong>美术完成度档位（4/5）</strong></td>
+<td><strong>中低</strong></td>
+<td>跨作品的主观比较，前提是「日式荒诞喜剧 + 程序生成」这一风格坐标；若放到写实向或高多边形赛道比，结论会变</td>
+</tr>
+<tr>
+<td><strong>「零系统是设计选择」的判断</strong></td>
+<td><strong>中</strong></td>
+<td>源码确无相关实现，但「为什么不做」属于意图推断，作者未公开说明</td>
+</tr>
+<tr>
+<td><strong>手感档位（5/5）</strong></td>
+<td><strong>中</strong></td>
+<td>结论部分来自我两遍自动打出的 13 振 —— 自动驾驶能稳定命中满力窗口，说明<strong>判定窗口对脚本友好</strong>，但「对真人是否同样友好」需要真人试玩才能定</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="_10">作为产品，它缺的是一整层</h3>
 <p>一个容易被忽略的判断：<strong>它作为「作品」是完成的，作为「产品」是不成立的。</strong></p>
 <ul>
 <li>作品 = 表达完整：世界观、反馈、文案、演出都到位了 ✅</li>
@@ -767,7 +824,7 @@ $('rNext').textContent = fmtLen(nowL);   // ← 应该是 nextL
 <p><strong>不可直接立项</strong>，除非先补上局外系统与每日目标，让玩家有理由回来。源码层面这一栏是空的，不是「我没测」，是「确实没有」。</p>
 <p>不过有一处<strong>值得直接抄</strong>：「把一个动作的精度窗口做成技巧曲线」的设计手法 —— 36ms 满力窗口 + 随进度收紧的判定阈值 + 渐进式教学（把 UI 本身当教程），零成本把一个纯数值游戏做出了技巧深度。反馈系统那一套的投入量级也可以照抄。</p>
 <hr />
-<h2 id="_10">附：我的实测方法</h2>
+<h2 id="_11">附：我的实测方法</h2>
 <div class="tbl-wrap"><table>
 <thead>
 <tr>
@@ -869,7 +926,7 @@ $(&#39;rNext&#39;).textContent = fmtLen(nowL);   // &lt;- 应为 nextL</code></p
 
 <footer class="site-footer">
   <div class="wrap">
-    <span>3 篇测评 · 2 个已通关 · 记录 15 个缺陷</span>
+    <span>3 篇测评 · 2 个已通关 · 记录 16 个缺陷</span>
     <span class="sep">·</span>
     <span>构建于 2026-11-09</span>
     <span class="sep">·</span>
