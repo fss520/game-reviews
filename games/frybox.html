@@ -43,7 +43,7 @@
       <h1>薯条出击</h1>
       <p class="rv-jp">薯条出击 · Crispy Squadron</p>
       
-      <p class="rv-oneline">一盒薯条的太空反击 —— 竖版弹幕射击，48 秒三波推进后决战「汉堡王」，火力全程自动，你只负责走位和捡东西；全程约 67 秒。</p>
+      <p class="rv-oneline">一盒薯条打太空 —— 48 秒三波推进后决战「汉堡王」。</p>
       
       <div class="rv-meta">
         <span class="rm"><i>平台</i>Web（单文件 HTML + 内联 base64 资源）</span>
@@ -54,6 +54,14 @@
       </div>
       
       <a class="rv-link" href="https://frybox.caniculab.com/" target="_blank" rel="noopener">🔗 访问游戏</a>
+      
+      
+      <div class="rv-dev">
+        <span class="rm rm-dev"><i>研发商</i>上海娱公竞宇网络有限公司（娱公互动）</span>
+        <span class="rm"><i>关系</i>自研自发</span>
+        <span class="rm"><i>版本</i>CRISPY ARCADE 系列第 7 号作品</span>
+      </div>
+      <p class="rv-devnote">域名 frybox.caniculab.com 挂在娱公竞宇官网 caniculab.com 之下，页面标题为「CRISPY ARCADE ✳ 小小薯条 · 大大火力 VOL. 07」。母公司与微博系关联（集团内《狼人杀》《谁是卧底》《弹唱达人》等，用户量过亿；假面科技为其投资方之一）。<strong>母体有资源 ≠ 这款产品有热度</strong> —— 官网「产品展示」区未收录薯条，同系列子域互不导流（已枚举 45 个候选子域验证）。</p>
       
       
       <div class="tags"><span class="tag">通关</span><span class="tag">自动化实测</span><span class="tag">源码分析</span><span class="tag">弹幕射击</span><span class="tag">零变现</span><span class="tag">单文件网页游戏</span></div>
@@ -104,6 +112,8 @@
           </div>
           
           
+          <p class="ds-verdict v-good">单文件网页，打开即玩，零账号零下载</p>
+          
         </div>
       </div>
       
@@ -127,6 +137,8 @@
           </div>
           
           <p class="ds-sum">无榜单、无公开用户数，母体官网也未收录。</p>
+          <p class="ds-verdict v-bad">无公开榜单、无公开用户数、母体官网也未收录 —— 作为产品几乎没有外部声量</p>
+          
         </div>
       </div>
       
@@ -156,6 +168,13 @@
           </div>
           
           <p class="ds-sum">走位躲弹幕 → 自动射击清敌 → 拾取火力 → 三波推进 → 打 BOSS。一局 67 秒，全程只管走位和捡东西。</p>
+          <p class="ds-verdict v-good">节奏精准的纵版弹幕射击：48 秒三波后决战汉堡王，但局内只有一层深度</p>
+          
+          <details class="ds-ev">
+            <summary>证据锚点 5 条</summary>
+            <ul><li>【high】连击系统是死代码：combo 被完整维护却从未参与计分或显示，白白丢掉了「连续击杀」这个最经典的爽点 — 源码 kill() —— 连击被维护：</li><li>【mid】「Boss 练习」模式没有专属结算文案，通关后提示语与完整关卡几乎一样，玩家分不清自己打的是哪条线 — 源码 finish() 只有一处结果分支：</li><li>【mid】Boss 练习模式的进度条恒定显示 100%，因为它复用了以「关卡总时长」为分母的公式 — 源码 reset():</li><li>【low】HUD 分数用补零格式、结算页用千分位格式，同一个数字在两处显示成两种写法 — 源码 hud():</li><li>【low】Boss 练习模式不产出任何东西：没有专属分数、没有解锁、没有任何记录 — 源码 reset('boss') 后，持久化相关的逻辑只有 finish() 里的这一行：</li></ul>
+          </details>
+          
         </div>
       </div>
       
@@ -177,6 +196,8 @@
           </div>
           
           <p class="ds-sum">一盒薯条打太空，敌机是红白条纹饮料杯和金黄汉堡，BOSS 是戴王冠的机械汉堡。食物拟人是这套美术能成立的前提 —— 换成人形敌机，整个调性会立刻垮掉。打击台词还埋了日式梗（「ガキィン!! 山が硬い…」「地球、両断!!!!」）。</p>
+          <p class="ds-verdict v-good">一盒薯条打太空，食物拟人是这套美术能成立的前提</p>
+          
         </div>
       </div>
       
@@ -199,6 +220,8 @@
             
           </div>
           
+          
+          <p class="ds-verdict v-mid">干净的矢量卡通，扣分在敌机与 BOSS 只有贴图、没有动作表演</p>
           
         </div>
       </div>
@@ -223,6 +246,8 @@
           </div>
           
           <p class="ds-sum">无广告、无内购、无货币、无商店，运行全程 0 个网络请求。分享只生成成绩图，不兑换任何资源。</p>
+          <p class="ds-verdict v-na">零广告零内购零货币，主动选择不做商业化 —— 作为作品成立，作为产品不成立</p>
+          
         </div>
       </div>
       
@@ -302,8 +327,7 @@
   <section class="prose" id="sec-body">
 <h1 id="crispy-squadron">薯条出击 · Crispy Squadron —— 一盒薯条的太空反击</h1>
 <p>先说结论：<strong>这是一个节奏精准、完成度相当高的竖版弹幕射击小品，而且是明显冲着雷霆战机（《怒首领蜂》）那套框架做的。</strong></p>
-<p>看到那个戴着王冠的机械汉堡 BOSS，第一反应就该是雷霆战机而不是别的什么 —— 而往下逐条对，会发现不是「像」，是<strong>骨架照抄</strong>：顶部固定 BOSS、炸弹清屏、Shift 精确移动并显示判定点、拾取道具强化火力、限时关卡制、连击槽，五件套齐备（连击槽那件写完没接上线，见问题 1）。</p>
-<p>这意味着评价它得用对尺子：拿《吸血鬼幸存者》去比是不合适的 —— 按 Steam 官方子类型分类，前者属于「轻度 Rogue」，本作属于「弹幕射击 / 垂直卷轴射击」，两者根本不是同一品类。幸存者类没有顶部 BOSS、没有炸弹清屏、也没有关卡制，比出来的东西没有意义。<strong>正确的比法是拿它跟雷霆战机谱系比：它做到了哪些招牌要素，做到什么程度，离这个品类的上限还有多远。</strong></p>
+<p>评价它得用对尺子：拿《吸血鬼幸存者》去比是不合适的 —— 按 Steam 官方子类型分类，前者属于「轻度 Rogue」，本作属于「弹幕射击 / 垂直卷轴射击」，两者根本不是同一品类。幸存者类没有顶部 BOSS、没有炸弹清屏、也没有关卡制，比出来的东西没有意义。<strong>正确的比法是拿它跟雷霆战机谱系比：它做到了哪些招牌要素，做到什么程度，离这个品类的上限还有多远。</strong></p>
 <p>48 秒三波推进，再打「汉堡王」，全程约 67 秒。火力全程自动，你只负责走位和捡东西。我用自动驾驶把它通关了四次（10,200 / 9,700 / 9,650 / 9,400 分），另跑了完全不操作的对照组做难度基线，也实测了 Boss 练习模式。</p>
 <p>它最难得的地方是<strong>知道自己要什么</strong>：不塞养成、不塞商城、不塞排行榜，就做一局纯粹的射击，然后把它做扎实。</p>
 <h2 id="_1">一、它照着谁做的：雷霆战机谱系逐要素对照</h2>
@@ -345,7 +369,7 @@
 <tr>
 <td>连击槽（Raiden II 起的核心机制）</td>
 <td><strong>写了但没接到分数上</strong></td>
-<td>见问题 1</td>
+<td>见第五节</td>
 </tr>
 </tbody>
 </table></div>
@@ -386,19 +410,7 @@
 </table></div>
 <p>源码注释写得很直白：<em>"Slow open fans fill the field; narrow aimed spreads ask for deliberate sidesteps."</em> —— 慢的铺场、快的点杀，两种压力交替。<strong>这是 Raiden 系的经典配方</strong>：大扇形弹把走位空间压窄，瞄准弹在你找缝的时候逼你横向动，两者叠加才有街机那种「贴着缝隙走」的紧张感。</p>
 <p>BOSS 战实测同屏弹量峰值约 <strong>20 发扇形 + 12 发瞄准</strong>，同时在场。两个阶段（<code>boss.phase</code> 1→2）在 50% 血量切换，弹型随之变化。</p>
-<h2 id="_2">二、美术坐标系：为什么说它「少了一层街机灵魂」</h2>
-<p><strong>风格</strong>：深蓝夜空 + 网格线 + 星尘，暖色食物角色配金黄薯条弹，冷暖强对比的矢量卡通风。</p>
-<p><strong>这个风格的头部参照</strong>：雷霆战机 / 怒首领蜂（品类原型）、怒首领蜂大往生（Cave，1997，弹幕与连击系统的天花板）、Space Eggs（网页 STG，形态最接近的一例）。</p>
-<p><strong>本作位置：同风格第二档。</strong></p>
-<p>判断依据不是像素还是矢量。这作是<strong>干净的矢量卡通风</strong>：轮廓平滑、赛璐璐明暗、深色描边保证深色背景下可读性 —— 这些都是有效的功能承载。敌机用「金黄薯条弹（扇形）」与「紫粉圆弹（瞄准）」两种<strong>形状</strong>区分弹道，不只靠颜色；按住 Shift 还会显示 7px 判定圈 + 21px 参考圈（Raiden 系的招牌惯例，已实现）。</p>
-<p>扣分在两点，都是对着 Raiden 谱系看出来的：</p>
-<ol>
-<li><strong>敌机与 BOSS 只有贴图，没有动作表演。</strong> 雷机型 STG 的敌机是会「摆姿态」的 —— 俯冲前调整角度、被打爆时炸成碎块带火光。这里饮料杯和汉堡从头到尾只有一张立绘在飘，命中时的反应是粒子火花和音效 —— <strong>声音有了，画面没有</strong>。汉堡王更明显：机械臂和喷气腿画得很细致，但这两条腿全程不做任何动作。素材成本已经付了，缺的只是一段动画。</li>
-<li><strong>敌机造型区分度不足。</strong> 汉堡和饮料杯除了配色几乎没有轮廓差异，玩家得靠颜色认人。Raiden 系的敌机是按「威胁类型」分配造型的。这里两种敌机的弹型截然不同，却长得很像，<strong>玩家需要先认机、再判弹型，多了一层认知负担</strong>。</li>
-</ol>
-<p>所以它是「风格统一且功能正确，但缺了街机原作那层『活的』表现力」—— 不是做得差，是少做了那一层。</p>
-<h2 id="_3">三、系统与数值：节奏切得很干净</h2>
-<p><strong>系统清单</strong>（11 个入口全部实测过）：</p>
+<h2 id="_2">二、数值与节奏：切得很干净</h2>
 <div class="tbl-wrap"><table>
 <thead>
 <tr>
@@ -518,85 +530,7 @@
 <li>拾取回血额外附带清弹幕 + 0.7 秒无敌（风险与收益自洽）</li>
 <li>番茄酱爆发（炸弹）：清屏 + 秒杀全部敌人 + 对 BOSS 造成 35 伤害，初始 2 发</li>
 </ul>
-<h2 id="_4">四、商业化：实测数据</h2>
-<div class="tbl-wrap"><table>
-<thead>
-<tr>
-<th>指标</th>
-<th>实测值</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>首个付费点弹出时机</td>
-<td>无 —— 不存在任何付费点</td>
-</tr>
-<tr>
-<td>首日不付费能玩多久</td>
-<td>无限（无体力、无上限、无次数限制）；单局 67 秒，可无限重开</td>
-</tr>
-<tr>
-<td>卡点后首充能额外玩多久</td>
-<td>不适用 —— 无卡点、无首充</td>
-</tr>
-<tr>
-<td>首日充值上限</td>
-<td>0 元（无法充值）</td>
-</tr>
-<tr>
-<td>广告与分享奖励</td>
-<td>无 —— 无广告 SDK、无分享按钮、无任何回流奖励</td>
-</tr>
-<tr>
-<td>留存手段</td>
-<td>仅 localStorage 记录最高分（<code>fries-best-v1</code>）；无签到、无每日任务、无活动、无成就</td>
-</tr>
-</tbody>
-</table></div>
-<h2 id="_5">五、系统对标：以哪个为基础</h2>
-<div class="tbl-wrap"><table>
-<thead>
-<tr>
-<th>系统</th>
-<th>对标</th>
-<th>本作做法</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>局内循环</td>
-<td>雷霆战机的「走位 + 拾取强化火力」/ 怒首领蜂大往生的连击槽</td>
-<td>自创（连击槽照抄但没接线）</td>
-</tr>
-<tr>
-<td>波次与火力曲线</td>
-<td>街机 STG 的「短局高密度」分段设计</td>
-<td>自创</td>
-</tr>
-<tr>
-<td>敌人与分值</td>
-<td>同类 STG 的杂兵分层</td>
-<td>自创</td>
-</tr>
-<tr>
-<td>掉落与补给</td>
-<td>雷霆战机的拾取强化火力 / 怒首领蜂大往生的道具投放</td>
-<td>自创</td>
-</tr>
-<tr>
-<td>数值保护</td>
-<td>街机 STG 的受击宽容（1.4s 无敌帧）</td>
-<td>自创</td>
-</tr>
-<tr>
-<td>局外养成 / 商城 / 排行榜 / 账号</td>
-<td>《怒首领蜂大往生》的局外解锁树 / 《向僵尸开炮》的装备与养成</td>
-<td><strong>不存在（有意为之）</strong></td>
-</tr>
-</tbody>
-</table></div>
-<p>也就是说：<strong>局内六项全是自创，唯一照搬的是框架（Raiden 那套招牌要素）和一个没接线的连击槽。</strong> 局外整层空白是主动选择 —— 一款 67 秒的作品不需要解锁树。</p>
-<h2 id="_6">六、我怎么打的：四次通关 + 一组对照</h2>
+<h2 id="_3">三、我怎么打的：四次通关 + 一组对照</h2>
 <div class="tbl-wrap"><table>
 <thead>
 <tr>
@@ -641,7 +575,7 @@
 <p><strong>前三局都是满血通关</strong>，说明难度设计是合理的 —— 躲得开，但不是躺着也能过：<strong>完全不操作的对照组在 18 秒死掉，450 分、3 击杀</strong>（连第一波都没打完）。第 4 局掉了 3 条命，是自动驾驶在第三波弹幕最密时的一个走位失误，不影响难度判断。</p>
 <p>分数浮动区间 9,400–10,200（±4%），BOSS 一项固定占 30% 左右（3000 / 9400–10200），其余分数基本由击杀数决定 —— 这也印证了「连击加成不存在」这一条。</p>
 <p>分数构成（源码 <code>kill()</code>）：杂兵击杀 100 分、饮料杯 150 分（比汉堡贵 50%）、BOSS 击杀 3000 分，满血时白捡回血物折算 100 分。10,200 分里 BOSS 一项就占了 29%。</p>
-<h2 id="_7">七、也测了、确认没问题的部分</h2>
+<h2 id="_4">四、也测了、确认没问题的部分</h2>
 <p>专业测评不能只列问题 —— 同样要说明<strong>哪些环节经得起检验</strong>，否则读者无法判断这份评测的边界在哪。以下都是本次实测确认<strong>行为正确</strong>的部分：</p>
 <div class="tbl-wrap"><table>
 <thead>
@@ -690,8 +624,7 @@
 </tbody>
 </table></div>
 <hr />
-<h2 id="_8">八、问题：五个实测确认的缺陷</h2>
-<h3 id="1">问题 1：连击系统是死代码（高）</h3>
+<h2 id="_5">五、最值得说的一处：连击系统是死代码</h2>
 <p>这是本次测评里最值得说的一个发现。</p>
 <p>源码里有一套<strong>完整的</strong>连击机制：每次击杀 <code>combo++</code> 并把 <code>comboTime</code> 重置为 2 秒；受击时清零；超过 2 秒没击杀也清零。<strong>但 <code>combo</code> 这个变量从头到尾没有任何一处被读取</strong> —— 全部 <code>score +=</code> 只有三处（击杀 100/150、BOSS 3000、满血捡补给 100），没有一处与 combo 有关；DOM 里也没有任何元素显示连击数。</p>
 <p>实测运行时能看到 combo 正常累积（1 → 3 → 5），分数却只跟着击杀数平铺增长：</p>
@@ -730,79 +663,12 @@
 </tbody>
 </table></div>
 <p><strong>「弹幕射击 + 连击」是标准配置，它写好了、接好了、却忘了接到分数上。</strong> 玩家连续击落时看不到任何额外反馈，连击本该带来的「一串杀」情绪峰值全部落空。修起来很简单：<code>kill()</code> 里按 combo 档位给击杀分加成（如 combo ≥ 10 翻倍），HUD 上加一个连击数字。</p>
-<h3 id="_9">另外四个问题</h3>
-<p>其余四个：</p>
-<p><strong>2. Boss 练习模式没有专属结算表现。</strong> 通关结算面板上标题仍是「完美出锅！」、标签仍是「MISSION COMPLETE」，只有正文括号里一句「Boss 练习完成。回到标题挑战完整关卡！」透露了模式差异 —— 结算页没有任何模式标识、配色或徽章。源码 <code>finish()</code> 只有一处结果分支：</p>
-<pre><code class="language-js">$('resultTag').textContent   = win?'MISSION COMPLETE':'ANOTHER ROUND?';
-$('resultTitle').textContent = win?'完美出锅！':'差一点，就酥了。';
-</code></pre>
-<p><strong>3. Boss 练习模式的进度条恒定 100%。</strong> 进度条公式是 <code>Math.min(100, elapsed / CFG.duration * 100)</code>，但 Boss 练习在 <code>reset('boss')</code> 里把 elapsed 直接设成了 CFG.duration：</p>
-<pre><code class="language-js">if(runMode==='boss'){elapsed=CFG.duration; wave=2; beginBoss();}   // elapsed 从 48 起算
-</code></pre>
-<p>实测 <code>elapsed=50, CFG.duration=48</code> → 进度条 <code>100%</code>，从头到尾不动。顶部倒计时做了同样处理（<code>boss?'BOSS':...</code>），进度条漏了。修法：分母按模式取 <code>runMode==='boss' ? 1 : CFG.duration</code>，或 Boss 阶段直接隐藏这条进度条（顶部已有 BOSS 血条，信息重复）。</p>
-<p><strong>4. HUD 分数与结算页分数格式不一致。</strong> HUD 用补零 <code>padStart(6,'0')</code> → 10200 显示成「010200」；结算页用 <code>toLocaleString()</code> → 「10,200」。<strong>数值本身三处完全一致</strong>（HUD / 结算 / localStorage 都对得上），只是写法不同。两处统一即可。</p>
-<p><strong>5. Boss 练习模式不产出任何东西。</strong> 它能正常进、通关、结算，但除了更新那个全局最高分之外不留下任何痕迹 —— 没有独立最佳成绩、没有解锁、没有次数限制、没有奖励。而且练习模式得分只有 3,000（完整关卡 10,200），<code>highScore</code> 取两者最大值，<strong>练 Boss 练习基本刷不破纪录</strong>，没有动力。修法：给练习模式单独记一个最佳成绩，并让它产出可累积的解锁物（如薯条币）。</p>
-<p>其中进度条那条最实：公式是 <code>Math.min(100, elapsed / CFG.duration * 100)</code>，但 Boss 练习模式在 <code>reset('boss')</code> 里把 elapsed 直接设成了 CFG.duration，进度条从头到尾不动 —— 顶部倒计时有做同样处理，进度条漏了。</p>
-<h2 id="_10">九、总评</h2>
+<h2 id="_6">六、总评</h2>
 <p><strong>8.0 / 10</strong> —— 衡量的是「以同赛道弹幕射击的标准看，它在哪个位置」，不是「好不好玩」。</p>
-<div class="tbl-wrap"><table>
-<thead>
-<tr>
-<th>维度</th>
-<th>档位</th>
-<th>对标</th>
-<th>一句话</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>核心机制</td>
-<td>4/5</td>
-<td>雷霆战机的「走位 + 拾取强化火力」循环</td>
-<td>循环完整节奏准确，但深度只有一层，没有局内选择</td>
-</tr>
-<tr>
-<td>数值设计</td>
-<td>4/5</td>
-<td>街机 STG 的短局高密度节奏</td>
-<td>48s 切三波、火力逐波递增、掉血有无敌帧保护，数值紧凑无冗余</td>
-</tr>
-<tr>
-<td>反馈系统</td>
-<td>4/5</td>
-<td>雷霆战机的判定点显示 + 怒首领蜂大往生的连击槽</td>
-<td>Shift 显示 7px 判定圈（已实现），但擦弹奖励缺失、连击写完没接上分数</td>
-</tr>
-<tr>
-<td>氛围叙事</td>
-<td>4/5</td>
-<td>同赛道的世界观包装强度</td>
-<td>「一盒薯条的星际反击」立意成立，HUD 全英文街机术语，标题页排版有作品感</td>
-</tr>
-<tr>
-<td>美术完成度</td>
-<td>4/5</td>
-<td>同风格网页 STG 的资产完成度</td>
-<td>矢量卡通 + 统一描边 + 霓虹光晕，扣分在敌机造型区分度</td>
-</tr>
-<tr>
-<td>系统完成度</td>
-<td>3/5</td>
-<td>同赛道头部产品的局外系统树</td>
-<td>单局系统完整，但局外为零；Boss 练习通了不给任何东西</td>
-</tr>
-<tr>
-<td>商业化体验</td>
-<td>4/5</td>
-<td>同赛道商业化产品的首充破冰与付费深度</td>
-<td>零变现是主动选择，作为作品成立，作为产品不成立</td>
-</tr>
-</tbody>
-</table></div>
 <p><strong>它最值得学的一件事</strong>：<strong>节奏切分</strong>。48 秒切成 18s / 18s / 12s 三波，火力档位逐波递增，每一波都有明确的「我变强了」信号。成本几乎为零（一个数组 <code>[1,2,3][wave]</code>），观感提升明显。</p>
 <p><strong>它最该补的一件事</strong>：<strong>把已经写好的连击接到分数上</strong>。combo 机制完整存在、每秒都在变，却从未参与计分 —— 这是纯粹的设计遗漏而非能力缺失，补上后连续击落会有明显的正反馈，是投入产出比最高的一处改动。若有余力，再补<strong>擦弹奖励与连击槽可视化</strong>（Shift 判定点显示已经做了，这块是半成品）。</p>
 <p><strong>作为作品，它成立</strong>；<strong>作为产品，它缺一整层</strong> —— 局外系统、留存内容、变现闭环一个都没有，通关后玩家没有任何理由回来。</p>
-<h3 id="_11">这份测评的置信边界</h3>
+<h3 id="_7">这份测评的置信边界</h3>
 <div class="tbl-wrap"><table>
 <thead>
 <tr>
@@ -855,7 +721,7 @@ $('resultTitle').textContent = win?'完美出锅！':'差一点，就酥了。';
 </tbody>
 </table></div>
 <hr />
-<h2 id="_12">附：我的实测方法</h2>
+<h2 id="_8">附：我的实测方法</h2>
 <div class="tbl-wrap"><table>
 <thead>
 <tr>
