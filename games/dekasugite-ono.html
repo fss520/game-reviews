@@ -79,14 +79,14 @@
   <div class="review-nav" id="reviewNav">
     <nav class="dimnav" aria-label="维度导航">
       <a href="#sec-axes" data-sec="sec-axes">六轴标签</a>
-      <a href="#sec-what" data-sec="sec-what">这是什么游戏</a>
+      <a href="#sec-preview" data-sec="sec-preview">预览</a>
       <a href="#sec-style" data-sec="sec-style">美术坐标系</a>
       <a href="#sec-play" data-sec="sec-play">玩法分层</a>
+      <a href="#sec-commerce" data-sec="sec-commerce">商业化体验</a>
+      <a href="#sec-what" data-sec="sec-what">这是什么游戏</a>
       <a href="#sec-score" data-sec="sec-score">标杆对比评分</a>
-      <a href="#sec-shot" data-sec="sec-shot">游戏截图</a>
       <a href="#sec-sys" data-sec="sec-sys">系统清单</a>
       <a href="#sec-bench" data-sec="sec-bench">系统对标</a>
-      <a href="#sec-commerce" data-sec="sec-commerce">商业化体验</a>
       <a href="#sec-bugs" data-sec="sec-bugs">缺陷清单</a>
     </nav>
   </div>
@@ -100,7 +100,10 @@
       
       
       <div class="axis axis-platform">
-        <div class="axis-head"><span class="axis-name">平台</span><span class="axis-note">载体决定评价语境</span></div>
+        <div class="axis-head">
+          <span class="axis-name">平台</span>
+          <span class="axis-note">载体决定评价语境</span>
+        </div>
         <div class="axis-body">
           
           <div class="axis-tags">
@@ -129,6 +132,20 @@
           
           <div class="axis-verdict axis-v-good">纯单机网页作品，零门槛零负担。它的传播路径是「甩链接」或「甩结果图」，不是应用商店。</div>
           
+          
+          <details class="axis-fold">
+            <summary>证据锚点 <span class="af-n">3 条</span></summary>
+            <ul class="axis-ev">
+              
+              <li>单文件 HTML 承载全部逻辑与贴图，外部请求仅 three.js CDN、Google Fonts、X、LINE 四个域名</li>
+              
+              <li>存档只有 localStorage，无后端、无账号体系</li>
+              
+              <li>渲染器实测为 WebGL：源码含 <code>WebGLRenderer</code> + <code>PerspectiveCamera</code> + three.js r128 —— <strong>页面自称 3D 是准确的</strong>，不是营销词</li>
+              
+            </ul>
+          </details>
+          
         </div>
       </div>
       
@@ -136,7 +153,10 @@
       
       
       <div class="axis axis-heat">
-        <div class="axis-head"><span class="axis-name">热度</span><span class="axis-note">无公开榜单可查</span></div>
+        <div class="axis-head">
+          <span class="axis-name">热度</span>
+          <span class="axis-note">无公开榜单可查</span>
+        </div>
         <div class="axis-body">
           
           <div class="axis-tags">
@@ -163,6 +183,20 @@
           
           <div class="axis-verdict axis-v-bad"><strong>没有热度数据，而且这次连母体资源都没有。</strong> 如果你要找的是「有商业验证的产品」，这篇可以直接跳过。它值得看的只有一个理由：AI 能不能做出打得出手感的完整游戏 —— 而这一点它给了答案。</div>
           
+          
+          <details class="axis-fold">
+            <summary>证据锚点 <span class="af-n">3 条</span></summary>
+            <ul class="axis-ev">
+              
+              <li>独立 Pages 站点，不在任何商店、榜单或社交平台上留下可检索记录</li>
+              
+              <li>页面无分享计数、无点赞、无评论入口，唯一出口是玩家自己手动生成的成绩图</li>
+              
+              <li>版本号 <code>ver 2026.10.30-59</code> 说明仍在迭代，但迭代节奏本身不构成热度证据</li>
+              
+            </ul>
+          </details>
+          
         </div>
       </div>
       
@@ -170,7 +204,10 @@
       
       
       <div class="axis axis-gameplay">
-        <div class="axis-head"><span class="axis-name">玩法</span><span class="axis-note">用 Steam 官方类型词</span></div>
+        <div class="axis-head">
+          <span class="axis-name">玩法</span>
+          <span class="axis-note">用 Steam 官方类型词</span>
+        </div>
         <div class="axis-body">
           
           <div class="axis-tags">
@@ -209,6 +246,24 @@
           
           <div class="axis-verdict axis-v-good">玩法层是<strong>单机制的极致化</strong> —— 不用任何系统堆料，只把「时机」这一件事做到 36 毫秒的精度。放在 Steam「点击游戏」这一类型里，这是相当高级的完成度。</div>
           
+          
+          <details class="axis-fold">
+            <summary>证据锚点 <span class="af-n">5 条</span></summary>
+            <ul class="axis-ev">
+              
+              <li>挂机游戏 / 点击游戏 ← Steam「类型」层正式词。核心动作只有一个：长按蓄力 + 松手</li>
+              
+              <li>物理破坏 ← Steam「特色」词。斧头划过地形会切开南瓜、栗奶油层、汤海、饼干大陆</li>
+              
+              <li>数值复利 ← 源码公式直读：斧长按 <code>x1.15</code> 倍率复利，13 振推到 26,000 km</li>
+              
+              <li>技巧上限极窄 ← 满力窗口 <strong>36ms</strong>（源码 <code>PW_TOP = 0.036</code>），且阈值随进度收紧</li>
+              
+              <li>无局外养成 / 无体力门 / 无运营活动 ← 源码全文检索无对应实现；只有一条 localStorage 记录最高振数</li>
+              
+            </ul>
+          </details>
+          
         </div>
       </div>
       
@@ -216,7 +271,10 @@
       
       
       <div class="axis axis-theme">
-        <div class="axis-head"><span class="axis-name">题材</span><span class="axis-note">决定用户预期</span></div>
+        <div class="axis-head">
+          <span class="axis-name">题材</span>
+          <span class="axis-note">决定用户预期</span>
+        </div>
         <div class="axis-body">
           
           <div class="axis-tags">
@@ -247,6 +305,22 @@
           
           <div class="axis-verdict axis-v-mid">题材是<strong>日本 Halloween 梗</strong>的密集堆叠，中文用户 get 不到笑点（不懂「両断」「デカすぎて」的双关），但对日本市场是精准的本地化。这直接限制了它的传播半径。</div>
           
+          
+          <details class="axis-fold">
+            <summary>证据锚点 <span class="af-n">4 条</span></summary>
+            <ul class="axis-ev">
+              
+              <li>标题「まじブンブンブンデカすぎて鎌 ハロウィン」—— 副标题直接写万圣节限定</li>
+              
+              <li>场景按「畑 › モンブラン › スープ › クッキー › カボチャ星」推进（南瓜田、蒙布朗、汤之海、饼干大陆、南瓜星），全食物拟人</li>
+              
+              <li>日式梗密度高：「地球、両断」「デカすぎて鎌」「両断」；源码里「神」字出现 17 次、「カボチャ」37 次</li>
+              
+              <li>全日文界面，无中文本地化</li>
+              
+            </ul>
+          </details>
+          
         </div>
       </div>
       
@@ -254,7 +328,10 @@
       
       
       <div class="axis axis-art">
-        <div class="axis-head"><span class="axis-name">美术</span><span class="axis-note">先定风格再谈完成度</span></div>
+        <div class="axis-head">
+          <span class="axis-name">美术</span>
+          <span class="axis-note">先定风格再谈完成度</span>
+        </div>
         <div class="axis-body">
           
           <div class="axis-tags">
@@ -285,6 +362,22 @@
           
           <div class="axis-verdict axis-v-mid">3D 卡通的完成度基准是《糖豆人》《Fall Guys》一线 —— 本作离得远，但<strong>它不需要到那个量级</strong>。判据是：3D 程序化生成 + 卡通风格这一条路上，该做到的是「形体不崩、明暗可读、反馈跟手」，这三点它都做到了。</div>
           
+          
+          <details class="axis-fold">
+            <summary>证据锚点 <span class="af-n">4 条</span></summary>
+            <ul class="axis-ev">
+              
+              <li>3D ← 源码实测 <code>WebGLRenderer</code> + <code>PerspectiveCamera</code> + three.js r128，页面 meta 自称「3Dバカゲー」与源码一致</li>
+              
+              <li>程序化生成 ← <strong>没有任何外部模型文件</strong>，南瓜、蒙布朗、汤海、饼干大陆全部由代码生成几何体（栗奶油分层、蒙布朗的 8 道畝、南瓜法线）</li>
+              
+              <li>贴图全是内联 SVG（<code>data:image/svg+xml</code>），共 5 组：表情脸、乌云、月亮、糖果、看板</li>
+              
+              <li>反馈层投入可量化：hitstop 27 处、G.shake 37 处、buzz 24 处、fovKick 13 处；16 种 WebAudio 合成音效；6 条打击台词；3 张 Canvas 现画的表情贴图</li>
+              
+            </ul>
+          </details>
+          
         </div>
       </div>
       
@@ -292,7 +385,10 @@
       
       
       <div class="axis axis-commerce">
-        <div class="axis-head"><span class="axis-name">商业化</span><span class="axis-note">无变现 = 定位选择</span></div>
+        <div class="axis-head">
+          <span class="axis-name">商业化</span>
+          <span class="axis-note">无变现 = 定位选择</span>
+        </div>
         <div class="axis-body">
           
           <div class="axis-tags">
@@ -323,6 +419,20 @@
           
           <div class="axis-verdict axis-v-na">零变现是<strong>作品定位</strong>，不是缺陷 —— 作者没有把它当产品做。要抄商业化设计，这篇没东西可抄；要抄「AI 能不能做出完整手感」，这��是很好的样本。</div>
           
+          
+          <details class="axis-fold">
+            <summary>证据锚点 <span class="af-n">3 条</span></summary>
+            <ul class="axis-ev">
+              
+              <li>源码全文检索 <code>advert|monetiz|purchase|IAP_|premium|subscribe|price|shop|gacha|coin|diamond</code> <strong>全部无命中</strong></li>
+              
+              <li>外部请求仅 three.js CDN、Google Fonts、X、LINE 四个域名，无任何广告/统计 SDK</li>
+              
+              <li>分享是「生成一张成绩图」（<code>x.com/intent/post</code>、<code>line.me/R/share</code>），不兑换任何游戏内资源</li>
+              
+            </ul>
+          </details>
+          
         </div>
       </div>
       
@@ -334,18 +444,25 @@
 
   
   
-  <section class="panel" id="sec-what">
-    <h3>这是什么游戏</h3>
-    <div class="pos-card">
-      <div class="pos-hero">一个把「时机」做成唯一技巧的网页放置游戏 —— 用 36 毫秒的满力窗口，把数值变大变成了手感问题。</div>
-      <dl class="pos-list">
-        <div class="pos-row"><dt>赛道</dt><dd>网页小游戏 · 放置/点击（无账号、无变现的单机作品）</dd></div>
-        <div class="pos-row"><dt>核心玩法</dt><dd>长按蓄力 → 在 36ms 满力平台松手 → 会心 ×1.15 → 斧长按复利公式暴涨 → 13 振劈开地球</dd></div>
-        <div class="pos-row"><dt>次要玩法</dt><dd>无 —— 没有局外养成，没有系统树，单局结束即结算</dd></div>
-        <div class="pos-row"><dt>变现形态</dt><dd>零变现（源码实测：无广告 SDK、无内购、无货币、无分享奖励，外部请求只有 three.js CDN 与 Google Fonts）</dd></div>
-        <div class="pos-row"><dt>付费群体</dt><dd>不存在付费群体 —— 这是作品不是产品，靠分享传播而非付费转化</dd></div>
-      </dl>
+  <section class="panel" id="sec-preview">
+    <h3>预览 <span class="cnt">玩法视频与系统截图</span></h3>
+
+    
+    <div class="pv-videos">
+      
+      <figure class="pv-video">
+        <video src="../assets/dekasugite-ono/05-play.mp4" poster="../assets/dekasugite-ono/01-charging.jpg" controls muted loop playsinline preload="metadata"></video>
+        <figcaption>
+          <strong>完整一局：蓄力 → 会心 → 斧长暴涨</strong>
+          <span>长按蓄力，在 36 毫秒的满力窗口松手触发会心 ×1.15，斧长按复利公式暴涨 —— 13 振劈开地球。看这段能直观感受到「时机」这一件事的手感密度。</span>
+          <em>证明：玩法轴「挂机游戏 / 点击游戏 / 物理破坏」，以及美术轴「3D 程序化生成」</em>
+        </figcaption>
+      </figure>
+      
     </div>
+    
+
+    
   </section>
   
 
@@ -392,9 +509,8 @@
   
 
   
-  
   <section class="panel" id="sec-play">
-    <h3>玩法分层与舒适区</h3>
+    <h3>玩法分层与舒适区 <span class="cnt">谁会喜欢，谁会走</span></h3>
     
     <div class="layers">
       
@@ -436,6 +552,92 @@
       </div>
     </div>
     
+  </section>
+  
+
+  
+  <section class="panel" id="sec-commerce">
+    <h3>商业化体验 <span class="cnt">零变现（作品，非产品）</span></h3>
+    <div class="tbl-wrap">
+    <table class="dt">
+      <thead><tr><th>指标</th><th>实测值</th><th>状态</th></tr></thead>
+      <tbody>
+        
+        <tr>
+          <td class="dt-strong">首个付费点弹出时机</td>
+          <td class="dt-dim">无 —— 不存在任何付费点</td>
+          <td>
+            <span class="st-chip st-open">已测</span>
+            
+          </td>
+        </tr>
+        
+        <tr>
+          <td class="dt-strong">首日不付费能玩多久</td>
+          <td class="dt-dim">无限（无体力、无体力上限、无倒计时）；单局约 2.5 分钟，可反复重开</td>
+          <td>
+            <span class="st-chip st-open">已测</span>
+            
+          </td>
+        </tr>
+        
+        <tr>
+          <td class="dt-strong">卡点后首充能额外玩多久</td>
+          <td class="dt-dim">不适用 —— 无卡点、无首充</td>
+          <td>
+            <span class="st-chip st-open">已测</span>
+            
+          </td>
+        </tr>
+        
+        <tr>
+          <td class="dt-strong">首日充值上限</td>
+          <td class="dt-dim">0 元（无法充值）</td>
+          <td>
+            <span class="st-chip st-open">已测</span>
+            
+          </td>
+        </tr>
+        
+        <tr>
+          <td class="dt-strong">分享奖励</td>
+          <td class="dt-dim">无 —— 分享只是导出结果卡与文案，无任何回流奖励</td>
+          <td>
+            <span class="st-chip st-open">已测</span>
+            
+          </td>
+        </tr>
+        
+        <tr>
+          <td class="dt-strong">留存手段</td>
+          <td class="dt-dim">仅 localStorage 记录 total/plays/bestOne/cleared/perfects，无签到、无每日任务、无活动</td>
+          <td>
+            <span class="st-chip st-open">已测</span>
+            
+          </td>
+        </tr>
+        
+      </tbody>
+    </table>
+    </div>
+    <p class="panel-note">这一栏是「负向结论」但很重要：**它说明了产品的性质**。这是一个完成度极高的作品（作品 = 表达完整），但不是一个完整的产品（产品 = 有留存与变现闭环）。若要商业化，缺的不是变现设计，而是先要有留存内容 —— 而它连一个局外系统都没有。</p>
+  </section>
+  
+
+  
+  
+  <section class="panel" id="sec-what">
+    <h3>这是什么游戏 <span class="cnt">一句话定位与循环结构</span></h3>
+    <div class="pos-card">
+      <div class="pos-hero">一个把「时机」做成唯一技巧的网页放置游戏 —— 用 36 毫秒的满力窗口，把数值变大变成了手感问题。</div>
+      <dl class="pos-list">
+        <div class="pos-row"><dt>赛道归属</dt><dd>网页小游戏 · 放置/点击（无账号、无变现的单机作品）</dd></div>
+        <div class="pos-row"><dt>核心玩法</dt><dd>长按蓄力 → 在 36ms 满力平台松手 → 会心 ×1.15 → 斧长按复利公式暴涨 → 13 振劈开地球</dd></div>
+        <div class="pos-row"><dt>次要玩法</dt><dd>无 —— 没有局外养成，没有系统树，单局结束即结算</dd></div>
+        <div class="pos-row"><dt>变现形态</dt><dd>零变现（源码实测：无广告 SDK、无内购、无货币、无分享奖励，外部请求只有 three.js CDN 与 Google Fonts）</dd></div>
+        <div class="pos-row"><dt>付费群体</dt><dd>不存在付费群体 —— 这是作品不是产品，靠分享传播而非付费转化</dd></div>
+      </dl>
+    </div>
   </section>
   
 
@@ -706,76 +908,6 @@
   
 
   
-  
-  <section class="panel" id="sec-commerce">
-    <h3>商业化体验 <span class="cnt">零变现（作品，非产品）</span></h3>
-    <div class="tbl-wrap">
-    <table class="dt">
-      <thead><tr><th>指标</th><th>实测值</th><th>状态</th></tr></thead>
-      <tbody>
-        
-        <tr>
-          <td class="dt-strong">首个付费点弹出时机</td>
-          <td class="dt-dim">无 —— 不存在任何付费点</td>
-          <td>
-            <span class="st-chip st-open">已测</span>
-            
-          </td>
-        </tr>
-        
-        <tr>
-          <td class="dt-strong">首日不付费能玩多久</td>
-          <td class="dt-dim">无限（无体力、无体力上限、无倒计时）；单局约 2.5 分钟，可反复重开</td>
-          <td>
-            <span class="st-chip st-open">已测</span>
-            
-          </td>
-        </tr>
-        
-        <tr>
-          <td class="dt-strong">卡点后首充能额外玩多久</td>
-          <td class="dt-dim">不适用 —— 无卡点、无首充</td>
-          <td>
-            <span class="st-chip st-open">已测</span>
-            
-          </td>
-        </tr>
-        
-        <tr>
-          <td class="dt-strong">首日充值上限</td>
-          <td class="dt-dim">0 元（无法充值）</td>
-          <td>
-            <span class="st-chip st-open">已测</span>
-            
-          </td>
-        </tr>
-        
-        <tr>
-          <td class="dt-strong">分享奖励</td>
-          <td class="dt-dim">无 —— 分享只是导出结果卡与文案，无任何回流奖励</td>
-          <td>
-            <span class="st-chip st-open">已测</span>
-            
-          </td>
-        </tr>
-        
-        <tr>
-          <td class="dt-strong">留存手段</td>
-          <td class="dt-dim">仅 localStorage 记录 total/plays/bestOne/cleared/perfects，无签到、无每日任务、无活动</td>
-          <td>
-            <span class="st-chip st-open">已测</span>
-            
-          </td>
-        </tr>
-        
-      </tbody>
-    </table>
-    </div>
-    <p class="panel-note">这一栏是「负向结论」但很重要：**它说明了产品的性质**。这是一个完成度极高的作品（作品 = 表达完整），但不是一个完整的产品（产品 = 有留存与变现闭环）。若要商业化，缺的不是变现设计，而是先要有留存内容 —— 而它连一个局外系统都没有。</p>
-  </section>
-  
-
-  
   <section class="prose">
 <h1 id="_1">まじブンブンブンデカすぎて斧 —— 把时机做成唯一技巧的网页小品</h1>
 <p>先说结论：<strong>这是一个设计密度极高的网页单机游戏</strong>。它只用 1 个 HTML 文件 + 1 个 three.js CDN 就实现了从森林砍到地球劈成两半的完整弧线，音效全部用 WebAudio 实时合成、美术全部程序生成，零素材文件。它甚至内置了给我这种自动化玩家准备的调试接口 <code>window.__dekasugi</code>。</p>
@@ -783,39 +915,10 @@
 <h2 id="_2">开篇：先说清它是什么、跟谁比</h2>
 <p><strong>它是什么</strong>：网页小游戏 · 放置/点击赛道。零账号、零变现、零局外系统 —— 源码全文检索无广告 SDK、无内购、无货币、无分享奖励，外部请求只有 three.js r128 CDN、Google Fonts、X、LIKE 四个。</p>
 <p>这个赛道的头部不是《咸鱼之王》那类重度放置卡牌，而是<strong>「单机制做到极致」的极简网页小品</strong>。在这个坐标系里，比的不是谁系统多，而是<strong>一个机制被打磨到什么程度</strong>。</p>
-<p><strong>美术坐标系</strong>：日式荒诞喜剧 —— low-poly 程序生成几何 + 漫画速度线 + 竖版海报排版（Dela Gothic One）。</p>
+<p><strong>美术坐标系</strong>：日式荒诞喜剧 —— low-poly 程序生成几何 + 漫画速度线 + 竖版海报排版（Dela Gothic One）。完整判读见上方「美术坐标系」。</p>
 <p>这里正好可以对照《正中靶心》：同样是「画面简单」，《正中靶心》走的是<strong>极简美术 + 极深系统</strong>（涂鸦画风背后藏了宝石/城墙/学徒/图鉴四套局外系统）；本作走的是<strong>极简美术 + 极深单点</strong>（画面同样简单，但把全部产能压进了反馈系统）。</p>
 <p>两条路都成立，判据是：<strong>简单有没有换来功能完整</strong>。《正中靶心》用简单画面换系统深度，本作用简单画面换反馈密度 —— 27 处 hitstop、37 处震屏、13 处 FOV 冲击、24 处震动调用、16 种 WebAudio 合成音效、6 条打击台词、3 张 Canvas 现画的表情贴图。<strong>它的美术低多边形 + 程序生成不是省事，是主动选择把预算全砸在手感上。</strong> 所以它在这条赛道的<strong>反馈密度</strong>一项上是碾压级的。</p>
-<p><strong>玩法分层</strong>：</p>
-<div class="tbl-wrap"><table>
-<thead>
-<tr>
-<th>轴</th>
-<th>位置</th>
-<th>依据</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>操作要求</td>
-<td>中操作（单动作，精度要求高）</td>
-<td>只有一个输入：长按蓄力、松手挥斧。但满力窗口只有 36ms，阈值随进度从 0.96 收紧到 0.99</td>
-</tr>
-<tr>
-<td>决策深度</td>
-<td>极低</td>
-<td>局内无选择、无构筑，每局唯一变量是「能不能稳定打出满力」</td>
-</tr>
-<tr>
-<td>反馈节奏</td>
-<td>极快反馈</td>
-<td>每砍一次都有顿帧 0.17s、震屏、FOV 冲击、震动、音效、台词；会心时 0.04 倍速 cutin + 速度线 + 闪白 + BGM 切换</td>
-</tr>
-</tbody>
-</table></div>
-<p><strong>舒适区画像：短时爽感型</strong> —— 通勤、摸鱼、睡前 2.5 分钟要一把即时反馈的人。<br />
-- ✅ 适合：喜欢纯爽感与操作手感、喜欢日式荒诞喜剧、不想注册账号也不想被广告打扰的人<br />
-- ❌ 不适合：追求长期养成与系统深度、不愿练手速、期待持续内容或社交的人</p>
+<p><strong>玩法分层与舒适区画像</strong>见上方「玩法分层与舒适区」。</p>
 <p>最后一条尤其要说明：<strong>通关后没有理由回来</strong>。localStorage 只记 10 个字段（total/bestOne/plays/axe/cleared/perfects/bgm/swings/bestClear），没有签到、没有每日任务、没有活动、没有商城。所以 8.5 分评的是「作品完成度」，不是「产品完成度」—— 这一点在后面的商业化体验里会再展开。</p>
 <hr />
 <h2 id="_3">一、核心机制：把「时机」做成唯一的技巧</h2>
@@ -924,13 +1027,8 @@ text: save.swings + '振り目で斧が' + fmtLen(r.nextL) + 'に！'   // 读�
 </blockquote>
 <p>同一张卡上既说斧子已经 26,000km（远超地球直径），又说「离地球还差一振」。</p>
 <p><strong>讽刺的是</strong>：通关瞬间 <code>earthClear()</code> 明明正确捕获了 <code>G.endStats={swings:13, ...}</code>，结局页用的就是它——数据是对的，只是分享卡和结果页没走这条路。<strong>修起来不难</strong>：分享文案应该用 <code>G.endStats.swings</code>，或在 <code>earthClear()</code> 前把数值存进 <code>G.res</code>。</p>
-<h3 id="bug-2-1">Bug 2：结果页振数差 1</h3>
-<p>结果页显示 12 振（那是通关前最后一把的累计），结局页显示 13 振。玩家通关后在两个界面之间来回看，会困惑「到底挥了几下」。</p>
-<h3 id="bug-3rnext-rnow">Bug 3：<code>rNext</code> 和 <code>rNow</code> 显示同一个值</h3>
-<pre><code class="language-js">$('rNow').textContent  = fmtLen(nowL);
-$('rNext').textContent = fmtLen(nowL);   // ← 应该是 nextL
-</code></pre>
-<p>「下一把斧子」这个信息在通关瞬间就丢了——而这恰恰是玩家最想看的。</p>
+<h3 id="bug_1">另外两个 bug</h3>
+<p>结果页振数差 1（显示 12，结局页 13），以及 <code>rNext</code> 和 <code>rNow</code> 显示同一个值 —— 「下一把斧子」这个信息在通关瞬间就丢了，而这恰恰是玩家最想看的。两条都已在上方「缺陷清单」附源码定位。</p>
 <hr />
 <h2 id="_7">六、其它值得一提的观察</h2>
 <p><strong>做得好的：</strong></p>
@@ -1109,11 +1207,14 @@ $('rNext').textContent = fmtLen(nowL);   // ← 应该是 nextL
       <div class="bug sev-high">
         <div class="bug-head">
           <span class="bug-sev">严重</span>
-          <strong>分享文案显示「0振り目」，与同屏的「26,000km」「地球まであと一振り」直接矛盾</strong>
+          <strong>分享文案显示「0振り目」，与同屏的「26,000km」「地球まであと一振」直接矛盾</strong>
         </div>
         <p class="bug-desc">通关瞬间 earthClear() 把 save.swings 归零，但结果页与分享卡仍从 save.swings 读数。分享卡还叠加了 G.res 里上一轮的残留数据，拼出「0振り目で斧が26,000kmに！…地球まであと一振り」这种既说已远超地球尺寸、又说还差一振的自相矛盾文案。</p>
+        <p class="bug-fix"><span class="bf-k">修复方向</span>分享文案改用 `G.endStats.swings`（结局页已经在用的正确来源），或在 earthClear() 归零前把数值存进 G.res。</p>
         
-        <pre class="bug-evidence"><code>// earthClear() —— 通关后归零
+        <details class="bug-ev-wrap">
+          <summary>实测证据 / 源码定位</summary>
+          <pre class="bug-evidence"><code>// earthClear() —— 通关后归零
 save.cleared++; save.swings = 0; save.axe = 0.97; ...
 
 // showResults() —— 结果页读的是同一个被清零的字段
@@ -1126,6 +1227,7 @@ text: save.swings + &#39;振り目で斧が&#39; + fmtLen(r.nextL) + &#39;に！
 //   结局页 eSwings = 13   （正确，走的是 G.endStats.swings）
 //   结果页 rSwingNo = 12  （少 1）
 //   分享文案        = 0   （完全错）</code></pre>
+        </details>
         
       </div>
       
@@ -1135,9 +1237,13 @@ text: save.swings + &#39;振り目で斧が&#39; + fmtLen(r.nextL) + &#39;に！
           <strong>结果页「现在」与「下一把」永远显示同一个值</strong>
         </div>
         <p class="bug-desc">下一把斧子的尺寸在通关瞬间就丢失了，而这恰恰是玩家最想看的信息。</p>
+        <p class="bug-fix"><span class="bf-k">修复方向</span>把 `rNext` 那行改成读 `nextL` —— 改一个变量名的事。</p>
         
-        <pre class="bug-evidence"><code>$(&#39;rNow&#39;).textContent  = fmtLen(nowL);
+        <details class="bug-ev-wrap">
+          <summary>实测证据 / 源码定位</summary>
+          <pre class="bug-evidence"><code>$(&#39;rNow&#39;).textContent  = fmtLen(nowL);
 $(&#39;rNext&#39;).textContent = fmtLen(nowL);   // &lt;- 应为 nextL</code></pre>
+        </details>
         
       </div>
       
@@ -1147,36 +1253,16 @@ $(&#39;rNext&#39;).textContent = fmtLen(nowL);   // &lt;- 应为 nextL</code></p
           <strong>结果页成长倍率永远显示 ×1.00</strong>
         </div>
         <p class="bug-desc">rMul 被硬编码为 &#39;×1.00&#39;，从不更新为真实成长率。</p>
+        <p class="bug-fix"><span class="bf-k">修复方向</span>用真实的成长倍率（会心加成）替换硬编码的 &#39;×1.00&#39;。</p>
         
-        <pre class="bug-evidence"><code>$(&#39;rMul&#39;).textContent = &#39;×1.00&#39;;</code></pre>
+        <details class="bug-ev-wrap">
+          <summary>实测证据 / 源码定位</summary>
+          <pre class="bug-evidence"><code>$(&#39;rMul&#39;).textContent = &#39;×1.00&#39;;</code></pre>
+        </details>
         
       </div>
       
     </div>
-  </section>
-  
-
-  
-  
-  <section class="panel" id="sec-preview">
-    <h3>预览 <span class="cnt">玩法视频与系统截图</span></h3>
-
-    
-    <div class="pv-videos">
-      
-      <figure class="pv-video">
-        <video src="../assets/dekasugite-ono/05-play.mp4" poster="../assets/dekasugite-ono/01-charging.jpg" controls muted loop playsinline preload="metadata"></video>
-        <figcaption>
-          <strong>完整一局：蓄力 → 会心 → 斧长暴涨</strong>
-          <span>长按蓄力，在 36 毫秒的满力窗口松手触发会心 ×1.15，斧长按复利公式暴涨 —— 13 振劈开地球。看这段能直观感受到「时机」这一件事的手感密度。</span>
-          <em>证明：玩法轴「挂机游戏 / 点击游戏 / 物理破坏」，以及美术轴「3D 程序化生成」</em>
-        </figcaption>
-      </figure>
-      
-    </div>
-    
-
-    
   </section>
   
 

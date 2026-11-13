@@ -703,3 +703,83 @@ body {
 /* 标签胶囊：主名可断行，metric 更小；避免长 metric 撑破窄屏 */
 .atag { white-space: normal; max-width: 100%; }
 .atag i { white-space: nowrap; }
+
+/* ===== 六轴内的嵌套详情 ===== */
+.axis-sub { margin-top: 4px; border-top: 1px dashed var(--border); padding-top: 12px; }
+.axis-sub-h { margin: 0 0 10px; font-size: 12.5px; color: var(--fg-dim); font-weight: 600; }
+.style-box-inline { margin-top: 4px; border-top: 1px dashed var(--border); padding-top: 12px; }
+.dt-axis { font-size: 12.5px; margin-top: 4px; }
+.dt-axis td, .dt-axis th { padding: 7px 10px; }
+
+/* ===== 预览区提前：给视频一个更强的存在感 ===== */
+#sec-preview .panel-note, #sec-preview h3 { margin-bottom: 14px; }
+.pv-videos { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+.pv-video video { border-bottom: 1px solid var(--border); }
+.pv-video figcaption em {
+  display: inline-block; margin-top: 2px; padding: 2px 8px; border-radius: 999px;
+  background: #2a2415; border: 1px solid #6a5620; color: #ffd98a; font-size: 11px;
+}
+
+/* ===== 六轴速览：证据折叠 ===== */
+.axis-fold { margin-top: 2px; }
+.axis-fold > summary { cursor: pointer; list-style: none; display: inline-flex; align-items: center; gap: 7px;
+  font-size: 11.5px; color: var(--fg-faint); padding: 4px 10px; border-radius: 999px;
+  background: var(--bg-soft); border: 1px solid var(--border); user-select: none; }
+.axis-fold > summary::-webkit-details-marker { display: none; }
+.axis-fold > summary::before { content: "▸"; font-size: 9px; color: var(--fg-faint); }
+.axis-fold[open] > summary::before { content: "▾"; }
+.axis-fold > summary:hover { color: var(--fg-dim); border-color: var(--border-lit); }
+.af-n { color: var(--accent); font-size: 11px; }
+.axis-fold .axis-ev { margin-top: 9px; }
+
+/* 轴名左侧加一条轴色标，一眼分清六轴 */
+.axis { position: relative; padding-left: 19px; }
+.axis::before { content: ""; position: absolute; left: 0; top: 12px; bottom: 12px; width: 3px;
+                border-radius: 2px; background: var(--border-lit); }
+.axis-heat::before     { background: #f0655a; }
+.axis-platform::before { background: #5aa9f7; }
+.axis-gameplay::before { background: #46c98b; }
+.axis-theme::before    { background: #b39ddb; }
+.axis-art::before      { background: #ff8a3d; }
+.axis-commerce::before { background: #ffcf4a; }
+
+/* ===== 六轴：轴名横排在顶部，正文占满宽度 =====
+   之前左侧固定 108px 轴名列，正文只剩 186px，结论框被挤成三行。
+   改成轴名 + 副说明同行置顶，正文全宽 -> 结论框两行内解决。 */
+.axis { display: block; padding: 13px 16px 13px 19px; }
+.axis-head { display: flex; flex-direction: row; align-items: baseline; gap: 10px;
+            flex-wrap: wrap; margin-bottom: 9px; }
+.axis-name { font-size: 14px; font-weight: 700; color: var(--accent); letter-spacing: .04em; }
+.axis-note { font-size: 11.5px; color: var(--fg-faint); line-height: 1.4; }
+.axis-body { gap: 8px; }
+@media (max-width: 720px) {
+  .axis { padding: 12px 13px 12px 16px; }
+}
+
+/* ===== 缺陷：修复方向 ===== */
+.bug-fix { margin: 9px 0 0; font-size: 12.5px; line-height: 1.65; color: #b9c4d6;
+           padding: 8px 11px; border-radius: 8px; background: #17202f; border-left: 2px solid #4d5a75; }
+.bf-k { display: inline-block; margin-right: 8px; padding: 1px 8px; border-radius: 999px;
+        font-size: 10.5px; background: #24304a; color: #9fb0cc; vertical-align: 1px; }
+
+/* ===== 缺陷证据默认折叠：先给结论，证据要的人点开 ===== */
+.bug-ev-wrap { margin-top: 9px; }
+.bug-ev-wrap > summary { cursor: pointer; list-style: none; display: inline-flex; align-items: center; gap: 6px;
+  font-size: 11.5px; color: var(--fg-faint); padding: 3px 10px; border-radius: 999px;
+  background: var(--bg-soft); border: 1px solid var(--border); user-select: none; }
+.bug-ev-wrap > summary::-webkit-details-marker { display: none; }
+.bug-ev-wrap > summary::before { content: "▸"; font-size: 9px; }
+.bug-ev-wrap[open] > summary::before { content: "▾"; }
+.bug-ev-wrap > summary:hover { color: var(--fg-dim); border-color: var(--border-lit); }
+.bug-ev-wrap .bug-evidence { margin-top: 8px; }
+
+/* ===== 首页：读法导语 ===== */
+.hero-how { margin: 14px 0 0; max-width: 760px; font-size: 13px; line-height: 1.8; color: var(--fg-dim); }
+.hero-how b { color: var(--accent); font-weight: 600; }
+
+/* ===== 首页卡片：六轴速览条加强 ===== */
+.mini-axes { margin: 12px 0 2px; }
+.ma { cursor: default; }
+.ma:hover { border-color: var(--border-lit); background: var(--bg-hover); }
+.ma-k { font-weight: 600; color: var(--fg-dim); }
+.ma-dot { box-shadow: 0 0 0 2px var(--bg-card); }

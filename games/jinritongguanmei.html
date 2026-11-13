@@ -79,14 +79,14 @@
   <div class="review-nav" id="reviewNav">
     <nav class="dimnav" aria-label="维度导航">
       <a href="#sec-axes" data-sec="sec-axes">六轴标签</a>
-      <a href="#sec-what" data-sec="sec-what">这是什么游戏</a>
+      <a href="#sec-preview" data-sec="sec-preview">预览</a>
       <a href="#sec-style" data-sec="sec-style">美术坐标系</a>
       <a href="#sec-play" data-sec="sec-play">玩法分层</a>
+      <a href="#sec-commerce" data-sec="sec-commerce">商业化体验</a>
+      <a href="#sec-what" data-sec="sec-what">这是什么游戏</a>
       <a href="#sec-score" data-sec="sec-score">标杆对比评分</a>
-      <a href="#sec-shot" data-sec="sec-shot">游戏截图</a>
       <a href="#sec-sys" data-sec="sec-sys">系统清单</a>
       <a href="#sec-bench" data-sec="sec-bench">系统对标</a>
-      <a href="#sec-commerce" data-sec="sec-commerce">商业化体验</a>
       <a href="#sec-bugs" data-sec="sec-bugs">缺陷清单</a>
     </nav>
   </div>
@@ -100,7 +100,10 @@
       
       
       <div class="axis axis-platform">
-        <div class="axis-head"><span class="axis-name">平台</span><span class="axis-note">微信小游戏官方口径</span></div>
+        <div class="axis-head">
+          <span class="axis-name">平台</span>
+          <span class="axis-note">微信小游戏官方口径</span>
+        </div>
         <div class="axis-body">
           
           <div class="axis-tags">
@@ -131,6 +134,22 @@
           
           <div class="axis-verdict axis-v-good">微信小游戏是<strong>国内小游戏最主流也最内卷的载体</strong>。这个载体的评价语境是：拿它跟《寻道大千》《无尽冬日》《向僵尸开炮》比，而不是跟任何 Steam 独立游戏比。</div>
           
+          
+          <details class="axis-fold">
+            <summary>证据锚点 <span class="af-n">4 条</span></summary>
+            <ul class="axis-ev">
+              
+              <li>AppID <code>wx1156237d0cc207a4</code>，微信官方主体：长沙游品科技有限公司，原始 ID <code>gh_a5****e2556b</code></li>
+              
+              <li>微信雷达 2026-10-14 首次收录，服务类目「小游戏 / 角色扮演/策略」（AI 识别）</li>
+              
+              <li>全部实测在微信 Windows 桌面版完成（MuMu Android 15 模拟器 + Airtest/Poco 自动化）</li>
+              
+              <li>存档绑定微信账号 —— 与另两篇的 localStorage 存档本质不同</li>
+              
+            </ul>
+          </details>
+          
         </div>
       </div>
       
@@ -138,7 +157,10 @@
       
       
       <div class="axis axis-heat">
-        <div class="axis-head"><span class="axis-name">热度</span><span class="axis-note">官方五榜均未出现</span></div>
+        <div class="axis-head">
+          <span class="axis-name">热度</span>
+          <span class="axis-note">官方五榜均未出现</span>
+        </div>
         <div class="axis-body">
           
           <div class="axis-tags">
@@ -167,6 +189,22 @@
           
           <div class="axis-verdict axis-v-bad"><strong>上线一个月、还没进任何一个官方榜。</strong> 这说明它目前没有跑出来。对以「找爆款参考」为目的的读者，这一篇的价值在于「头部公司的塔防新品长什么样」，而不是「这个品类有多热」。</div>
           
+          
+          <details class="axis-fold">
+            <summary>证据锚点 <span class="af-n">4 条</span></summary>
+            <ul class="axis-ev">
+              
+              <li>抓取时间 2026-11-09，用 appid 精确查询微信小游戏官方五个榜（PC 小游戏榜 / 畅销榜 / 人气榜 / 畅玩榜 / 热度飙升榜），<strong>均未出现</strong>；五个榜共核 309 个不同 appid</li>
+              
+              <li>五个榜是官方唯一公开的排行入口（官网 <code>xiaoyouxi.qq.com</code> 首页无搜索框，search.html 返回 404），所以「未上榜」是可给出的完整结论</li>
+              
+              <li>替代信号：微信雷达 2026-10-14 首次收录，使用次数 10,000，版本数 1 个</li>
+              
+              <li>交叉核对：有第三方 AI 拆解站称其「微信畅销榜</li>
+              
+            </ul>
+          </details>
+          
         </div>
       </div>
       
@@ -174,7 +212,10 @@
       
       
       <div class="axis axis-gameplay">
-        <div class="axis-head"><span class="axis-name">玩法</span><span class="axis-note">微小官方口径</span></div>
+        <div class="axis-head">
+          <span class="axis-name">玩法</span>
+          <span class="axis-note">微小官方口径</span>
+        </div>
         <div class="axis-body">
           
           <div class="axis-tags">
@@ -215,6 +256,26 @@
           
           <div class="axis-verdict axis-v-mid">玩法层是<strong>「塔防做壳、养成做核」</strong> —— 局内只有布防这一个决策，真正驱动回访的是局外的角色升级。对比同赛道的《正中靶心》（局内三选一构筑 + 局外四套系统），它的局内深度差一整层。</div>
           
+          
+          <details class="axis-fold">
+            <summary>证据锚点 <span class="af-n">6 条</span></summary>
+            <ul class="axis-ev">
+              
+              <li>官方类目 <code>休闲/塔防</code> ← 微信官方主类「休闲」+ 子类「塔防」。<strong>塔防在官方口径里属于「休闲」</strong>，和「益智」「消除」「模拟经营」并列，不是独立大类</li>
+              
+              <li>官方卖点标签 <code>塔防策略</code> ← 这是国内投放素材和运营实际在用的话</li>
+              
+              <li>手动布防有效 ← 连续 A/B/A 三局实测：布防 24 塔 11%，不布防 6%，独立 0 塔复现 6%</li>
+              
+              <li>局外养成 ← 角色/英雄两级升级，实测 8 局顺序排列后收益从 +1% 涨到 +5%（养成会污染实验顺序，所以用 A/B/A 而非 A/B）</li>
+              
+              <li>体力门 ← 界面 OCR 实测：初始 30，每局 3 点，免费上限 5 + 3 次</li>
+              
+              <li>复活激励视频 ← 复活页文案与广告图标实测确认</li>
+              
+            </ul>
+          </details>
+          
         </div>
       </div>
       
@@ -222,7 +283,10 @@
       
       
       <div class="axis axis-theme">
-        <div class="axis-head"><span class="axis-name">题材</span><span class="axis-note">西游</span></div>
+        <div class="axis-head">
+          <span class="axis-name">题材</span>
+          <span class="axis-note">西游</span>
+        </div>
         <div class="axis-body">
           
           <div class="axis-tags">
@@ -249,6 +313,22 @@
           
           <div class="axis-verdict axis-v-mid"><strong>西游 + 塔防是这条赛道最拥挤的组合。</strong> 游品自己就有《西游降妖记》在榜（《紫薇》系小游戏也做西游），加上市面上的《塔防西游记》《西游除妖记》—— 题材不构成任何差异化，先天带着「同质化严重」的判定（DataEye 报告原话：仙侠/三国/武侠题材在投数下滑，原因是同质化严重）。</div>
           
+          
+          <details class="axis-fold">
+            <summary>证据锚点 <span class="af-n">4 条</span></summary>
+            <ul class="axis-ev">
+              
+              <li>官方简介：「棋盘求生，守护唐僧大战妖魔！」</li>
+              
+              <li>收录名「今天通关没西游」；角色为钟馗、二郎神、白龙马、红孩儿</li>
+              
+              <li>微信官方类目 <code>小游戏 / 角色扮演/策略</code></li>
+              
+              <li>局内实测画面确认西游皮：护送对象是唐僧，敌人是妖魔</li>
+              
+            </ul>
+          </details>
+          
         </div>
       </div>
       
@@ -256,7 +336,10 @@
       
       
       <div class="axis axis-art">
-        <div class="axis-head"><span class="axis-name">美术</span><span class="axis-note">先定风格再谈完成度</span></div>
+        <div class="axis-head">
+          <span class="axis-name">美术</span>
+          <span class="axis-note">先定风格再谈完成度</span>
+        </div>
         <div class="axis-body">
           
           <div class="axis-tags">
@@ -289,6 +372,24 @@
           
           <div class="axis-verdict axis-v-mid"><strong>「风格统一但表达失效」，不是「做得差」。</strong> 低多边形本身不是缺点，判据是这个风格该做到的有没有做到 —— 它在统一性和可读性上做得好，但敌人辨识度和信息层级没做，这正是弹幕/塔防这类需要瞬时读场的玩法最不能省的部分。</div>
           
+          
+          <details class="axis-fold">
+            <summary>证据锚点 <span class="af-n">5 条</span></summary>
+            <ul class="axis-ev">
+              
+              <li>低多边形 + 国风卡通 ← 沙色道路与蓝紫空地做冷暖对比，描边扁平化处理</li>
+              
+              <li>六边形地块 ← 微信赛道标志性的六边形棋盘（与《正中靶心》同）</li>
+              
+              <li>配色克制、可读性在同赛道均值之上 —— 战斗层无冗余特效，道路与空地对比清晰</li>
+              
+              <li><strong>功能承载力不足</strong> ← 敌人没有兵种剪影差异、没有血条层级；命名字幕互相遮挡到 OCR 都读不出来（实测证据）</li>
+              
+              <li>资产量明显小于头部产品（对比《正中靶心》28 分屏 + 四套局外系统）</li>
+              
+            </ul>
+          </details>
+          
         </div>
       </div>
       
@@ -296,7 +397,10 @@
       
       
       <div class="axis axis-commerce">
-        <div class="axis-head"><span class="axis-name">商业化</span><span class="axis-note">IAP 为主 + 混合变现</span></div>
+        <div class="axis-head">
+          <span class="axis-name">商业化</span>
+          <span class="axis-note">IAP 为主 + 混合变现</span>
+        </div>
         <div class="axis-body">
           
           <div class="axis-tags">
@@ -331,6 +435,24 @@
           
           <div class="axis-verdict axis-v-mid">这是三篇里<strong>唯一有真实商业设计</strong>的一篇 —— 体力门 + 复活广告 + 礼包承接，循环完整。但设计取向很明确：<strong>用等待时长逼付费，而不是用内容深度留住人</strong>。卡点后首充能额外玩多久、首日上限多少，这两个关键数字仍属空白。</div>
           
+          
+          <details class="axis-fold">
+            <summary>证据锚点 <span class="af-n">5 条</span></summary>
+            <ul class="axis-ev">
+              
+              <li>体力付费墙 ← 实测：付费墙弹窗<strong>盖住开始按钮</strong>，连续点击 6 次都在「开关弹窗」之间循环，界面亮度轨迹 138↔89</li>
+              
+              <li>等待时长 18 / 41 分钟级 ← 倒计时读数多次采到（<strong>抽样观察而非连续计时</strong>，具体值可能有出入）</li>
+              
+              <li>复活激励视频 ← 失败后可看广告继续，因此「10 局」实际是无限局</li>
+              
+              <li>付费冲动来自「不想等」而非「想变强」—— 付费墙卡死时长与单局时长（93 秒）之比超过 10 倍</li>
+              
+              <li><strong>未测</strong>：首充内容、首日充值上限（涉及真实充值，本篇不做）</li>
+              
+            </ul>
+          </details>
+          
         </div>
       </div>
       
@@ -342,18 +464,70 @@
 
   
   
-  <section class="panel" id="sec-what">
-    <h3>这是什么游戏</h3>
-    <div class="pos-card">
-      <div class="pos-hero">微信小程序里的六边形塔防，但真正的主循环是「升级角色/英雄」——塔防只是把养成收益放大成看得见的战场。</div>
-      <dl class="pos-list">
-        <div class="pos-row"><dt>赛道</dt><dd>微信小游戏 · 塔防/放置（与《正中靶心》同赛道，但做了完全不同的取舍）</dd></div>
-        <div class="pos-row"><dt>核心玩法</dt><dd>局内手动布防（0-11% 的生存进度）→ 局外升级角色/英雄 → 布防收益从 +1% 涨到 +5%</dd></div>
-        <div class="pos-row"><dt>次要玩法</dt><dd>体力经济 + 广告/礼包变现循环（打一局 93 秒 → 看一次 30 秒广告 → 再打一局）</dd></div>
-        <div class="pos-row"><dt>变现形态</dt><dd>混合变现（IAA 广告为主 + IAP 礼包承接），广告嵌在循环必需环节</dd></div>
-        <div class="pos-row"><dt>付费群体</dt><dd>轻付费泛用户 —— 白嫖可玩约 3 小时，但卡死后等待时长超过游戏本身 10 倍，付费冲动来自「不想等」而非「想变强」</dd></div>
-      </dl>
+  <section class="panel" id="sec-preview">
+    <h3>预览 <span class="cnt">玩法视频与系统截图</span></h3>
+
+    
+    <div class="pv-videos">
+      
+      <figure class="pv-video">
+        <video src="../assets/jinritongguanmei/01-battle.mp4" poster="../assets/jinritongguanmei/03-battle-mid.jpg" controls muted loop playsinline preload="metadata"></video>
+        <figcaption>
+          <strong>完整一局：手动布防 → 进度推进 → 战败</strong>
+          <span>六边形棋盘上布防挡妖，护送唐僧推进。录像实测到 11% 进度处战败 —— 这段同时暴露了两件事：局内深度有限（布防有效但有效之后也就到 11%），以及进度条几乎不动。</span>
+          <em>证明：玩法轴「手动布防 / 六边形棋盘」，以及缺陷清单里的「关卡进度上限低」</em>
+        </figcaption>
+      </figure>
+      
     </div>
+    
+
+    
+    <div class="pv-shots">
+      <h4 class="pv-shots-h">系统与运营活动</h4>
+      <div class="pv-shot-tabs" role="tablist">
+        
+        <button class="pv-tab active" data-pvtab="0">战斗层</button>
+        
+        <button class="pv-tab" data-pvtab="1">体力与付费墙</button>
+        
+      </div>
+      
+      <div class="pv-shot-group" data-pvpanel="0">
+        
+        <figure class="pv-shot">
+          <img src="../assets/jinritongguanmei/03-battle-mid.jpg" alt="" onclick="zoom(this.src, this.alt)">
+          <figcaption><span class="pv-look">看六边形地块与道路</span><span>沙色道路 + 蓝紫空地的冷暖对比，六边形棋盘是这条赛道的标志形态</span></figcaption>
+        </figure>
+        
+        <figure class="pv-shot">
+          <img src="../assets/jinritongguanmei/04-battle-peak.jpg" alt="" onclick="zoom(this.src, this.alt)">
+          <figcaption><span class="pv-look">看敌人辨识度</span><span>敌人没有兵种剪影差异、没有血条层级；命名字幕叠成一团，OCR 都读不出来</span></figcaption>
+        </figure>
+        
+        <figure class="pv-shot">
+          <img src="../assets/jinritongguanmei/06-gameover.jpg" alt="" onclick="zoom(this.src, this.alt)">
+          <figcaption><span class="pv-look">看失败反馈</span><span>失败弹窗会被商业弹窗打断（见下一组）</span></figcaption>
+        </figure>
+        
+      </div>
+      
+      <div class="pv-shot-group hide" data-pvpanel="1">
+        
+        <figure class="pv-shot">
+          <img src="../assets/jinritongguanmei/07-stamina-paywall.jpg" alt="" onclick="zoom(this.src, this.alt)">
+          <figcaption><span class="pv-look">看付费墙的位置</span><span>付费墙弹窗盖住开始按钮 —— 玩家点「开始」得到的第一个反馈是要付钱或看广告</span></figcaption>
+        </figure>
+        
+        <figure class="pv-shot">
+          <img src="../assets/jinritongguanmei/01-menu.jpg" alt="" onclick="zoom(this.src, this.alt)">
+          <figcaption><span class="pv-look">看主界面入口</span><span>签到、体力、角色/英雄升级等入口集中在此</span></figcaption>
+        </figure>
+        
+      </div>
+      
+    </div>
+    
   </section>
   
 
@@ -405,9 +579,8 @@
   
 
   
-  
   <section class="panel" id="sec-play">
-    <h3>玩法分层与舒适区</h3>
+    <h3>玩法分层与舒适区 <span class="cnt">谁会喜欢，谁会走</span></h3>
     
     <div class="layers">
       
@@ -449,6 +622,90 @@
       </div>
     </div>
     
+  </section>
+  
+
+  
+  <section class="panel" id="sec-commerce">
+    <h3>商业化体验 <span class="cnt">混合变现（IAA + IAP）</span></h3>
+    <div class="tbl-wrap">
+    <table class="dt">
+      <thead><tr><th>指标</th><th>实测值</th><th>状态</th></tr></thead>
+      <tbody>
+        
+        <tr>
+          <td class="dt-strong">首个付费点弹出时机</td>
+          <td class="dt-dim">战败后立刻弹限时礼包（「再战一回合」「超值 700%」「礼包剩余时间 29:05」）</td>
+          <td>
+            <span class="st-chip st-open">已测</span>
+            
+          </td>
+        </tr>
+        
+        <tr>
+          <td class="dt-strong">首日不付费能玩多久</td>
+          <td class="dt-dim">初始体力 30 = 10 局 ≈ 15.5 分钟；加每日免费领取 5+3 次（每次回 40~47）≈ 3 小时；之后卡死</td>
+          <td>
+            <span class="st-chip st-open">已测</span>
+            
+          </td>
+        </tr>
+        
+        <tr>
+          <td class="dt-strong">卡点后首充能额外玩多久</td>
+          <td class="dt-dim">待测 —— 需确认首充实际内容与价格</td>
+          <td>
+            <span class="st-chip st-todo">待测</span>
+          </td>
+        </tr>
+        
+        <tr>
+          <td class="dt-strong">首日充值上限</td>
+          <td class="dt-dim">待测</td>
+          <td>
+            <span class="st-chip st-todo">待测</span>
+          </td>
+        </tr>
+        
+        <tr>
+          <td class="dt-strong">付费墙卡死时长</td>
+          <td class="dt-dim">18 分钟 / 41 分钟级（实测倒计时读数），而单局只有 93 秒</td>
+          <td>
+            <span class="st-chip st-open">已测</span>
+            
+          </td>
+        </tr>
+        
+        <tr>
+          <td class="dt-strong">每日免费领取上限</td>
+          <td class="dt-dim">青蓝卡 5/5 次、紫卡 3 次（紫卡已用尽 0/3）</td>
+          <td>
+            <span class="st-chip st-open">已测</span>
+            
+          </td>
+        </tr>
+        
+      </tbody>
+    </table>
+    </div>
+    <p class="panel-note">变现结构清晰：IAA 负责留存（免费领体力是唯一免费续命方式），IAP 负责承接（礼包 + 蓝钻买体力）。问题不在有没有商业化，而在付费墙的位置 —— 它盖住了「开始战斗」，把「再点一次」的直觉行为变成开关弹窗，实测连点 6 次一次战斗都没开起来。</p>
+  </section>
+  
+
+  
+  
+  <section class="panel" id="sec-what">
+    <h3>这是什么游戏 <span class="cnt">一句话定位与循环结构</span></h3>
+    <div class="pos-card">
+      <div class="pos-hero">微信小程序里的六边形塔防，但真正的主循环是「升级角色/英雄」——塔防只是把养成收益放大成看得见的战场。</div>
+      <dl class="pos-list">
+        <div class="pos-row"><dt>赛道归属</dt><dd>微信小游戏 · 塔防/放置（与《正中靶心》同赛道，但做了完全不同的取舍）</dd></div>
+        <div class="pos-row"><dt>核心玩法</dt><dd>局内手动布防（0-11% 的生存进度）→ 局外升级角色/英雄 → 布防收益从 +1% 涨到 +5%</dd></div>
+        <div class="pos-row"><dt>次要玩法</dt><dd>体力经济 + 广告/礼包变现循环（打一局 93 秒 → 看一次 30 秒广告 → 再打一局）</dd></div>
+        <div class="pos-row"><dt>变现形态</dt><dd>混合变现（IAA 广告为主 + IAP 礼包承接），广告嵌在循环必需环节</dd></div>
+        <div class="pos-row"><dt>付费群体</dt><dd>轻付费泛用户 —— 白嫖可玩约 3 小时，但卡死后等待时长超过游戏本身 10 倍，付费冲动来自「不想等」而非「想变强」</dd></div>
+      </dl>
+    </div>
   </section>
   
 
@@ -737,74 +994,6 @@
   
 
   
-  
-  <section class="panel" id="sec-commerce">
-    <h3>商业化体验 <span class="cnt">混合变现（IAA + IAP）</span></h3>
-    <div class="tbl-wrap">
-    <table class="dt">
-      <thead><tr><th>指标</th><th>实测值</th><th>状态</th></tr></thead>
-      <tbody>
-        
-        <tr>
-          <td class="dt-strong">首个付费点弹出时机</td>
-          <td class="dt-dim">战败后立刻弹限时礼包（「再战一回合」「超值 700%」「礼包剩余时间 29:05」）</td>
-          <td>
-            <span class="st-chip st-open">已测</span>
-            
-          </td>
-        </tr>
-        
-        <tr>
-          <td class="dt-strong">首日不付费能玩多久</td>
-          <td class="dt-dim">初始体力 30 = 10 局 ≈ 15.5 分钟；加每日免费领取 5+3 次（每次回 40~47）≈ 3 小时；之后卡死</td>
-          <td>
-            <span class="st-chip st-open">已测</span>
-            
-          </td>
-        </tr>
-        
-        <tr>
-          <td class="dt-strong">卡点后首充能额外玩多久</td>
-          <td class="dt-dim">待测 —— 需确认首充实际内容与价格</td>
-          <td>
-            <span class="st-chip st-todo">待测</span>
-          </td>
-        </tr>
-        
-        <tr>
-          <td class="dt-strong">首日充值上限</td>
-          <td class="dt-dim">待测</td>
-          <td>
-            <span class="st-chip st-todo">待测</span>
-          </td>
-        </tr>
-        
-        <tr>
-          <td class="dt-strong">付费墙卡死时长</td>
-          <td class="dt-dim">18 分钟 / 41 分钟级（实测倒计时读数），而单局只有 93 秒</td>
-          <td>
-            <span class="st-chip st-open">已测</span>
-            
-          </td>
-        </tr>
-        
-        <tr>
-          <td class="dt-strong">每日免费领取上限</td>
-          <td class="dt-dim">青蓝卡 5/5 次、紫卡 3 次（紫卡已用尽 0/3）</td>
-          <td>
-            <span class="st-chip st-open">已测</span>
-            
-          </td>
-        </tr>
-        
-      </tbody>
-    </table>
-    </div>
-    <p class="panel-note">变现结构清晰：IAA 负责留存（免费领体力是唯一免费续命方式），IAP 负责承接（礼包 + 蓝钻买体力）。问题不在有没有商业化，而在付费墙的位置 —— 它盖住了「开始战斗」，把「再点一次」的直觉行为变成开关弹窗，实测连点 6 次一次战斗都没开起来。</p>
-  </section>
-  
-
-  
   <section class="prose">
 <h1 id="_1">今天通关没 —— 同赛道的另一个极端</h1>
 <p>一款跑在微信里的六边形塔防。主界面写着「第2章 · 普通 · 最高生存进度：11%」，点「开始战斗」消耗 3 点体力，进了战场就是熟悉的塔防：敌人从右上角的岩洞出场，沿着浅褐色地块铺成的 S 形道路走向右下角基地，你在道路两侧的蓝紫色空地上布塔。</p>
@@ -851,37 +1040,7 @@
 </table></div>
 <p><strong>《正中靶心》是一个「极简美术 + 极深系统」的产品</strong> —— 它的涂鸦画风看起来非常简陋，AI 看到大概率会给个低分，但恰恰是这个画风让 28 分屏里的割草过程足够清晰、足够有视觉冲击力，而它在极简画面背后藏了四套局外系统。这正是「美术光评分没有用」的例子：<strong>极简且功能完整是高完成度，简单且功能缺失才是低完成度。</strong></p>
 <p>《今天通关没》的问题不是画面简单 —— 它的低多边形六边形地块配色克制、道路与空地对比清晰，作为美术路线是站得住的。问题是<strong>功能承载力不足</strong>：敌人没有兵种剪影差异、没有血条层级、命名字幕互相遮挡到 OCR 都读不出来。所以它的准确定位是「<strong>风格统一但表达失效</strong>」，不是「做得差」。</p>
-<p>同理，「好不好玩」也必须分层才谈得上：</p>
-<div class="tbl-wrap"><table>
-<thead>
-<tr>
-<th>轴</th>
-<th>位置</th>
-<th>依据</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>操作要求</td>
-<td>弱操作</td>
-<td>点塔、点技能，无走位。上手 10 秒会，但也没有操作上限</td>
-</tr>
-<tr>
-<td>决策深度</td>
-<td>中低</td>
-<td>布防有意义（实测 6%→11%），但缺波次、缺塔面板</td>
-</tr>
-<tr>
-<td>反馈节奏</td>
-<td>慢反馈</td>
-<td>93 秒进度只更新 6 次，前 25 秒恒为 0%</td>
-</tr>
-</tbody>
-</table></div>
-<p><strong>舒适区画像：碎片时间养号型。</strong> 通勤、排队、睡前单手操作，靠每日签到和活动循环滚养成。<br />
-- ✅ 适合：喜欢长期数值积累、能接受「看广告换资源」、单局 1-2 分钟的人<br />
-- ❌ 不适合：追求操作手感、追求塔防策略深度、排斥广告的玩家</p>
-<p>如果你属于后者，这游戏从设计上就没打算让你舒服 —— 这不是质量差，是<strong>定位不同</strong>。</p>
+<p>如果你属于后者，这游戏从设计上就没打算让你舒服 —— 这不是质量差，是<strong>定位不同</strong>。（逐轴分层与舒适区画像见上方「玩法分层与舒适区」）</p>
 <hr />
 <h2 id="11">一、核心机制：布防有效，但有效之后也就到 11%</h2>
 <p>这是本文最重要的一次修正。我先跑了对照组，再跑了 A/B/A 三连，全部实测：</p>
@@ -1103,31 +1262,38 @@
 </ul>
 <p>美术做得不错，但美术在一款数值驱动型游戏里撑不起体验。</p>
 <p>至于命名本身：满屏的叠词（「鬼鬼鬼电妖」「妖妖鬼鬼鬼光」）在视觉上糊成一片。实测 OCR 识别这些文本的置信度只有 0.53–0.81，还频繁误读（把「唐僧」读成「唐增」）。作为一款需要玩家辨认兵种的塔防游戏，敌人视觉上不可区分是个实打实的可读性缺陷。</p>
-<h2 id="_6">五、问题</h2>
-<h3 id="1">问题 1：关卡的进度上限低到玩家看不到正反馈</h3>
-<p><strong>现象</strong>：A/B/A 实测 —— 布防 24 次 = 11%，不布防 = 6%。布防有效，但有效之后天花板也只有 11%，93 秒的局在这里触顶战败。</p>
-<p><strong>影响</strong>：塔防最核心的乐趣是「我离下一波还差一步」。玩家永远等不到那一步，因为关卡本身就不打算让你走到。</p>
-<p><strong>修复方向</strong>：把百分比换成波次制（第 12/30 波），或者把单局目标调低到能在 2 分钟内看到接近完成的信号。</p>
-<h3 id="2">问题 2：体力门槛把游戏切成了「一局 + 一条广告」</h3>
-<p><strong>现象</strong>：30 点体力 ÷ 每局 3 点 = 10 局。体力耗尽后只能付费或看广告，且每日免费次数有上限（弹窗写着「今日剩余 5/5 次」「今日剩余 2/3 次」）。实测顶部的体力恢复倒计时读到过 18 分钟、41 分钟。</p>
-<p><strong>影响</strong>：单局 93 秒的体验被拆成碎片，广告成为循环的一部分而不是可选的加速器。</p>
-<p><strong>修复方向</strong>：体力回复速度与每日产出节奏对齐，或者让「每日任务」成为稳定的体力来源。</p>
-<h3 id="25">问题 2.5：付费墙盖住开始按钮，点击行为在「开关弹窗」之间循环</h3>
-<p><strong>现象</strong>：体力归零后点「开始战斗」，弹出的「体力不足」窗口<strong>覆盖在按钮上方</strong>。我实测连续点 6 次，画面亮度在 138（主界面）和 89（弹窗）之间反复跳，OCR 里「体力不足」时有时无 —— 一次战斗都没开起来。</p>
-<p><strong>影响</strong>：这个反馈和「游戏卡死了」在视觉上无法区分。真人玩家更可能去重启小程序、找客服，或者干脆放弃 —— 而这正是付费墙想制造的压力。弹窗里四条路（免费 5/5、紫卡 0/3、蓝钻 x88、已售罄）同时摊开，把「没路可走」摆在玩家脸上。</p>
-<p><strong>修复方向</strong>：付费墙做成独立页面或从底部升起，不遮挡开始按钮；点击开始时若无体力，直接跳到领取页而不是弹窗。</p>
-<h3 id="3">问题 3：失败反馈被商业弹窗打断</h3>
-<p><strong>现象</strong>：战败后「再接再厉 / 返回 / 双倍领取」之上会盖一层限时礼包弹窗（「再战一回合」「超值 700%」「礼包剩余时间 00:29:05」），底部只有「点击空白处关闭」。</p>
-<p><strong>影响</strong>：玩家打完一局，第一眼看到的不是「我为什么输了」，而是一个充值包。真正的失败引导（「升级角色、升级英雄、挑战其他难度」）必须先手动关掉弹窗才看得到。</p>
-<p><strong>修复方向</strong>：失败结算优先展示，礼包入口降级为结算页上的一个次要按钮。</p>
-<h3 id="4">问题 4：核心进度条几乎不动</h3>
-<p><strong>现象</strong>：93 秒里进度从 0% 到 11%，只更新 6 次，前 25 秒一直是 0%。</p>
-<p><strong>影响</strong>：玩家在「我的塔够不够」「敌人到哪了」和「我离通关多远」之间拿不到实时反馈，塔防最重要的紧张感无法建立。</p>
-<p><strong>修复方向</strong>：把百分比换成波次制显示，或者在百分比之外补一条按波计数的进度。</p>
-<h3 id="5">问题 5：敌人在视觉上无法区分</h3>
-<p><strong>现象</strong>：深蓝和黑色两种小兵在六边形地块上密集排列，名字全是叠词，OCR 置信度低到 0.53 且频繁误读。</p>
-<p><strong>影响</strong>：玩家无法判断该优先打哪一类，也就无法做针对性布防。</p>
-<p><strong>修复方向</strong>：给不同兵种明确的剪影差异（体型、颜色、携带物），名字用单个字或双字。</p>
+<h2 id="_6">五、问题：五个实测确认的缺陷</h2>
+<p>每条的现象、实测读数、源码定位都在上方「缺陷清单」里逐条列出，这里只补<strong>修复方向</strong> —— 这部分是我作为策划视角给的判断：</p>
+<div class="tbl-wrap"><table>
+<thead>
+<tr>
+<th>问题</th>
+<th>修复方向</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>关卡进度上限 11%</td>
+<td>把百分比换成波次制（第 12/30 波），或把单局目标调到 2 分钟内能看到接近完成的信号</td>
+</tr>
+<tr>
+<td>体力门槛切断体验</td>
+<td>体力回复速度与每日产出节奏对齐，或让「每日任务」成为稳定的体力来源</td>
+</tr>
+<tr>
+<td>付费墙盖住开始按钮</td>
+<td>付费墙改成独立页面或从底部升起，不遮挡开始按钮；无体力时直接跳领取页而不是弹窗</td>
+</tr>
+<tr>
+<td>失败反馈被礼包打断</td>
+<td>失败结算优先展示，礼包入口降级为结算页上的次要按钮</td>
+</tr>
+<tr>
+<td>敌人在视觉上无法区分</td>
+<td>给不同兵种明确的剪影差异（体型、颜色、携带物），名字用单字或双字</td>
+</tr>
+</tbody>
+</table></div>
 <h2 id="_7">六、也测了、确认没问题的部分</h2>
 <p>同样要说明<strong>哪些环节经得起检验</strong>，否则读者无法判断这份评测的边界在哪：</p>
 <div class="tbl-wrap"><table>
@@ -1357,8 +1523,11 @@
           <strong>关卡上限低得离谱：布防到底也只走到 11%，玩家在正反馈到来前就被判死</strong>
         </div>
         <p class="bug-desc">A/B/A 对照实验实测：不布防的对照组稳定停在 6%，布防 24 次的实验组稳定到 11% —— 布防是有效的，但**有效之后的终点依然只有 11%**。这一局跑了 93 秒，百分比从 0% 爬到 11% 就触顶战败。也就是说无论玩家操作多好，都看不到「快通关了」的信号，因为关卡本身的进度上限远在玩家能力之外。塔防的复利来自「我离下一波还差 3 个塔」，而这里的进度条几乎不给正反馈。</p>
+        <p class="bug-fix"><span class="bf-k">修复方向</span>把百分比换成波次制（第 12/30 波），或把单局目标调到 2 分钟内能看到接近完成的信号。塔防的复利来自「我离下一波还差 3 个塔」，百分比给不了这种可累积的确定感。</p>
         
-        <pre class="bug-evidence"><code>A/B/A 连续三局（同一账号、连续进行，排除养成干扰）:
+        <details class="bug-ev-wrap">
+          <summary>实测证据 / 源码定位</summary>
+          <pre class="bug-evidence"><code>A/B/A 连续三局（同一账号、连续进行，排除养成干扰）:
   A1 (布防24次)  峰值 11%   用时 81s
   B  (布防 0次)  峰值  6%   用时 70s
   A2 (布防24次)  峰值 11%   用时 82s
@@ -1392,6 +1561,7 @@ Chromium 渲染窗口），点的全是空气。
 -&gt; 这条不影响上面 A/B/A 的结论（那一组是在 PID 有效时跑的，
    且帧文件独立复核过），但也说明：**这类对照实验必须验证
    「点击真的生效」**，否则会得到一个看起来像反例、实则无效的数据点。</code></pre>
+        </details>
         
       </div>
       
@@ -1401,8 +1571,11 @@ Chromium 渲染窗口），点的全是空气。
           <strong>体力硬门槛把单局时长放大成「每 3 分钟一次广告」</strong>
         </div>
         <p class="bug-desc">开一局消耗 3 点体力，初始 30 点 = 10 局。体力耗尽后点「开始战斗」会弹「体力不足」窗口，只能「x88」付费购买或看 30 秒广告免费领，且弹窗里明确写着「今日剩余 5/5 次」「今日剩余 2/3 次」——**每日免费领取次数有上限**。于是单局 93 秒的体验被拆成「打一局 → 看一次广告 → 再打一局」的循环，广告是这个循环里不可或缺的一环，而不是可选的加速器。</p>
+        <p class="bug-fix"><span class="bf-k">修复方向</span>体力回复速度与每日产出节奏对齐，或让「每日任务」成为稳定的体力来源 —— 让玩家的等待时间回到与单局体验同量级（现在是 93 秒 vs 18-41 分钟）。</p>
         
-        <pre class="bug-evidence"><code>体力不足弹窗 OCR:
+        <details class="bug-ev-wrap">
+          <summary>实测证据 / 源码定位</summary>
+          <pre class="bug-evidence"><code>体力不足弹窗 OCR:
   「体力不足」「恭喜获得」「购买体力」
   「今日剩余5/5次」「今日剩余2/3次」
   「x88」（付费购买）「免费」（看广告）
@@ -1410,6 +1583,7 @@ Chromium 渲染窗口），点的全是空气。
 实际点「免费」后弹出 30 秒广告（倒计时「30秒后可获得奖励」），
 播完显示「已获得奖励」，体力从 0 恢复到 47。
 青蓝卡上的绿色图标点下去也生效：体力从 0 恢复到 41。</code></pre>
+        </details>
         
       </div>
       
@@ -1419,14 +1593,18 @@ Chromium 渲染窗口），点的全是空气。
           <strong>体力付费墙挡住「开始战斗」按钮，连续点击只会反复开关弹窗，玩家会以为游戏卡死</strong>
         </div>
         <p class="bug-desc">体力归零后，「开始战斗」不再是进入战斗，而是打开付费墙。这个弹窗**盖在开始按钮上方**，于是继续点按钮的效果是在主界面和弹窗之间来回切换 —— 我实测连点 6 次，画面亮度在 90 和 137 之间反复跳，OCR 里「体力不足」时有时无，一次战斗都没开起来。对真人玩家来说，这个反馈和「游戏卡住了」几乎无法区分。更糟的是弹窗同时摆出四条路：青蓝卡「今日剩余 5/5 次」可领、紫卡「今日剩余 0/3 次」已用尽、底部蓝钻 x88 付费、另一格直接写「已售罄」。免费次数用完后，唯一的出路是等顶部那个恢复倒计时（我实测读到过 18 分钟、41 分钟）—— 而一局游戏只有 93 秒。**等待时间比游戏本身长一个数量级，这是比体力数值本身更伤的设计。**</p>
+        <p class="bug-fix"><span class="bf-k">修复方向</span>付费墙改成独立页面或从底部升起，不遮挡开始按钮；无体力时直接跳领取页而不是弹窗。</p>
         
-        <pre class="bug-evidence"><code>连续点「开始战斗」6 次的画面亮度轨迹:
+        <details class="bug-ev-wrap">
+          <summary>实测证据 / 源码定位</summary>
+          <pre class="bug-evidence"><code>连续点「开始战斗」6 次的画面亮度轨迹:
   138.4 -&gt; 88.8 -&gt; 138.4 -&gt; 88.9 -&gt; 138.2 -&gt; 88.7
 （88 = 弹窗开着，138 = 主界面；OCR 里「体力不足」「购买体力」交替出现）
 弹窗内四条入口的实测 OCR:
   「购买体力」「今日剩余5/5次」「今日剩余0/3次」
   「x6」「x6」「x88」「已售罄」「体力不足」
 顶部体力恢复倒计时实测读数: 18:03、8:59、3:38、41 分钟级</code></pre>
+        </details>
         
       </div>
       
@@ -1436,12 +1614,16 @@ Chromium 渲染窗口），点的全是空气。
           <strong>「最高生存进度」只记录最高值，普通失败会显示 0%，玩家看不出自己其实推进过</strong>
         </div>
         <p class="bug-desc">主界面的进度文案是「最高生存进度：X%」。战斗结束后回到主界面，显示的却是「最高生存进度：11%」，而同一局的实时 HUD 百分比在失败时归零。两套口径并存，玩家无法从主界面判断「我上一局到底走了多远」，只能看到自己刷新的最好成绩，失败反馈被吃掉。</p>
+        <p class="bug-fix"><span class="bf-k">修复方向</span>同时记录「本次进度」和「历史最高」两个字段，结算页分开显示 —— 失败时也要让玩家看到自己这局推进到了哪里。</p>
         
-        <pre class="bug-evidence"><code>菜单页 OCR（战斗失败后回到主界面）:
+        <details class="bug-ev-wrap">
+          <summary>实测证据 / 源码定位</summary>
+          <pre class="bug-evidence"><code>菜单页 OCR（战斗失败后回到主界面）:
   「第2章」「普通」「最高生存进度：11%」
 同一次战斗 HUD 实测曲线（46 个采样点）:
   0% → 1% → 2% → 3% → 4% → 5% → 6% → 失败
 —— HUD 的 6% 只在战斗中可见，失败即消失；主界面只留「最高」值。</code></pre>
+        </details>
         
       </div>
       
@@ -1451,12 +1633,16 @@ Chromium 渲染窗口），点的全是空气。
           <strong>战败后立刻弹出付费礼包弹窗，遮挡「再接再厉」的失败总结</strong>
         </div>
         <p class="bug-desc">战败结算页之上会盖一层限时礼包弹窗（「再战一回合」「超值 700%」「礼包剩余时间 29:05」），底部提示「点击空白处关闭」。玩家第一眼看到的不是失败原因，而是充值包。必须先手动点空白处关掉，才能看到「再接再厉 / 升级角色、升级英雄、挑战其他难度」这句真正的引导。失败反馈被商业弹窗打断，是明显的变现节奏压过玩法节奏。</p>
+        <p class="bug-fix"><span class="bf-k">修复方向</span>失败结算优先展示，礼包入口降级为结算页上的次要按钮 —— 玩家打完一局，第一眼看到的应该是「我为什么输了」。</p>
         
-        <pre class="bug-evidence"><code>战败后 OCR 依次读到:
+        <details class="bug-ev-wrap">
+          <summary>实测证据 / 源码定位</summary>
+          <pre class="bug-evidence"><code>战败后 OCR 依次读到:
   「再接再厉，再战一回合」「超值」「700%」
   「礼包剩余时间：00:29:05」「我要了」
   「点击空白处关闭」
 —— 遮住「再接再厉 / 返回 / 双倍领取」那一层。</code></pre>
+        </details>
         
       </div>
       
@@ -1466,11 +1652,15 @@ Chromium 渲染窗口），点的全是空气。
           <strong>生存进度的百分号步进太粗，1% 的刻度对应约 10 秒战斗，反馈颗粒度不足</strong>
         </div>
         <p class="bug-desc">实测整局 93 秒，进度从 0% 走到 11%，中间大部分时间停在 0% 和 1%。玩家在建造塔、防守、升级的这几十秒里，屏幕上的核心反馈几乎不变，既不知道这一波守得怎么样，也拿不到「再来一点就更好」的推进感。百分比进度条和塔防的「波次」这类离散反馈没有配合，导致操作与反馈脱节。</p>
+        <p class="bug-fix"><span class="bf-k">修复方向</span>在百分比之外补一条按波计数的进度条，让 93 秒里有更密的正反馈节点。</p>
         
-        <pre class="bug-evidence"><code>逐帧 OCR 的 HUD 百分比序列（93 秒内 46 个采样点）:
+        <details class="bug-ev-wrap">
+          <summary>实测证据 / 源码定位</summary>
+          <pre class="bug-evidence"><code>逐帧 OCR 的 HUD 百分比序列（93 秒内 46 个采样点）:
   0% 0% 0% 0% 0% 0% 0% 0% 0% 0% 0% 0% 0% 0% 0% 0% 0% 1% 1% 1% 1% 1% 1% 1%
   2% 2% 2% 2% 2% 2% 2% 3% 3% 3% 3% 4% 4% 4% 4% 4% 4% 5% 5% 5% 6%
 —— 前 18 个采样点（约 25 秒）百分比一直是 0%。</code></pre>
+        </details>
         
       </div>
       
@@ -1480,11 +1670,15 @@ Chromium 渲染窗口），点的全是空气。
           <strong>敌人命名的中二文案与实际表现不匹配，且 OCR 完全读不出来</strong>
         </div>
         <p class="bug-desc">场上单位的名字是「春毒毒」「毒毒莓」「妖乐」「鬼鬼鬼鬼」「唐借」这类叠词梗，密集出现在战场中央，数量一多就互相遮挡到无法分辨谁是谁。实测 OCR 对这些文本的识别置信度普遍在 0.53–0.81，且多处误读为「唐增」「钟道」。作为一款以「辨认兵种」为核心的塔防游戏，敌人在视觉上不可区分是个实质性的可读性问题。</p>
+        <p class="bug-fix"><span class="bf-k">修复方向</span>名字用单字或双字，并给不同兵种明确的剪影差异（体型、颜色、携带物）—— 玩家需要能判断该优先打哪一类。</p>
         
-        <pre class="bug-evidence"><code>战场 OCR 实测（置信度）:
+        <details class="bug-ev-wrap">
+          <summary>实测证据 / 源码定位</summary>
+          <pre class="bug-evidence"><code>战场 OCR 实测（置信度）:
   「春毒毒」0.81  「毒毒莓」0.69  「妖乐」0.77
   「唐增」0.53（原文应为「唐僧」类角色名）  「钟道」0.93
   「鬼鬼鬼电妖」等叠词互相粘连，无稳定分隔。</code></pre>
+        </details>
         
       </div>
       
@@ -1494,85 +1688,20 @@ Chromium 渲染窗口），点的全是空气。
           <strong>主界面被十余个入口和角标塞满，核心目标被挤到很小的位置</strong>
         </div>
         <p class="bug-desc">主界面同时存在：左侧 5 个入口（设置、公告、签到、在线奖励、神兵来袭）、右侧 4 个（VIP权益、分享、收藏、游戏圈）、底部 5 个导航（商城、角色、战斗、英雄、副本），其中 4 个带红点或感叹号角标，底部商城和副本还带锁图标。加上资源栏、章节横幅、25/50/100% 宝箱进度条，「开始战斗」这个唯一真正要按的按钮被压到屏幕最底部的小块区域。</p>
+        <p class="bug-fix"><span class="bf-k">修复方向</span>主界面只留一个主行动按钮（开始战斗），其余入口收进二级菜单或顶部图标。</p>
         
-        <pre class="bug-evidence"><code>主界面 OCR 统计:
+        <details class="bug-ev-wrap">
+          <summary>实测证据 / 源码定位</summary>
+          <pre class="bug-evidence"><code>主界面 OCR 统计:
   左侧入口 5 个、右侧入口 4 个、底部导航 5 个
   带角标的入口 4 个（公告/签到/VIP权益/战斗）
   带锁的入口 2 个（商城、副本）
   主按钮「开始战斗」位于 y≈850（画布 1040 高），占屏高不足 20%。</code></pre>
+        </details>
         
       </div>
       
     </div>
-  </section>
-  
-
-  
-  
-  <section class="panel" id="sec-preview">
-    <h3>预览 <span class="cnt">玩法视频与系统截图</span></h3>
-
-    
-    <div class="pv-videos">
-      
-      <figure class="pv-video">
-        <video src="../assets/jinritongguanmei/01-battle.mp4" poster="../assets/jinritongguanmei/03-battle-mid.jpg" controls muted loop playsinline preload="metadata"></video>
-        <figcaption>
-          <strong>完整一局：手动布防 → 进度推进 → 战败</strong>
-          <span>六边形棋盘上布防挡妖，护送唐僧推进。录像实测到 11% 进度处战败 —— 这段同时暴露了两件事：局内深度有限（布防有效但有效之后也就到 11%），以及进度条几乎不动。</span>
-          <em>证明：玩法轴「手动布防 / 六边形棋盘」，以及缺陷清单里的「关卡进度上限低」</em>
-        </figcaption>
-      </figure>
-      
-    </div>
-    
-
-    
-    <div class="pv-shots">
-      <h4 class="pv-shots-h">系统与运营活动</h4>
-      <div class="pv-shot-tabs" role="tablist">
-        
-        <button class="pv-tab active" data-pvtab="0">战斗层</button>
-        
-        <button class="pv-tab" data-pvtab="1">体力与付费墙</button>
-        
-      </div>
-      
-      <div class="pv-shot-group" data-pvpanel="0">
-        
-        <figure class="pv-shot">
-          <img src="../assets/jinritongguanmei/03-battle-mid.jpg" alt="" onclick="zoom(this.src, this.alt)">
-          <figcaption><span class="pv-look">看六边形地块与道路</span><span>沙色道路 + 蓝紫空地的冷暖对比，六边形棋盘是这条赛道的标志形态</span></figcaption>
-        </figure>
-        
-        <figure class="pv-shot">
-          <img src="../assets/jinritongguanmei/04-battle-peak.jpg" alt="" onclick="zoom(this.src, this.alt)">
-          <figcaption><span class="pv-look">看敌人辨识度</span><span>敌人没有兵种剪影差异、没有血条层级；命名字幕叠成一团，OCR 都读不出来</span></figcaption>
-        </figure>
-        
-        <figure class="pv-shot">
-          <img src="../assets/jinritongguanmei/06-gameover.jpg" alt="" onclick="zoom(this.src, this.alt)">
-          <figcaption><span class="pv-look">看失败反馈</span><span>失败弹窗会被商业弹窗打断（见下一组）</span></figcaption>
-        </figure>
-        
-      </div>
-      
-      <div class="pv-shot-group hide" data-pvpanel="1">
-        
-        <figure class="pv-shot">
-          <img src="../assets/jinritongguanmei/07-stamina-paywall.jpg" alt="" onclick="zoom(this.src, this.alt)">
-          <figcaption><span class="pv-look">看付费墙的位置</span><span>付费墙弹窗盖住开始按钮 —— 玩家点「开始」得到的第一个反馈是要付钱或看广告</span></figcaption>
-        </figure>
-        
-        <figure class="pv-shot">
-          <img src="../assets/jinritongguanmei/01-menu.jpg" alt="" onclick="zoom(this.src, this.alt)">
-          <figcaption><span class="pv-look">看主界面入口</span><span>签到、体力、角色/英雄升级等入口集中在此</span></figcaption>
-        </figure>
-        
-      </div>
-      
-    </div>
-    
   </section>
   
 
