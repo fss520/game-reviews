@@ -46,18 +46,24 @@
       <p class="rv-oneline">微信小程序里的六边形塔防，但真正的主循环是「升级角色/英雄」——塔防只是把养成收益放大成看得见的战场。</p>
       
       <div class="rv-meta">
-        <span class="rm"><i>赛道</i>微信小游戏 · 塔防/放置（与《正中靶心》同赛道，但做了完全不同的取舍）</span>
+        
+        <span class="rm rm-dev"><i>研发商</i>长沙游品科技有限公司 · 研发 + 发行一体</span>
+        
         <span class="rm"><i>平台</i>微信小程序（Windows 桌面版）</span>
+        <span class="rm"><i>上线</i>2026-10-14 上线</span>
         <span class="rm"><i>类型</i>塔防 / 放置</span>
         <span class="rm"><i>测评日期</i>2026-10-30</span>
         <span class="rm"><i>实测时长</i>约 93 秒（录屏实测，11% 处战败）</span>
         
       </div>
       
+      <p class="rv-devnote">AppID `wx11562****cc207a4` 与实测包 `wx1156237d0cc207a4` 吻合。游品科技是头部小游戏公司：2020 年成立，创始人侯添乐（原建筑行业项目经理），代表作《收纳物语》《进击的汉字》《荒岛求生模拟器》《看谁能打过》《Cell Survivor》（出海月流水 8000 万），2026 年 4 月首次进入中国游戏厂商出海收入榜前 30（第 26 名）。**这不是小作坊的随手之作，是头部公司 2026 年 10 月的新作** —— 这个身份改变了整篇测评的重量级。</p>
+      
+      
       <a class="rv-link" href="小程序://今天通关没/9yv5jXVIlHKANSF" target="_blank" rel="noopener">🔗 访问游戏</a>
       
       
-      <div class="tags"><span class="tag">微信小游戏</span><span class="tag">塔防</span><span class="tag">自动化实测</span><span class="tag">未通关</span><span class="tag">体力门槛</span><span class="tag">变现设计</span></div>
+      <div class="tags"><span class="tag">微信小游戏</span><span class="tag">塔防</span><span class="tag">自动化实测</span><span class="tag">未通关</span><span class="tag">体力门槛</span><span class="tag">变现设计</span><span class="tag">西游</span></div>
       
     </div>
     
@@ -72,6 +78,7 @@
   
   <div class="review-nav" id="reviewNav">
     <nav class="dimnav" aria-label="维度导航">
+      <a href="#sec-axes" data-sec="sec-axes">六轴标签</a>
       <a href="#sec-what" data-sec="sec-what">这是什么游戏</a>
       <a href="#sec-style" data-sec="sec-style">美术坐标系</a>
       <a href="#sec-play" data-sec="sec-play">玩法分层</a>
@@ -83,6 +90,255 @@
       <a href="#sec-bugs" data-sec="sec-bugs">缺陷清单</a>
     </nav>
   </div>
+
+  
+  
+  <section class="panel" id="sec-axes">
+    <h3>六轴标签 <span class="cnt">按顺序读：平台 → 热度 → 玩法 → 题材 → 美术 → 商业化</span></h3>
+    <div class="axes">
+      
+      
+      
+      <div class="axis axis-platform">
+        <div class="axis-head"><span class="axis-name">平台</span><span class="axis-note">微信小游戏官方口径</span></div>
+        <div class="axis-body">
+          
+          <div class="axis-tags">
+            
+            <span class="atag atag-strong">微信小游戏<i>微信小程序</i></span>
+            
+            <span class="atag">微信内即点即玩</span>
+            
+            <span class="atag">无需下载</span>
+            
+            <span class="atag">无账号</span>
+            
+          </div>
+          
+          
+          <ul class="axis-ev">
+            
+            <li>AppID <code>wx1156237d0cc207a4</code>，微信官方主体：长沙游品科技有限公司，原始 ID <code>gh_a5****e2556b</code></li>
+            
+            <li>微信雷达 2026-10-14 首次收录，服务类目「小游戏 / 角色扮演/策略」（AI 识别）</li>
+            
+            <li>全部实测在微信 Windows 桌面版完成（MuMu Android 15 模拟器 + Airtest/Poco 自动化）</li>
+            
+            <li>存档绑定微信账号 —— 与另两篇的 localStorage 存档本质不同</li>
+            
+          </ul>
+          
+          
+          <div class="axis-verdict axis-v-good">微信小游戏是<strong>国内小游戏最主流也最内卷的载体</strong>。这个载体的评价语境是：拿它跟《寻道大千》《无尽冬日》《向僵尸开炮》比，而不是跟任何 Steam 独立游戏比。</div>
+          
+        </div>
+      </div>
+      
+      
+      
+      
+      <div class="axis axis-heat">
+        <div class="axis-head"><span class="axis-name">热度</span><span class="axis-note">官方五榜均未出现</span></div>
+        <div class="axis-body">
+          
+          <div class="axis-tags">
+            
+            <span class="atag atag-strong">官方五榜未上榜</span>
+            
+            <span class="atag">使用次数 1 万<i>微信雷达</i></span>
+            
+            <span class="atag">版本数 1 个</span>
+            
+          </div>
+          
+          
+          <ul class="axis-ev">
+            
+            <li>抓取时间 2026-11-09，用 appid 精确查询微信小游戏官方五个榜（PC 小游戏榜 / 畅销榜 / 人气榜 / 畅玩榜 / 热度飙升榜），<strong>均未出现</strong>；五个榜共核 309 个不同 appid</li>
+            
+            <li>五个榜是官方唯一公开的排行入口（官网 <code>xiaoyouxi.qq.com</code> 首页无搜索框，search.html 返回 404），所以「未上榜」是可给出的完整结论</li>
+            
+            <li>替代信号：微信雷达 2026-10-14 首次收录，使用次数 10,000，版本数 1 个</li>
+            
+            <li>交叉核对：有第三方 AI 拆解站称其「微信畅销榜</li>
+            
+          </ul>
+          
+          
+          <div class="axis-verdict axis-v-bad"><strong>上线一个月、还没进任何一个官方榜。</strong> 这说明它目前没有跑出来。对以「找爆款参考」为目的的读者，这一篇的价值在于「头部公司的塔防新品长什么样」，而不是「这个品类有多热」。</div>
+          
+        </div>
+      </div>
+      
+      
+      
+      
+      <div class="axis axis-gameplay">
+        <div class="axis-head"><span class="axis-name">玩法</span><span class="axis-note">微小官方口径</span></div>
+        <div class="axis-body">
+          
+          <div class="axis-tags">
+            
+            <span class="atag atag-strong">休闲 / 塔防<i>微信官方主类/子类</i></span>
+            
+            <span class="atag">塔防策略<i>官方卖点标签</i></span>
+            
+            <span class="atag">手动布防</span>
+            
+            <span class="atag">局外养成</span>
+            
+            <span class="atag">六边形棋盘</span>
+            
+            <span class="atag">体力门</span>
+            
+            <span class="atag">复活激励视频</span>
+            
+          </div>
+          
+          
+          <ul class="axis-ev">
+            
+            <li>官方类目 <code>休闲/塔防</code> ← 微信官方主类「休闲」+ 子类「塔防」。<strong>塔防在官方口径里属于「休闲」</strong>，和「益智」「消除」「模拟经营」并列，不是独立大类</li>
+            
+            <li>官方卖点标签 <code>塔防策略</code> ← 这是国内投放素材和运营实际在用的话</li>
+            
+            <li>手动布防有效 ← 连续 A/B/A 三局实测：布防 24 塔 11%，不布防 6%，独立 0 塔复现 6%</li>
+            
+            <li>局外养成 ← 角色/英雄两级升级，实测 8 局顺序排列后收益从 +1% 涨到 +5%（养成会污染实验顺序，所以用 A/B/A 而非 A/B）</li>
+            
+            <li>体力门 ← 界面 OCR 实测：初始 30，每局 3 点，免费上限 5 + 3 次</li>
+            
+            <li>复活激励视频 ← 复活页文案与广告图标实测确认</li>
+            
+          </ul>
+          
+          
+          <div class="axis-verdict axis-v-mid">玩法层是<strong>「塔防做壳、养成做核」</strong> —— 局内只有布防这一个决策，真正驱动回访的是局外的角色升级。对比同赛道的《正中靶心》（局内三选一构筑 + 局外四套系统），它的局内深度差一整层。</div>
+          
+        </div>
+      </div>
+      
+      
+      
+      
+      <div class="axis axis-theme">
+        <div class="axis-head"><span class="axis-name">题材</span><span class="axis-note">西游</span></div>
+        <div class="axis-body">
+          
+          <div class="axis-tags">
+            
+            <span class="atag atag-strong">西游</span>
+            
+            <span class="atag">角色扮演<i>官方类目</i></span>
+            
+          </div>
+          
+          
+          <ul class="axis-ev">
+            
+            <li>官方简介：「棋盘求生，守护唐僧大战妖魔！」</li>
+            
+            <li>收录名「今天通关没西游」；角色为钟馗、二郎神、白龙马、红孩儿</li>
+            
+            <li>微信官方类目 <code>小游戏 / 角色扮演/策略</code></li>
+            
+            <li>局内实测画面确认西游皮：护送对象是唐僧，敌人是妖魔</li>
+            
+          </ul>
+          
+          
+          <div class="axis-verdict axis-v-mid"><strong>西游 + 塔防是这条赛道最拥挤的组合。</strong> 游品自己就有《西游降妖记》在榜（《紫薇》系小游戏也做西游），加上市面上的《塔防西游记》《西游除妖记》—— 题材不构成任何差异化，先天带着「同质化严重」的判定（DataEye 报告原话：仙侠/三国/武侠题材在投数下滑，原因是同质化严重）。</div>
+          
+        </div>
+      </div>
+      
+      
+      
+      
+      <div class="axis axis-art">
+        <div class="axis-head"><span class="axis-name">美术</span><span class="axis-note">先定风格再谈完成度</span></div>
+        <div class="axis-body">
+          
+          <div class="axis-tags">
+            
+            <span class="atag atag-strong">2D</span>
+            
+            <span class="atag">低多边形</span>
+            
+            <span class="atag">国风卡通</span>
+            
+            <span class="atag">六边形地块</span>
+            
+          </div>
+          
+          
+          <ul class="axis-ev">
+            
+            <li>低多边形 + 国风卡通 ← 沙色道路与蓝紫空地做冷暖对比，描边扁平化处理</li>
+            
+            <li>六边形地块 ← 微信赛道标志性的六边形棋盘（与《正中靶心》同）</li>
+            
+            <li>配色克制、可读性在同赛道均值之上 —— 战斗层无冗余特效，道路与空地对比清晰</li>
+            
+            <li><strong>功能承载力不足</strong> ← 敌人没有兵种剪影差异、没有血条层级；命名字幕互相遮挡到 OCR 都读不出来（实测证据）</li>
+            
+            <li>资产量明显小于头部产品（对比《正中靶心》28 分屏 + 四套局外系统）</li>
+            
+          </ul>
+          
+          
+          <div class="axis-verdict axis-v-mid"><strong>「风格统一但表达失效」，不是「做得差」。</strong> 低多边形本身不是缺点，判据是这个风格该做到的有没有做到 —— 它在统一性和可读性上做得好，但敌人辨识度和信息层级没做，这正是弹幕/塔防这类需要瞬时读场的玩法最不能省的部分。</div>
+          
+        </div>
+      </div>
+      
+      
+      
+      
+      <div class="axis axis-commerce">
+        <div class="axis-head"><span class="axis-name">商业化</span><span class="axis-note">IAP 为主 + 混合变现</span></div>
+        <div class="axis-body">
+          
+          <div class="axis-tags">
+            
+            <span class="atag atag-strong">IAP</span>
+            
+            <span class="atag">混合变现<i>IAA + IAP</i></span>
+            
+            <span class="atag">体力付费墙</span>
+            
+            <span class="atag">复活激励视频</span>
+            
+            <span class="atag">首日上限未测</span>
+            
+          </div>
+          
+          
+          <ul class="axis-ev">
+            
+            <li>体力付费墙 ← 实测：付费墙弹窗<strong>盖住开始按钮</strong>，连续点击 6 次都在「开关弹窗」之间循环，界面亮度轨迹 138↔89</li>
+            
+            <li>等待时长 18 / 41 分钟级 ← 倒计时读数多次采到（<strong>抽样观察而非连续计时</strong>，具体值可能有出入）</li>
+            
+            <li>复活激励视频 ← 失败后可看广告继续，因此「10 局」实际是无限局</li>
+            
+            <li>付费冲动来自「不想等」而非「想变强」—— 付费墙卡死时长与单局时长（93 秒）之比超过 10 倍</li>
+            
+            <li><strong>未测</strong>：首充内容、首日充值上限（涉及真实充值，本篇不做）</li>
+            
+          </ul>
+          
+          
+          <div class="axis-verdict axis-v-mid">这是三篇里<strong>唯一有真实商业设计</strong>的一篇 —— 体力门 + 复活广告 + 礼包承接，循环完整。但设计取向很明确：<strong>用等待时长逼付费，而不是用内容深度留住人</strong>。卡点后首充能额外玩多久、首日上限多少，这两个关键数字仍属空白。</div>
+          
+        </div>
+      </div>
+      
+      
+    </div>
+    <p class="panel-note">平台是微信小游戏，所以玩法标签**按微小官方口径**贴（主类/子类用官方分类，辅以官方卖点标签），不用 Steam 那套词表 —— 跨口径比较没有意义。</p>
+  </section>
+  
 
   
   
@@ -1251,6 +1507,75 @@ Chromium 渲染窗口），点的全是空气。
   </section>
   
 
+  
+  
+  <section class="panel" id="sec-preview">
+    <h3>预览 <span class="cnt">玩法视频与系统截图</span></h3>
+
+    
+    <div class="pv-videos">
+      
+      <figure class="pv-video">
+        <video src="../assets/jinritongguanmei/01-battle.mp4" poster="../assets/jinritongguanmei/03-battle-mid.jpg" controls muted loop playsinline preload="metadata"></video>
+        <figcaption>
+          <strong>完整一局：手动布防 → 进度推进 → 战败</strong>
+          <span>六边形棋盘上布防挡妖，护送唐僧推进。录像实测到 11% 进度处战败 —— 这段同时暴露了两件事：局内深度有限（布防有效但有效之后也就到 11%），以及进度条几乎不动。</span>
+          <em>证明：玩法轴「手动布防 / 六边形棋盘」，以及缺陷清单里的「关卡进度上限低」</em>
+        </figcaption>
+      </figure>
+      
+    </div>
+    
+
+    
+    <div class="pv-shots">
+      <h4 class="pv-shots-h">系统与运营活动</h4>
+      <div class="pv-shot-tabs" role="tablist">
+        
+        <button class="pv-tab active" data-pvtab="0">战斗层</button>
+        
+        <button class="pv-tab" data-pvtab="1">体力与付费墙</button>
+        
+      </div>
+      
+      <div class="pv-shot-group" data-pvpanel="0">
+        
+        <figure class="pv-shot">
+          <img src="../assets/jinritongguanmei/03-battle-mid.jpg" alt="" onclick="zoom(this.src, this.alt)">
+          <figcaption><span class="pv-look">看六边形地块与道路</span><span>沙色道路 + 蓝紫空地的冷暖对比，六边形棋盘是这条赛道的标志形态</span></figcaption>
+        </figure>
+        
+        <figure class="pv-shot">
+          <img src="../assets/jinritongguanmei/04-battle-peak.jpg" alt="" onclick="zoom(this.src, this.alt)">
+          <figcaption><span class="pv-look">看敌人辨识度</span><span>敌人没有兵种剪影差异、没有血条层级；命名字幕叠成一团，OCR 都读不出来</span></figcaption>
+        </figure>
+        
+        <figure class="pv-shot">
+          <img src="../assets/jinritongguanmei/06-gameover.jpg" alt="" onclick="zoom(this.src, this.alt)">
+          <figcaption><span class="pv-look">看失败反馈</span><span>失败弹窗会被商业弹窗打断（见下一组）</span></figcaption>
+        </figure>
+        
+      </div>
+      
+      <div class="pv-shot-group hide" data-pvpanel="1">
+        
+        <figure class="pv-shot">
+          <img src="../assets/jinritongguanmei/07-stamina-paywall.jpg" alt="" onclick="zoom(this.src, this.alt)">
+          <figcaption><span class="pv-look">看付费墙的位置</span><span>付费墙弹窗盖住开始按钮 —— 玩家点「开始」得到的第一个反馈是要付钱或看广告</span></figcaption>
+        </figure>
+        
+        <figure class="pv-shot">
+          <img src="../assets/jinritongguanmei/01-menu.jpg" alt="" onclick="zoom(this.src, this.alt)">
+          <figcaption><span class="pv-look">看主界面入口</span><span>签到、体力、角色/英雄升级等入口集中在此</span></figcaption>
+        </figure>
+        
+      </div>
+      
+    </div>
+    
+  </section>
+  
+
   <nav class="rv-nav">
     
     <a class="rv-nav-item" href="dekasugite-ono.html">
@@ -1275,7 +1600,7 @@ Chromium 渲染窗口），点的全是空气。
   <div class="wrap">
     <span>3 篇测评 · 2 个已通关 · 记录 16 个缺陷</span>
     <span class="sep">·</span>
-    <span>构建于 2026-11-09</span>
+    <span>构建于 2026-11-13</span>
     <span class="sep">·</span>
     <span>数据均可复现</span>
   </div>
@@ -1388,6 +1713,22 @@ window.addEventListener('scroll', function () {
     }
     pendingSec = null;
   }, { passive: true });
+});
+
+/* ---- 预览区：系统截图组 tab 切换 ---- */
+document.querySelectorAll('.pv-shot-tabs').forEach(function (bar) {
+  var tabs = bar.querySelectorAll('.pv-tab');
+  tabs.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var idx = btn.getAttribute('data-pvtab');
+      tabs.forEach(function (b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      var wrap = bar.parentElement;
+      wrap.querySelectorAll('.pv-shot-group').forEach(function (g) {
+        g.classList.toggle('hide', g.getAttribute('data-pvpanel') !== idx);
+      });
+    });
+  });
 });
 
 /* 初始：按 URL hash 定位 */

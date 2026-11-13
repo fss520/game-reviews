@@ -46,18 +46,24 @@
       <p class="rv-oneline">一个把「时机」做成唯一技巧的网页放置游戏 —— 用 36 毫秒的满力窗口，把数值变大变成了手感问题。</p>
       
       <div class="rv-meta">
-        <span class="rm"><i>赛道</i>网页小游戏 · 放置/点击（无账号、无变现的单机作品）</span>
+        
+        <span class="rm rm-dev"><i>研发商</i>未署名（个人 / 小团队作品） · 自研自发 · AI 生成</span>
+        
         <span class="rm"><i>平台</i>Web（Three.js）</span>
+        <span class="rm"><i>上线</i>版本号 ver 2026.10.30-59</span>
         <span class="rm"><i>类型</i>放置 / 点击</span>
         <span class="rm"><i>测评日期</i>2026-10-29</span>
         <span class="rm"><i>实测时长</i>约 2.5 分钟（13 振通关）</span>
         <span class="rm rm-ok"><i>状态</i>已通关</span>
       </div>
       
+      <p class="rv-devnote">页面无作者署名、无版权声明、无社交主页链接，只有 X 和 LINE 两个**分享**出口（`x.com/intent/post`、`line.me/R/share`），无法据此定位作者。技术侧证据指向 AI 生成：单文件 HTML 内嵌 47 条规格高度一致的日文注释（含「分段立体の法線」「放射分割で渦を細かく描く」这类实现细节描述），配合 three.js 程序化建模 —— 这种密度与一致性的代码通常由 AI 生成再经人工微调。</p>
+      
+      
       <a class="rv-link" href="https://dekasugite-ono.pages.dev/" target="_blank" rel="noopener">🔗 访问游戏</a>
       
       
-      <div class="tags"><span class="tag">通关</span><span class="tag">自动化实测</span><span class="tag">源码分析</span><span class="tag">日式</span><span class="tag">零变现</span></div>
+      <div class="tags"><span class="tag">通关</span><span class="tag">自动化实测</span><span class="tag">源码分析</span><span class="tag">日式</span><span class="tag">零变现</span><span class="tag">AI生成</span><span class="tag">3D</span></div>
       
     </div>
     
@@ -72,6 +78,7 @@
   
   <div class="review-nav" id="reviewNav">
     <nav class="dimnav" aria-label="维度导航">
+      <a href="#sec-axes" data-sec="sec-axes">六轴标签</a>
       <a href="#sec-what" data-sec="sec-what">这是什么游戏</a>
       <a href="#sec-style" data-sec="sec-style">美术坐标系</a>
       <a href="#sec-play" data-sec="sec-play">玩法分层</a>
@@ -83,6 +90,247 @@
       <a href="#sec-bugs" data-sec="sec-bugs">缺陷清单</a>
     </nav>
   </div>
+
+  
+  
+  <section class="panel" id="sec-axes">
+    <h3>六轴标签 <span class="cnt">按顺序读：平台 → 热度 → 玩法 → 题材 → 美术 → 商业化</span></h3>
+    <div class="axes">
+      
+      
+      
+      <div class="axis axis-platform">
+        <div class="axis-head"><span class="axis-name">平台</span><span class="axis-note">载体决定评价语境</span></div>
+        <div class="axis-body">
+          
+          <div class="axis-tags">
+            
+            <span class="atag atag-strong">H5 网页<i>Cloudflare Pages</i></span>
+            
+            <span class="atag">无需下载<i>即点即玩</i></span>
+            
+            <span class="atag">无账号<i>零注册</i></span>
+            
+            <span class="atag">3D<i>three.js r128</i></span>
+            
+          </div>
+          
+          
+          <ul class="axis-ev">
+            
+            <li>单文件 HTML 承载全部逻辑与贴图，外部请求仅 three.js CDN、Google Fonts、X、LINE 四个域名</li>
+            
+            <li>存档只有 localStorage，无后端、无账号体系</li>
+            
+            <li>渲染器实测为 WebGL：源码含 <code>WebGLRenderer</code> + <code>PerspectiveCamera</code> + three.js r128 —— <strong>页面自称 3D 是准确的</strong>，不是营销词</li>
+            
+          </ul>
+          
+          
+          <div class="axis-verdict axis-v-good">纯单机网页作品，零门槛零负担。它的传播路径是「甩链接」或「甩结果图」，不是应用商店。</div>
+          
+        </div>
+      </div>
+      
+      
+      
+      
+      <div class="axis axis-heat">
+        <div class="axis-head"><span class="axis-name">热度</span><span class="axis-note">无公开榜单可查</span></div>
+        <div class="axis-body">
+          
+          <div class="axis-tags">
+            
+            <span class="atag atag-strong">无公开榜单记录</span>
+            
+            <span class="atag">未署名</span>
+            
+            <span class="atag">个人/小团队<i>页面无作者信息</i></span>
+            
+          </div>
+          
+          
+          <ul class="axis-ev">
+            
+            <li>独立 Pages 站点，不在任何商店、榜单或社交平台上留下可检索记录</li>
+            
+            <li>页面无分享计数、无点赞、无评论入口，唯一出口是玩家自己手动生成的成绩图</li>
+            
+            <li>版本号 <code>ver 2026.10.30-59</code> 说明仍在迭代，但迭代节奏本身不构成热度证据</li>
+            
+          </ul>
+          
+          
+          <div class="axis-verdict axis-v-bad"><strong>没有热度数据，而且这次连母体资源都没有。</strong> 如果你要找的是「有商业验证的产品」，这篇可以直接跳过。它值得看的只有一个理由：AI 能不能做出打得出手感的完整游戏 —— 而这一点它给了答案。</div>
+          
+        </div>
+      </div>
+      
+      
+      
+      
+      <div class="axis axis-gameplay">
+        <div class="axis-head"><span class="axis-name">玩法</span><span class="axis-note">用 Steam 官方类型词</span></div>
+        <div class="axis-body">
+          
+          <div class="axis-tags">
+            
+            <span class="atag atag-strong">挂机游戏<i>Steam 正式类型词</i></span>
+            
+            <span class="atag">点击游戏<i>Steam 正式类型词</i></span>
+            
+            <span class="atag">物理破坏<i>Steam「特色」</i></span>
+            
+            <span class="atag">单次操作</span>
+            
+            <span class="atag">无局外养成</span>
+            
+            <span class="atag">无体力门</span>
+            
+            <span class="atag">无运营活动</span>
+            
+          </div>
+          
+          
+          <ul class="axis-ev">
+            
+            <li>挂机游戏 / 点击游戏 ← Steam「类型」层正式词。核心动作只有一个：长按蓄力 + 松手</li>
+            
+            <li>物理破坏 ← Steam「特色」词。斧头划过地形会切开南瓜、栗奶油层、汤海、饼干大陆</li>
+            
+            <li>数值复利 ← 源码公式直读：斧长按 <code>x1.15</code> 倍率复利，13 振推到 26,000 km</li>
+            
+            <li>技巧上限极窄 ← 满力窗口 <strong>36ms</strong>（源码 <code>PW_TOP = 0.036</code>），且阈值随进度收紧</li>
+            
+            <li>无局外养成 / 无体力门 / 无运营活动 ← 源码全文检索无对应实现；只有一条 localStorage 记录最高振数</li>
+            
+          </ul>
+          
+          
+          <div class="axis-verdict axis-v-good">玩法层是<strong>单机制的极致化</strong> —— 不用任何系统堆料，只把「时机」这一件事做到 36 毫秒的精度。放在 Steam「点击游戏」这一类型里，这是相当高级的完成度。</div>
+          
+        </div>
+      </div>
+      
+      
+      
+      
+      <div class="axis axis-theme">
+        <div class="axis-head"><span class="axis-name">题材</span><span class="axis-note">决定用户预期</span></div>
+        <div class="axis-body">
+          
+          <div class="axis-tags">
+            
+            <span class="atag atag-strong">日式和风</span>
+            
+            <span class="atag">万圣节</span>
+            
+            <span class="atag">食物</span>
+            
+            <span class="atag">太空</span>
+            
+          </div>
+          
+          
+          <ul class="axis-ev">
+            
+            <li>标题「まじブンブンブンデカすぎて鎌 ハロウィン」—— 副标题直接写万圣节限定</li>
+            
+            <li>场景按「畑 › モンブラン › スープ › クッキー › カボチャ星」推进（南瓜田、蒙布朗、汤之海、饼干大陆、南瓜星），全食物拟人</li>
+            
+            <li>日式梗密度高：「地球、両断」「デカすぎて鎌」「両断」；源码里「神」字出现 17 次、「カボチャ」37 次</li>
+            
+            <li>全日文界面，无中文本地化</li>
+            
+          </ul>
+          
+          
+          <div class="axis-verdict axis-v-mid">题材是<strong>日本 Halloween 梗</strong>的密集堆叠，中文用户 get 不到笑点（不懂「両断」「デカすぎて」的双关），但对日本市场是精准的本地化。这直接限制了它的传播半径。</div>
+          
+        </div>
+      </div>
+      
+      
+      
+      
+      <div class="axis axis-art">
+        <div class="axis-head"><span class="axis-name">美术</span><span class="axis-note">先定风格再谈完成度</span></div>
+        <div class="axis-body">
+          
+          <div class="axis-tags">
+            
+            <span class="atag atag-strong">3D</span>
+            
+            <span class="atag">卡通风格<i>Steam 官方词</i></span>
+            
+            <span class="atag">暗黑<i>万圣夜配色</i></span>
+            
+            <span class="atag">程序化生成<i>无外部模型文件</i></span>
+            
+          </div>
+          
+          
+          <ul class="axis-ev">
+            
+            <li>3D ← 源码实测 <code>WebGLRenderer</code> + <code>PerspectiveCamera</code> + three.js r128，页面 meta 自称「3Dバカゲー」与源码一致</li>
+            
+            <li>程序化生成 ← <strong>没有任何外部模型文件</strong>，南瓜、蒙布朗、汤海、饼干大陆全部由代码生成几何体（栗奶油分层、蒙布朗的 8 道畝、南瓜法线）</li>
+            
+            <li>贴图全是内联 SVG（<code>data:image/svg+xml</code>），共 5 组：表情脸、乌云、月亮、糖果、看板</li>
+            
+            <li>反馈层投入可量化：hitstop 27 处、G.shake 37 处、buzz 24 处、fovKick 13 处；16 种 WebAudio 合成音效；6 条打击台词；3 张 Canvas 现画的表情贴图</li>
+            
+          </ul>
+          
+          
+          <div class="axis-verdict axis-v-mid">3D 卡通的完成度基准是《糖豆人》《Fall Guys》一线 —— 本作离得远，但<strong>它不需要到那个量级</strong>。判据是：3D 程序化生成 + 卡通风格这一条路上，该做到的是「形体不崩、明暗可读、反馈跟手」，这三点它都做到了。</div>
+          
+        </div>
+      </div>
+      
+      
+      
+      
+      <div class="axis axis-commerce">
+        <div class="axis-head"><span class="axis-name">商业化</span><span class="axis-note">无变现 = 定位选择</span></div>
+        <div class="axis-body">
+          
+          <div class="axis-tags">
+            
+            <span class="atag atag-strong">无变现</span>
+            
+            <span class="atag">无广告</span>
+            
+            <span class="atag">无内购</span>
+            
+            <span class="atag">无货币</span>
+            
+            <span class="atag">分享仅出图<i>X / LINE</i></span>
+            
+          </div>
+          
+          
+          <ul class="axis-ev">
+            
+            <li>源码全文检索 <code>advert|monetiz|purchase|IAP_|premium|subscribe|price|shop|gacha|coin|diamond</code> <strong>全部无命中</strong></li>
+            
+            <li>外部请求仅 three.js CDN、Google Fonts、X、LINE 四个域名，无任何广告/统计 SDK</li>
+            
+            <li>分享是「生成一张成绩图」（<code>x.com/intent/post</code>、<code>line.me/R/share</code>），不兑换任何游戏内资源</li>
+            
+          </ul>
+          
+          
+          <div class="axis-verdict axis-v-na">零变现是<strong>作品定位</strong>，不是缺陷 —— 作者没有把它当产品做。要抄商业化设计，这篇没东西可抄；要抄「AI 能不能做出完整手感」，这��是很好的样本。</div>
+          
+        </div>
+      </div>
+      
+      
+    </div>
+    <p class="panel-note">平台是 H5 自有站（Cloudflare Pages），所以玩法标签用 Steam 官方词表（本作属于 Steam「挂机游戏 / 点击游戏」类型族），题材与美术用通用词。</p>
+  </section>
+  
 
   
   
@@ -908,6 +1156,30 @@ $(&#39;rNext&#39;).textContent = fmtLen(nowL);   // &lt;- 应为 nextL</code></p
   </section>
   
 
+  
+  
+  <section class="panel" id="sec-preview">
+    <h3>预览 <span class="cnt">玩法视频与系统截图</span></h3>
+
+    
+    <div class="pv-videos">
+      
+      <figure class="pv-video">
+        <video src="../assets/dekasugite-ono/05-play.mp4" poster="../assets/dekasugite-ono/01-charging.jpg" controls muted loop playsinline preload="metadata"></video>
+        <figcaption>
+          <strong>完整一局：蓄力 → 会心 → 斧长暴涨</strong>
+          <span>长按蓄力，在 36 毫秒的满力窗口松手触发会心 ×1.15，斧长按复利公式暴涨 —— 13 振劈开地球。看这段能直观感受到「时机」这一件事的手感密度。</span>
+          <em>证明：玩法轴「挂机游戏 / 点击游戏 / 物理破坏」，以及美术轴「3D 程序化生成」</em>
+        </figcaption>
+      </figure>
+      
+    </div>
+    
+
+    
+  </section>
+  
+
   <nav class="rv-nav">
     <span></span>
     
@@ -928,7 +1200,7 @@ $(&#39;rNext&#39;).textContent = fmtLen(nowL);   // &lt;- 应为 nextL</code></p
   <div class="wrap">
     <span>3 篇测评 · 2 个已通关 · 记录 16 个缺陷</span>
     <span class="sep">·</span>
-    <span>构建于 2026-11-09</span>
+    <span>构建于 2026-11-13</span>
     <span class="sep">·</span>
     <span>数据均可复现</span>
   </div>
@@ -1041,6 +1313,22 @@ window.addEventListener('scroll', function () {
     }
     pendingSec = null;
   }, { passive: true });
+});
+
+/* ---- 预览区：系统截图组 tab 切换 ---- */
+document.querySelectorAll('.pv-shot-tabs').forEach(function (bar) {
+  var tabs = bar.querySelectorAll('.pv-tab');
+  tabs.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var idx = btn.getAttribute('data-pvtab');
+      tabs.forEach(function (b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      var wrap = bar.parentElement;
+      wrap.querySelectorAll('.pv-shot-group').forEach(function (g) {
+        g.classList.toggle('hide', g.getAttribute('data-pvpanel') !== idx);
+      });
+    });
+  });
 });
 
 /* 初始：按 URL hash 定位 */

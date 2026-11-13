@@ -46,13 +46,19 @@
       <p class="rv-oneline">一盒薯条的太空反击 —— 竖版弹幕射击，48 秒三波推进后决战「汉堡王」，火力全程自动，你只负责走位和捡东西；全程约 67 秒。</p>
       
       <div class="rv-meta">
-        <span class="rm"><i>赛道</i>网页小游戏 · 弹幕射击（STG），细分风格是「食物拟人化 + 街机弹幕」</span>
+        
+        <span class="rm rm-dev"><i>研发商</i>上海娱公竞宇网络有限公司（娱公互动） · 自研自发</span>
+        
         <span class="rm"><i>平台</i>Web（单文件 HTML + 内联 base64 资源）</span>
+        <span class="rm"><i>上线</i>CRISPY ARCADE 系列第 7 号作品</span>
         <span class="rm"><i>类型</i>弹幕射击 / STG</span>
         <span class="rm"><i>测评日期</i>2026-11-09</span>
         <span class="rm"><i>实测时长</i>约 67 秒（完整关卡通关，两次实测）</span>
         <span class="rm rm-ok"><i>状态</i>已通关</span>
       </div>
+      
+      <p class="rv-devnote">域名 frybox.caniculab.com 挂在娱公竞宇官网 caniculab.com 之下，页面标题为「CRISPY ARCADE ✳ 小小薯条 · 大大火力 VOL. 07」。母公司与微博系关联（集团内《狼人杀》《谁是卧底》《弹唱达人》等，用户量过亿；假面科技为其投资方之一）。**母体有资源 ≠ 这款产品有热度** —— 官网「产品展示」区未收录薯条，同系列子域互不导流（已枚举 45 个候选子域验证）。</p>
+      
       
       <a class="rv-link" href="https://frybox.caniculab.com/" target="_blank" rel="noopener">🔗 访问游戏</a>
       
@@ -72,6 +78,7 @@
   
   <div class="review-nav" id="reviewNav">
     <nav class="dimnav" aria-label="维度导航">
+      <a href="#sec-axes" data-sec="sec-axes">六轴标签</a>
       <a href="#sec-what" data-sec="sec-what">这是什么游戏</a>
       <a href="#sec-style" data-sec="sec-style">美术坐标系</a>
       <a href="#sec-play" data-sec="sec-play">玩法分层</a>
@@ -86,15 +93,252 @@
 
   
   
+  <section class="panel" id="sec-axes">
+    <h3>六轴标签 <span class="cnt">按顺序读：平台 → 热度 → 玩法 → 题材 → 美术 → 商业化</span></h3>
+    <div class="axes">
+      
+      
+      
+      <div class="axis axis-platform">
+        <div class="axis-head"><span class="axis-name">平台</span><span class="axis-note">载体决定评价语境</span></div>
+        <div class="axis-body">
+          
+          <div class="axis-tags">
+            
+            <span class="atag atag-strong">H5 网页<i>单文件 HTML</i></span>
+            
+            <span class="atag">独立子域<i>frybox.caniculab.com</i></span>
+            
+            <span class="atag">无需下载<i>即点即玩</i></span>
+            
+            <span class="atag">无账号<i>零注册</i></span>
+            
+          </div>
+          
+          
+          <ul class="axis-ev">
+            
+            <li>全部资源内联在单个 HTML 文件里（three.js 之外的素材均为内联 base64 / SVG），实测 Performance API 网络请求 0 个</li>
+            
+            <li>存档只用 localStorage 两个键（最高分 / 最高波次），无后端、无账号</li>
+            
+          </ul>
+          
+          
+          <div class="axis-verdict axis-v-good">不是 App、不是微信小游戏，也不是 Steam —— 是一个可以直接甩给别人的网页链接。这种载体决定了它的传播方式是「截图分享」而不是「下载安装」。</div>
+          
+        </div>
+      </div>
+      
+      
+      
+      
+      <div class="axis axis-heat">
+        <div class="axis-head"><span class="axis-name">热度</span><span class="axis-note">无公开榜单可查</span></div>
+        <div class="axis-body">
+          
+          <div class="axis-tags">
+            
+            <span class="atag atag-strong">无公开榜单记录</span>
+            
+            <span class="atag">系列第 7 号<i>CRISPY ARCADE VOL.07</i></span>
+            
+            <span class="atag">官网未收录<i>产品展示区无此作</i></span>
+            
+          </div>
+          
+          
+          <ul class="axis-ev">
+            
+            <li>独立子域站无任何公开排名数据源；它不在 Steam、不在微信小游戏五榜、不在任何应用商店</li>
+            
+            <li>官网 caniculab.com「产品展示」区只挂三张 banner，无薯条链接 —— 母体没有为它导流</li>
+            
+            <li>枚举 45 个候选子域（burgerking / fries / burger / soda 等）全部指向同一泛解析 IP，用 HTTP 状态码 + 响应体积过滤后无一有效站点 —— 同系列作品之间互不导流</li>
+            
+          </ul>
+          
+          
+          <div class="axis-verdict axis-v-bad"><strong>没有热度数据本身就是结论。</strong> 这是一个自娱向的作品，不是有商业目标的产品。如果你的目的是「找一款能抄的爆款」，这一篇读到这里就可以关掉了 —— 下面的内容只对「这个 STG 框架被怎么执行」这个问题有价值。</div>
+          
+        </div>
+      </div>
+      
+      
+      
+      
+      <div class="axis axis-gameplay">
+        <div class="axis-head"><span class="axis-name">玩法</span><span class="axis-note">用 Steam 官方子类型词</span></div>
+        <div class="axis-body">
+          
+          <div class="axis-tags">
+            
+            <span class="atag atag-strong">弹幕射击<i>Steam 官方子类型</i></span>
+            
+            <span class="atag">垂直卷轴射击<i>Steam 官方子类型</i></span>
+            
+            <span class="atag">关卡制<i>限时单局</i></span>
+            
+            <span class="atag">BOSS 关</span>
+            
+            <span class="atag">自动射击<i>Steam「特色」</i></span>
+            
+            <span class="atag">无局外养成</span>
+            
+            <span class="atag">无体力门</span>
+            
+            <span class="atag">无图鉴收集</span>
+            
+          </div>
+          
+          
+          <ul class="axis-ev">
+            
+            <li>弹幕射击 ← 顶部固定 BOSS + 炸弹清屏 + 扇形/瞄准双弹型（实测 BOSS 战同屏峰值 20 发扇形 + 12 发瞄准）</li>
+            
+            <li>垂直卷轴射击 ← 480×720 竖屏，固定纵向卷动</li>
+            
+            <li>自动射击 ← 射击间隔固定 0.125s，玩家只负责走位（Steam「特色」分类：自动化）</li>
+            
+            <li>无局外养成 / 无体力门 / 无图鉴 ← 源码全文检索无对应实现；存档只有两个 localStorage 键</li>
+            
+            <li>时长由源码常量直读：48 秒总时长切成 18s / 18s / 12s 三波，随后 BOSS 战约 16 秒，全程约 67 秒</li>
+            
+          </ul>
+          
+          
+          <div class="axis-verdict axis-v-good">玩法层是<strong>做减法</strong>的典范 —— 只保留「走位 + 拾取 + 一场 BOSS 战」，把所有长线系统都砍掉。这让它在 67 秒里非常干净，但也决定了它没有留存抓手。</div>
+          
+        </div>
+      </div>
+      
+      
+      
+      
+      <div class="axis axis-theme">
+        <div class="axis-head"><span class="axis-name">题材</span><span class="axis-note">决定用户预期</span></div>
+        <div class="axis-body">
+          
+          <div class="axis-tags">
+            
+            <span class="atag atag-strong">食物拟人</span>
+            
+            <span class="atag">太空科幻</span>
+            
+            <span class="atag">卡通</span>
+            
+          </div>
+          
+          
+          <ul class="axis-ev">
+            
+            <li>食物拟人 ← 敌机是红白条纹饮料杯（soda）与金黄汉堡（burger），BOSS 是戴王冠的机械汉堡「汉堡王」</li>
+            
+            <li>太空科幻 ← 深蓝星空 + 网格线 + 星尘背景，设定为「一盒薯条的太空反击」</li>
+            
+            <li>打击台词用了日式梗：「ガキィン!! 山が硬い…」「ズガァァァン!!!」「ボイ〜ン!! 地球は硬い…」「地球、両断!!!!」（源码中 6 条 <code>showWord()</code> 全部枚举）</li>
+            
+          </ul>
+          
+          
+          <div class="axis-verdict axis-v-good">题材是这套美术能成立的<strong>前提</strong> —— 食物拟人让「敌人」可以是饮料杯而不显得低幼，也让汉堡王这个 BOSS 形态自带幽默感。换成人形敌机，整个调性会立刻垮掉。</div>
+          
+        </div>
+      </div>
+      
+      
+      
+      
+      <div class="axis axis-art">
+        <div class="axis-head"><span class="axis-name">美术</span><span class="axis-note">先定风格再谈完成度</span></div>
+        <div class="axis-body">
+          
+          <div class="axis-tags">
+            
+            <span class="atag atag-strong">2D</span>
+            
+            <span class="atag">矢量卡通<i>Canvas 2D 程序绘制</i></span>
+            
+            <span class="atag">明亮</span>
+            
+            <span class="atag">俯视<i>竖版</i></span>
+            
+          </div>
+          
+          
+          <ul class="axis-ev">
+            
+            <li>2D ← 源码无 WebGL 上下文，Canvas 2D 绘制，grep <code>WebGLRenderer|PerspectiveCamera|three</code> 全部无命中</li>
+            
+            <li>矢量卡通 ← 全部素材为程序绘制 + 内联 SVG，统一的深色描边与金黄光晕语言</li>
+            
+            <li>功能性承载有效 ← 敌机用「金黄薯条弹（扇形）」与「紫粉圆弹（瞄准）」两种<strong>形状</strong>区分弹道，不只靠颜色</li>
+            
+            <li>判定点可视化已实现 ← 按住 Shift 显示 7px 判定圈 + 21px 参考圈（像素级验证：判定圈 +80 像素、参考圈 +22 像素），这是 Raiden 系的招牌惯例</li>
+            
+          </ul>
+          
+          
+          <div class="axis-verdict axis-v-mid">同风格第二档。<strong>不是「做得差」，是「少了一层街机灵魂」</strong> —— 缺的是敌机与 BOSS 的动作表演（汉堡王的机械臂和喷气腿画得很细，却全程不做任何动作）。</div>
+          
+        </div>
+      </div>
+      
+      
+      
+      
+      <div class="axis axis-commerce">
+        <div class="axis-head"><span class="axis-name">商业化</span><span class="axis-note">无变现 = 定位选择</span></div>
+        <div class="axis-body">
+          
+          <div class="axis-tags">
+            
+            <span class="atag atag-strong">无变现</span>
+            
+            <span class="atag">无广告</span>
+            
+            <span class="atag">无内购</span>
+            
+            <span class="atag">无货币</span>
+            
+            <span class="atag">无分享奖励</span>
+            
+          </div>
+          
+          
+          <ul class="axis-ev">
+            
+            <li>源码全文检索 <code>Advert|adUnit|monetization|purchase|IAP_|premium|subscribe|price|shop</code> 全部无有效命中</li>
+            
+            <li>Performance API 实测运行全程 <strong>0 个网络请求</strong></li>
+            
+            <li>页面无分享按钮，<code>navigator.share</code> 未被调用（分享只有「成绩截图」这一层人工传播）</li>
+            
+          </ul>
+          
+          
+          <div class="axis-verdict axis-v-na">零变现是<strong>定位选择</strong>，不是缺陷 —— 页面标题「VOL. 07」和「CRISPY ARCADE」系列感说明它是作品集里的一件，不是待运营的产品。想抄商业化设计，这一篇没有东西可抄；想抄玩法框架，有。</div>
+          
+        </div>
+      </div>
+      
+      
+    </div>
+    <p class="panel-note">平台决定用哪套词表 —— 本作是 H5 自有站，用 Steam 官方子类型 + 行业通用词；玩法标签优先用 Steam 官方词（「弹幕射击」是 Steam 子类型正式词，比「STG」更精确）。</p>
+  </section>
+  
+
+  
+  
   <section class="panel" id="sec-what">
     <h3>这是什么游戏</h3>
     <div class="pos-card">
       <div class="pos-hero">一盒薯条的太空反击 —— 竖版弹幕射击，48 秒三波推进后决战「汉堡王」，火力全程自动，你只负责走位和捡东西；全程约 67 秒。</div>
       <dl class="pos-list">
-        <div class="pos-row"><dt>赛道</dt><dd>网页小游戏 · 弹幕射击（STG），细分风格是「食物拟人化 + 街机弹幕」</dd></div>
+        <div class="pos-row"><dt>赛道</dt><dd>网页小游戏 · 纵版弹幕射击（STG）。**直接沿用雷霆战机（《怒首领蜂》Raiden 谱系）的框架**：顶部 BOSS、炸弹清屏、Shift 精确移动并显示判定点、拾取道具强化火力、限时关卡 —— 五个招牌要素全部齐备</dd></div>
         <div class="pos-row"><dt>核心玩法</dt><dd>走位躲弹幕 → 自动射击清敌 → 拾取掉落（回血 / 火力强化）→ 三波后 BOSS 决战 → 通关结算</dd></div>
         <div class="pos-row"><dt>次要玩法</dt><dd>章节推进式 —— 每波结束火力档位提升一档（单向 → 双排 → 三向），火力升级是局内临时强化</dd></div>
-        <div class="pos-row"><dt>变现形态</dt><dd>零变现（源码全文检索：无广告 SDK、无内购、无货币、无商店、无分享奖励；外部请求 0 个）</dd></div>
+        <div class="pos-row"><dt>变现形态</dt><dd>零变现（源码全文检索：无广告 SDK、无内购、无货币、无商店、无分享奖励；Performance API 实测 0 个网络请求）</dd></div>
         <div class="pos-row"><dt>付费群体</dt><dd>不存在付费群体 —— 这是作品不是产品，靠「分享成绩截图」的社交传播而非付费转化</dd></div>
       </dl>
     </div>
@@ -115,23 +359,18 @@
         <div class="st-heads">
           
           <div class="st-head">
-            <span class="st-hn">吸血鬼幸存者（Vampire Survivors）</span>
-            <span class="st-hd">同为「自动射击 + 走位躲避」的品类定盘星，差别在于它有 Roguelike 构筑而本作没有</span>
+            <span class="st-hn">雷霆战机 / 怒首领蜂（Raiden）</span>
+            <span class="st-hd">**这个赛道真正的定盘星**。它的框架被本作完整继承：顶部固定 BOSS、炸弹清屏、Shift 精确移动并显示判定点、拾取道具强化火力、限时关卡制</span>
           </div>
           
           <div class="st-head">
-            <span class="st-hn">经典纵版 STG（《怒首领蜂》《太空侵略者》一路）</span>
-            <span class="st-hd">弹幕密度、判定点可视化、擦弹反馈的读法基准；本作的炸弹清屏机制正是这一脉的做法</span>
+            <span class="st-hn">怒首领蜂大往生（Cave，1997）</span>
+            <span class="st-hd">Raiden 谱系的弹幕巅峰，用来标定「弹幕密度与连击系统的上限」—— 本作在这个维度差着一整个量级</span>
           </div>
           
           <div class="st-head">
             <span class="st-hn">Space Eggs（itch.io 网页 STG）</span>
-            <span class="st-hd">同为「打蛋 + 拾取掉落充能 + 关卡制 + 无变现」的网页射击作品，最接近的一例</span>
-          </div>
-          
-          <div class="st-head">
-            <span class="st-hn">正中靶心</span>
-            <span class="st-hd">同为「极简程序生成美术」的网页小品路线，但本作走的是完整关卡制而非无尽刷分</span>
+            <span class="st-hd">同为「打蛋 + 拾取掉落充能 + 关卡制 + 无变现」的网页射击作品，形态最接近的一例</span>
           </div>
           
         </div>
@@ -146,7 +385,7 @@
       
       <div class="st-row st-row-col">
         <span class="st-k">判读依据</span>
-        <span class="st-v st-dim">判断标准不是像素还是矢量。这作是**干净的矢量卡通风**：轮廓平滑、赛璐璐明暗、深色描边保证深色背景下可读性，敌机用「金黄薯条弹 + 紫粉圆弹」两种形状做弹道区分 —— 这些都是有效的功能承载。扣分在两点：一是**角色个性**（汉堡和饮料杯除了配色几乎没有轮廓差异，玩家靠颜色而非造型辨认敌人）；二是**信息层**（弹幕没有判定点提示、没有擦弹加分提示，弹幕游戏最核心的「险度反馈」缺失）。所以它是「风格统一且功能正确，但少了一层街机灵魂」，不是做得差。</span>
+        <span class="st-v st-dim">判断标准不是像素还是矢量。这作是**干净的矢量卡通风**：轮廓平滑、赛璐璐明暗、深色描边保证深色背景下可读性，敌机用「金黄薯条弹 + 紫粉圆弹」两种形状做弹道区分 —— 这些都是有效的功能承载。扣分在两点：一是**角色个性**（汉堡和饮料杯除了配色几乎没有轮廓差异，玩家靠颜色而非造型辨认敌人）；二是**敌机与 BOSS 的动作表现**（Raiden 系的敌机会摆姿态、爆火花、拖着残影飞过，汉堡王的机械臂和喷气腿也只是贴图，没有实际攻击动作）。所以它是「风格统一且功能正确，但少了一层街机灵魂」，不是做得差。</span>
       </div>
       
     </div>
@@ -172,7 +411,7 @@
       
       <div class="layer">
         <div class="layer-head"><span class="layer-axis">反馈节奏</span><span class="layer-level">中快反馈</span></div>
-        <p class="layer-detail">射击间隔 0.125s，击杀立即 +100 分并有粒子与音效；但擦弹、命中判定、暴击这些「爽点反馈」没有额外层级</p>
+        <p class="layer-detail">射击间隔 0.125s，击杀立即 +100 分并有粒子与音效；Shift 可显示判定点（Raiden 式），但擦弹、暴击这些「爽点反馈」没有额外层级</p>
       </div>
       
     </div>
@@ -213,8 +452,8 @@
           <span class="sc2-tier">4<i>/5</i></span>
         </div>
         <div class="sc2-bar"><i style="width: 80%"></i></div>
-        <p class="sc2-ref"><span class="sc2-rk">对标</span>《吸血鬼幸存者》的自动射击 + 走位循环</p>
-        <p class="sc2-note">循环完整且节奏准确，但深度只有《吸血鬼幸存者》的一层 —— 没有任何局内选择，长线全靠操作，且连击加成也没接上</p>
+        <p class="sc2-ref"><span class="sc2-rk">对标</span>雷霆战机的「走位 + 拾取强化火力 + 顶部 BOSS」循环</p>
+        <p class="sc2-note">循环完整且节奏准确，但深度只有街机原作的一层 —— 没有任何局内选择（雷机型 STG 靠多武器组合制造深度），长线全靠操作，且连击加成也没接上</p>
       </div>
       
       <div class="sc2">
@@ -230,11 +469,11 @@
       <div class="sc2">
         <div class="sc2-head">
           <span class="sc2-k">反馈系统</span>
-          <span class="sc2-tier">3<i>/5</i></span>
+          <span class="sc2-tier">4<i>/5</i></span>
         </div>
-        <div class="sc2-bar"><i style="width: 60%"></i></div>
-        <p class="sc2-ref"><span class="sc2-rk">对标</span>传统弹幕射击的擦弹 / 判定点反馈</p>
-        <p class="sc2-note">击杀有粒子、音效、分数飘字、震屏。但弹幕游戏最核心的「判定点可视化」「擦弹奖励」全无，而且连击系统写完却没接到分数上（见问题 1）—— 这是最大的短板</p>
+        <div class="sc2-bar"><i style="width: 80%"></i></div>
+        <p class="sc2-ref"><span class="sc2-rk">对标</span>雷霆战机的判定点显示 + 怒首领蜂大往生的连击槽</p>
+        <p class="sc2-note">Shift 精确移动时显示 7px 判定点圈（Raiden 式惯例，已实现），击杀有粒子、音效、飘字、震屏。扣分在**擦弹奖励缺失**，以及**连击系统写完却没接到分数上**（见问题 1）</p>
       </div>
       
       <div class="sc2">
@@ -584,12 +823,92 @@
   
   <section class="prose">
 <h1 id="crispy-squadron">薯条出击 · Crispy Squadron —— 一盒薯条的太空反击</h1>
-<p>先说结论：<strong>这是一个节奏精准、完成度相当高的竖版弹幕射击小品。</strong> 48 秒三波推进，再打「汉堡王」，全程约 67 秒。火力全程自动，你只负责走位和捡东西。我用自动驾驶把它通关了四次（10,200 / 9,700 / 9,650 / 9,400 分），另跑了完全不操作的对照组做难度基线，也实测了 Boss 练习模式。</p>
+<p>先说结论：<strong>这是一个节奏精准、完成度相当高的竖版弹幕射击小品，而且是明显冲着雷霆战机（《怒首领蜂》）那套框架做的。</strong></p>
+<p>看到那个戴着王冠的机械汉堡 BOSS，第一反应就该是雷霆战机而不是别的什么 —— 而往下逐条对，会发现不是「像」，是<strong>骨架照抄</strong>：顶部固定 BOSS、炸弹清屏、Shift 精确移动并显示判定点、拾取道具强化火力、限时关卡制、连击槽，五件套齐备（连击槽那件写完没接上线，见问题 1）。</p>
+<p>这意味着评价它得用对尺子：拿《吸血鬼幸存者》去比是不合适的 —— 按 Steam 官方子类型分类，前者属于「轻度 Rogue」，本作属于「弹幕射击 / 垂直卷轴射击」，两者根本不是同一品类。幸存者类没有顶部 BOSS、没有炸弹清屏、也没有关卡制，比出来的东西没有意义。<strong>正确的比法是拿它跟雷霆战机谱系比：它做到了哪些招牌要素，做到什么程度，离这个品类的上限还有多远。</strong></p>
+<p>48 秒三波推进，再打「汉堡王」，全程约 67 秒。火力全程自动，你只负责走位和捡东西。我用自动驾驶把它通关了四次（10,200 / 9,700 / 9,650 / 9,400 分），另跑了完全不操作的对照组做难度基线，也实测了 Boss 练习模式。</p>
 <p>它最难得的地方是<strong>知道自己要什么</strong>：不塞养成、不塞商城、不塞排行榜，就做一局纯粹的射击，然后把它做扎实。</p>
 <h2 id="_1">一、这是什么游戏</h2>
 <p><strong>竖版弹幕射击（STG），单局 67 秒，零账号零变现。</strong></p>
 <p>标题页写着「VOL. 07 / ONE BOX. FULL FIREPOWER.」，立意很明确：一盒薯条要打太空。玩家开着一艘薯条盒飞船，在深蓝星空里对抗食物舰队 —— 敌人是红白条纹饮料杯（soda）和金黄汉堡（burger），最终 BOSS 是戴王冠的机械汉堡「汉堡王」。</p>
+<p>看到「汉堡王」这个设计，第一反应就该是<strong>雷霆战机</strong>（《怒首领蜂》Raiden）。不是碰巧像，是骨架一模一样 —— 往下逐条对，会发现这套框架被继承得相当完整：</p>
+<div class="tbl-wrap"><table>
+<thead>
+<tr>
+<th>雷霆战机/怒首领蜂的招牌</th>
+<th>本作</th>
+<th>实测依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>顶部固定大 BOSS</td>
+<td>汉堡王悬在画面上半部，宽约 44% 画面</td>
+<td>BOSS 血条独立于 HUD，显示「115 / 200」</td>
+</tr>
+<tr>
+<td>炸弹清屏（Thermonuclear Bomb 清掉所有敌弹）</td>
+<td>「番茄酱爆发」清空全部弹幕 + 秒杀杂兵 + 对 BOSS 35 伤害</td>
+<td>实测放弹前 4 发 → 放弹后 0 发</td>
+</tr>
+<tr>
+<td>Shift 精确移动 + 显示判定点</td>
+<td>Shift 移动速度 440→220，按住显示 7px 判定圈</td>
+<td>实测按住 Shift：判定圈像素 +80、参考圈 +22</td>
+</tr>
+<tr>
+<td>拾取道具强化火力</td>
+<td>拾取「番茄酱加持」10 秒五向齐射</td>
+<td>源码 <code>upgrade=10</code>，<code>kills%6===0</code> 掉落</td>
+</tr>
+<tr>
+<td>限时关卡 + 阶段推进</td>
+<td>48 秒三波，每波火力升一档</td>
+<td>实测 18s / 18s / 12s</td>
+</tr>
+<tr>
+<td>连击槽（Raiden II 起的核心机制）</td>
+<td><strong>写了但没接到分数上</strong></td>
+<td>见问题 1</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>这五个要素齐备，就说明作者是明确冲着这个谱系做的</strong>，不是随手搓了个像射击的东西。所以评价这作，用「弹幕射击的完成度」这把尺子比，比拿《吸血鬼幸存者》这类幸存者类去比要准得多 —— 幸存者类没有顶部 BOSS、没有炸弹清屏、也没有关卡制。</p>
 <p><strong>核心循环只有一条</strong>：走位躲弹幕 → 自动射击清敌 → 拾取掉落 → 三波后打 BOSS。没有构筑、没有选牌、没有局外系统。</p>
+<h3 id="raiden">两种敌机，两种弹型 —— 这是 Raiden 系的「弹幕」设计</h3>
+<p>敌机只有两种，但它们开的火完全不同，这是 Raiden 系的核心手法：</p>
+<div class="tbl-wrap"><table>
+<thead>
+<tr>
+<th>敌机</th>
+<th>血量</th>
+<th>弹型</th>
+<th>发数（按波次）</th>
+<th>弹速</th>
+<th>走位要求</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>饮料杯</strong> soda</td>
+<td>3</td>
+<td><strong>扇形慢弹</strong>（3 / 5 / 7 / 11 发）</td>
+<td>3→5→7→11</td>
+<td>95 / 120 / 145</td>
+<td>慢弹铺场，要找缝隙穿</td>
+</tr>
+<tr>
+<td><strong>汉堡</strong> burger</td>
+<td>2</td>
+<td><strong>瞄准弹</strong>（1 / 3 / 5 发）</td>
+<td>1→3→5</td>
+<td>135 / 170 / 200</td>
+<td>快弹单点，要横向急闪</td>
+</tr>
+</tbody>
+</table></div>
+<p>源码注释写得很直白：<em>"Slow open fans fill the field; narrow aimed spreads ask for deliberate sidesteps."</em> —— 慢的铺场、快的点杀，两种压力交替。<strong>这是 Raiden 系的经典配方</strong>：大扇形弹把走位空间压窄，瞄准弹在你找缝的时候逼你横向动，两者叠加才有街机那种「贴着缝隙走」的紧张感。</p>
+<p>BOSS 战实测同屏弹量峰值约 <strong>20 发扇形 + 12 发瞄准</strong>，同时在场。两个阶段（<code>boss.phase</code> 1→2）在 50% 血量切换，弹型随之变化。</p>
 <h3 id="_2">玩法分层</h3>
 <div class="tbl-wrap"><table>
 <thead>
@@ -890,7 +1209,7 @@ $('resultTitle').textContent = win?'完美出锅！':'差一点，就酥了。';
 </tbody>
 </table></div>
 <p><strong>它最值得学的一件事</strong>：<strong>节奏切分</strong>。48 秒切成 18s / 18s / 12s 三波，火力档位逐波递增，每一波都有明确的「我变强了」信号。成本几乎为零（一个数组 <code>[1,2,3][wave]</code>），观感提升明显。</p>
-<p><strong>它最该修的一件事</strong>：<strong>把已经写好的连击接到分数上</strong>。combo 机制完整存在、每秒都在变，却从未参与计分 —— 这是纯粹的设计遗漏而非能力缺失，补上后连续击落会有明显的正反馈，是投入产出比最高的一处改动。若有余力，再补弹幕判定点可视化与擦弹奖励，那是弹幕射击这一品类的固有期待。</p>
+<p><strong>它最该补的一件事</strong>：<strong>把已经写好的连击接到分数上</strong>。combo 机制完整存在、每秒都在变，却从未参与计分 —— 这是纯粹的设计遗漏而非能力缺失，补上后连续击落会有明显的正反馈，是投入产出比最高的一处改动。若有余力，再补擦弹奖励与连击槽可视化（Raiden 系列的连击槽是这一品类最经典的情绪放大器）。</p>
 <p><strong>它最该补的一件事</strong>：<strong>判定点可视化与擦弹奖励</strong>。现在弹幕是纯色发光条，玩家只能靠肉眼估距离 —— 弹幕游戏最核心的「险度反馈」整个丢掉了。给弹幕加一个判定点圆环、给擦弹加分，成本很低但能显著提升这一维。</p>
 <p><strong>作为作品，它成立</strong>；<strong>作为产品，它缺一整层</strong> —— 局外系统、留存内容、变现闭环一个都没有，通关后玩家没有任何理由回来。</p>
 <h3 id="_9">这份测评的置信边界</h3>
@@ -1125,6 +1444,39 @@ DOM 侧确认无连击显示：
   </section>
   
 
+  
+  
+  <section class="panel" id="sec-preview">
+    <h3>预览 <span class="cnt">玩法视频与系统截图</span></h3>
+
+    
+    <div class="pv-videos">
+      
+      <figure class="pv-video">
+        <video src="../assets/frybox/01-wave.mp4" poster="../assets/frybox/01-wave1.jpg" controls muted loop playsinline preload="metadata"></video>
+        <figcaption>
+          <strong>常规玩法：三波推进</strong>
+          <span>自动射击 + 手动走位。饮料杯开扇形慢弹铺场、汉堡开瞄准弹点杀，两种压力交替 —— 这就是 Raiden 系敌机的经典配方。</span>
+          <em>证明：玩法轴「弹幕射击 / 垂直卷轴射击 / 自动射击」，以及敌机双弹型设计</em>
+        </figcaption>
+      </figure>
+      
+      <figure class="pv-video">
+        <video src="../assets/frybox/02-boss.mp4" poster="../assets/frybox/04-boss.jpg" controls muted loop playsinline preload="metadata"></video>
+        <figcaption>
+          <strong>汉堡王 BOSS 战</strong>
+          <span>顶部固定 BOSS，两阶段（50% 血量切换弹型）。这段同时暴露了作品的最大短板：BOSS 的机械臂和喷气腿画得很细，却全程不做任何动作。</span>
+          <em>证明：玩法轴「BOSS 关」，以及美术轴「缺动作表演」这条扣分项</em>
+        </figcaption>
+      </figure>
+      
+    </div>
+    
+
+    
+  </section>
+  
+
   <nav class="rv-nav">
     
     <a class="rv-nav-item" href="jinritongguanmei.html">
@@ -1145,7 +1497,7 @@ DOM 侧确认无连击显示：
   <div class="wrap">
     <span>3 篇测评 · 2 个已通关 · 记录 16 个缺陷</span>
     <span class="sep">·</span>
-    <span>构建于 2026-11-09</span>
+    <span>构建于 2026-11-13</span>
     <span class="sep">·</span>
     <span>数据均可复现</span>
   </div>
@@ -1258,6 +1610,22 @@ window.addEventListener('scroll', function () {
     }
     pendingSec = null;
   }, { passive: true });
+});
+
+/* ---- 预览区：系统截图组 tab 切换 ---- */
+document.querySelectorAll('.pv-shot-tabs').forEach(function (bar) {
+  var tabs = bar.querySelectorAll('.pv-tab');
+  tabs.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var idx = btn.getAttribute('data-pvtab');
+      tabs.forEach(function (b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      var wrap = bar.parentElement;
+      wrap.querySelectorAll('.pv-shot-group').forEach(function (g) {
+        g.classList.toggle('hide', g.getAttribute('data-pvpanel') !== idx);
+      });
+    });
+  });
 });
 
 /* 初始：按 URL hash 定位 */
