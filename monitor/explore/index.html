@@ -1,0 +1,148 @@
+<!doctype html><html lang="zh"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>永远的蔚蓝星球 · 交互式界面浏览器</title>
+<style>
+:root{--fg:#e8e4da;--fg-dim:#a9a294;--fg-faint:#6d675c;--bg:#100e0c;--card:#1d1a16;
+--border:#2e2a24;--accent:#e8b93e;--money:#ff7b7b;--new:#5ec6ff;}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+body{background:var(--bg);color:var(--fg);font:14px/1.7 -apple-system,"Segoe UI","Microsoft YaHei",sans-serif;
+display:flex;flex-direction:column;align-items:center;min-height:100vh;}
+a{color:var(--accent);text-decoration:none;}
+.topbar{width:100%;max-width:480px;padding:10px 12px;display:flex;align-items:center;gap:8px;
+border-bottom:1px solid var(--border);position:sticky;top:0;background:var(--bg);z-index:50;}
+.topbar .home-btn{color:var(--accent);font-size:13px;padding:2px 8px;border:1px solid var(--border);border-radius:8px;cursor:pointer;user-select:none;}
+.crumbs{flex:1;font-size:12px;color:var(--fg-dim);overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
+.crumbs b{color:var(--fg);}
+.crumbs span{cursor:pointer;}
+.crumbs span:hover{color:var(--accent);}
+.stage{width:100%;max-width:420px;position:relative;}
+.screen{position:relative;width:100%;aspect-ratio:561/1040;background:#000;overflow:hidden;
+border-left:1px solid var(--border);border-right:1px solid var(--border);}
+.screen img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .18s;}
+.screen img.bg.on{opacity:1;}
+.screen video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:none;background:#000;z-index:5;}
+.hs{position:absolute;transform:translate(-50%,-50%);cursor:pointer;z-index:10;
+border:2px solid transparent;border-radius:10px;transition:border-color .12s, background .12s;}
+.hs .tag{position:absolute;left:50%;bottom:-16px;transform:translateX(-50%);white-space:nowrap;
+font-size:10px;color:#fff;background:rgba(0,0,0,.72);padding:0 5px;border-radius:6px;
+opacity:0;transition:opacity .12s;pointer-events:none;z-index:11;}
+.hs:hover,.hs:active{border-color:var(--accent);background:rgba(232,185,62,.10);}
+.hs:hover .tag,.hs:active .tag{opacity:1;}
+.hs.nav{border-color:rgba(255,255,255,.28);border-style:dashed;}
+.hs.nav .tag{opacity:1;color:var(--fg);}
+.hs.money{border-color:var(--money);border-style:solid;animation:pulse 1.6s infinite;}
+.hs.money .tag{opacity:1;color:var(--money);}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(255,123,123,.45)}50%{box-shadow:0 0 0 7px rgba(255,123,123,0)}}
+.hs.unrec{border-color:rgba(140,140,140,.35);border-style:dotted;}
+.hs.unrec .tag{opacity:1;color:#999;}
+.hud{width:100%;max-width:420px;display:flex;gap:8px;padding:8px 12px;flex-wrap:wrap;align-items:center;}
+.hud .btn{font-size:12px;padding:4px 10px;border:1px solid var(--border);border-radius:8px;cursor:pointer;
+background:var(--card);color:var(--fg-dim);user-select:none;}
+.hud .btn.on{color:var(--accent);border-color:var(--accent);}
+.hud .btn.money-on{color:var(--money);border-color:var(--money);}
+.infopanel{width:100%;max-width:420px;display:none;padding:10px 12px;font-size:12px;color:var(--fg-dim);
+border-top:1px dashed var(--border);white-space:pre-wrap;max-height:200px;overflow:auto;}
+.infopanel.on{display:block;}
+.legend{width:100%;max-width:420px;padding:6px 12px 20px;font-size:11px;color:var(--fg-faint);display:flex;gap:12px;flex-wrap:wrap;}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:4px;vertical-align:-1px;}
+.winlink{padding:6px 12px;font-size:11.5px;color:var(--fg-faint);width:100%;max-width:420px;}
+</style></head><body>
+<div class="topbar">
+  <span class="home-btn" id="homeBtn">⌂ 主界面</span>
+  <div class="crumbs" id="crumbs"></div>
+</div>
+<div class="stage"><div class="screen" id="screen">
+  <img class="bg" id="bgA"><img class="bg" id="bgB">
+  <video id="vid" playsinline controls></video>
+</div></div>
+<div class="hud">
+  <span class="btn" id="animBtn">▶ 界面动画</span>
+  <span class="btn" id="infoBtn">界面信息</span>
+  <span class="btn money-on" id="moneyBtn">充值点高亮</span>
+</div>
+<div class="infopanel" id="infoPanel"></div>
+<div class="legend">
+  <span><i style="border:2px dashed rgba(255,255,255,.4)"></i>可点击跳转</span>
+  <span><i style="border:2px solid var(--money)"></i>充值点</span>
+  <span><i style="border:2px dotted #888"></i>未录制/未解锁</span>
+</div>
+<div class="winlink">数据：<span id="meta"></span> · <a href="../index.html">返回活动窗口墙</a></div>
+<script>
+const DATA = {"game": "永远的蔚蓝星球", "date": "2026-11-23", "generated": "2026-11-23 16:33:04", "home": "home", "windows": {"structure": {"title": "界面结构与导航", "desc": "主界面、底部导航、养成（英雄/装备）、抽卡（擂鼓/星愿/图腾）的界面与跳转层级", "activity": false}, "activities": {"title": "活动中心与日常福利", "desc": "活动、特惠、七日等运营活动入口", "activity": true}, "first-charge": {"title": "首充活动", "desc": "首充 ¥6 礼包及其界面", "activity": true}, "arena-season": {"title": "竞技赛季", "desc": "竞技场 PvP：匹配、排行、商店；赛季倒计时", "activity": true}, "city-daily": {"title": "领地日常", "desc": "食堂/城墙/矿鼠之家/图鉴/玩法大厅", "activity": true}, "social": {"title": "任务/好友/邮件/排行", "desc": "社交与任务系统入口", "activity": false}}, "screens": {"home": {"label": "主界面（关卡视图）", "img": "../thumbs/structure/home.jpg", "video": "../videos/structure/home.mp4", "window": "structure", "edges": [{"label": "特惠", "x": 32, "y": 224, "to": "tehui"}, {"label": "活动", "x": 34, "y": 295, "to": "huodong"}, {"label": "首充", "x": 36, "y": 367, "to": "shouchong"}, {"label": "七日", "x": 36, "y": 433, "to": "qiri"}, {"label": "任务", "x": 515, "y": 268, "to": "renwu"}, {"label": "好友", "x": 512, "y": 328, "to": "haoyou"}, {"label": "邮件", "x": 512, "y": 388, "to": "youjian"}, {"label": "装备（武器位）", "x": 443, "y": 504, "to": "equip-weapon"}, {"label": "商城（抽卡总览）", "x": 40, "y": 1011, "to": "nav-shangcheng"}, {"label": "英雄列表", "x": 155, "y": 1010, "to": "nav-hero"}, {"label": "国王（装备总览）", "x": 263, "y": 1011, "to": "nav-king"}, {"label": "领地/城市全景", "x": 380, "y": 1011, "to": "nav-city"}, {"label": "开始挑战", "x": 232, "y": 811, "unrec": "进入战斗（见测评页战斗实录）"}], "text": "0O 永远的蔚蓝星球 细心的土豆 499 12992 8834/60 小游戏 千抽福利问题反馈游戏圈 客服 特惠 9.失落都市 任务 活动 好友 首充 第9关 邮件 七日 朱落都市 通过第10关开启合作挑战 468 开始挑战 10 商城 英雄 国王 领地 公会", "recharge": true}, "tehui": {"label": "特惠", "img": "../thumbs/activities/tehui.jpg", "video": "../videos/activities/tehui.mp4", "window": "activities", "edges": [{"label": "返回主界面", "x": 520, "y": 90, "to": "home"}, {"label": "购买战令最高获得返利", "x": 119, "y": 172, "money": true}, {"label": "一键领取", "x": 116, "y": 876, "money": true}, {"label": "￥28", "x": 293, "y": 876, "money": true}, {"label": "￥68", "x": 458, "y": 875, "money": true}, {"label": "超值月卡", "x": 189, "y": 1006, "money": true}], "text": "永远的蔚蓝星球 ·-○ 剩余时间：6天07时33分 赏金战令 购买战令最高获得返利 2000% 参与消耗体力提升等级 50/80 今日：0/1200 普通奖励 进阶奖励 豪华奖励 300 680 自选 自选 15 自选 直升10级 一键领取 ￥28 ￥68 超值月卡 战令 特权周卡 钻石基金", "recharge": true}, "huodong": {"label": "活动", "img": "../thumbs/activities/huodong.jpg", "video": "../videos/activities/huodong.mp4", "window": "activities", "edges": [{"label": "返回主界面", "x": 520, "y": 90, "to": "home"}, {"label": "超值礼包", "x": 175, "y": 150, "money": true}, {"label": "免费礼包", "x": 122, "y": 333, "money": true}, {"label": "免费礼包", "x": 122, "y": 477, "money": true}, {"label": "日礼包", "x": 200, "y": 875, "money": true}, {"label": "周礼包", "x": 378, "y": 876, "money": true}, {"label": "超值礼包", "x": 190, "y": 1002, "money": true}, {"label": "每日充值", "x": 396, "y": 1003, "money": true}], "text": "永远的蔚蓝星球 剩余时间：07小时33分 499 超值礼包 免费礼包 限购（1/1） 免费 OT 免费礼包 限购（1/1） 免费 500 机关核心 5.0折 限购（5/5） 225 体力 8.0折 限购（1/1） 日礼包 周礼包 超值礼包 每日特惠 每日充值 累充豪礼", "recharge": true}, "shouchong": {"label": "首充", "img": "../thumbs/first-charge/shouchong.jpg", "video": "../videos/first-charge/shouchong.mp4", "window": "first-charge", "edges": [{"label": "返回主界面", "x": 40, "y": 1011, "to": "home"}, {"label": "￥6", "x": 290, "y": 815, "money": true}], "text": "0O 永远的蔚蓝星球 武器幻化 赤炎焕灵 开局召唤英雄十 冲关利器： 全队攻击力+50 第1天 第2天 第3天 皮肤 英雄 当日 20 5000 600 ￥6", "recharge": true}, "qiri": {"label": "七日", "img": "../thumbs/activities/qiri.jpg", "video": "../videos/activities/qiri.mp4", "window": "activities", "edges": [{"label": "返回主界面", "x": 520, "y": 90, "to": "home"}, {"label": "完成7日手册，领取海量豪礼", "x": 288, "y": 163, "money": true}, {"label": "领取", "x": 453, "y": 454, "money": true}], "text": "00 永远的蔚蓝星球 - 7日目标 完成7日手册，领取海量豪礼 800 260 200 400 550 700 850 1日 将1件装备强化至+8（1/1） 领取 2日 完成今日10个手册任务（5/10） 3日 前往 200 4日 3个主线冒险领完全部宝箱（0/3） 前往 5日 快速扫荡5次（1/5） 6日 前往 7日 武器天赋激活10次（3/10） 商城 英雄 国王 领地", "recharge": false}, "renwu": {"label": "任务", "img": "../thumbs/social/renwu.jpg", "video": "../videos/social/renwu.mp4", "window": "social", "edges": [{"label": "返回主界面", "x": 520, "y": 90, "to": "home"}, {"label": "领取", "x": 444, "y": 433, "money": true}], "text": "永远的蔚蓝星球 - 细心的土豆 499 12992 8834/60 每日任务 30 2 20 50 80 100 每日登录 领取 100 1/1 参与3次竞技场 前往 100 12 0/3 消耗100点体力 前往 100 12 0/100 快速扫荡3次 前往 100 0/3 参与2次星球矿场 前往 日常 周常 商城 英雄 国王 领地", "recharge": false}, "haoyou": {"label": "好友", "img": "../thumbs/social/haoyou.jpg", "video": "../videos/social/haoyou.mp4", "window": "social", "edges": [{"label": "返回主界面", "x": 520, "y": 90, "to": "home"}], "text": "0O 永远的蔚蓝星球 细心的土豆 499 12992 8834/60 小游戏 千抽福利问题反馈游戏圈 客服 特惠 9.失落都市 任务 活动 好友 首充 第9关 邮件 七日 朱落都市 通过第10关开启合作挑战 468 开始挑战 10 商城 英雄 国王 领地 公会", "recharge": true}, "youjian": {"label": "邮件", "img": "../thumbs/social/youjian.jpg", "video": "../videos/social/youjian.mp4", "window": "social", "edges": [{"label": "返回主界面", "x": 520, "y": 90, "to": "home"}, {"label": "一键领取", "x": 400, "y": 835, "money": true}], "text": "0O 永远的蔚蓝星球 - 细心的土豆 12992 8834/60 邮件 赛季排行奖励 2026.11.23 每日排行奖励 2026.11.23 竞技场挂机奖励 2026.11.23 溢出体力补发 2026.11.23 每日排行奖励 2026.11.22 一键删除 一键领取 商城 英雄 国王 领地", "recharge": false}, "equip-weapon": {"label": "装备（武器位）", "img": "../thumbs/structure/equip-weapon.jpg", "video": "../videos/structure/equip-weapon.mp4", "window": "structure", "edges": [{"label": "返回主界面", "x": 263, "y": 1008, "to": "home"}], "text": "0O 永远的蔚蓝星球 细心的土豆 499 12992 8834/60 小游戏 千抽福利问题反馈游戏圈 客服 特惠 9.失落都市 任务 活动 好友 首充 第9关 邮件 七日 朱落都市 通过第10关开启合作挑战 468 开始挑战 10 商城 英雄 国王 领地 公会", "recharge": true}, "nav-shangcheng": {"label": "商城（抽卡总览）", "img": "../thumbs/structure/nav-shangcheng.jpg", "video": "../videos/structure/nav-shangcheng.mp4", "window": "structure", "edges": [{"label": "擂鼓招募", "x": 124, "y": 580, "to": "nav-leigu"}, {"label": "星愿招募", "x": 375, "y": 581, "to": "nav-xingyuan"}, {"label": "图腾寻宝", "x": 242, "y": 684, "to": "nav-tuteng"}, {"label": "返回主界面", "x": 40, "y": 1009, "to": "home"}, {"label": "英雄兑换", "x": 42, "y": 411, "unrec": "未录制"}], "text": "永远的蔚蓝星球 499 12992 英雄招募 LV.2 156/1000 英雄兑换 5/10 擂鼓招募 星愿招募 0T/6 0/1 图腾寻宝 概率 剩余20次必定获得卓越图腾 返回 英雄 国王 领地 公会", "recharge": false}, "nav-leigu": {"label": "擂鼓招募", "img": "../thumbs/structure/nav-leigu.jpg", "video": "../videos/structure/nav-leigu.mp4", "window": "structure", "edges": [{"label": "返回商城", "x": 280, "y": 60, "to": "nav-shangcheng"}], "text": "DO 永远的蔚蓝星球 ·-|○ 499 12992 提示 X 是否使用30 补充1 并继续进行1.0轮招募？ 9/10 本次登录不再提醒 取消 确定 概率 剩余20次必定获得卓越图腾 返回 英雄 国王 领地 公会", "recharge": false}, "nav-xingyuan": {"label": "星愿招募", "img": "../thumbs/structure/nav-xingyuan.jpg", "video": "../videos/structure/nav-xingyuan.mp4", "window": "structure", "edges": [{"label": "返回商城", "x": 280, "y": 60, "to": "nav-shangcheng"}], "text": "永远的蔚蓝星球 499 12992 愿招募 Lv.2 156/1000 每日0点重置刷新次数 英雄兑换 x6 招募 换一批 9011 本次招募投出1个骰子 星愿招募", "recharge": false}, "nav-tuteng": {"label": "图腾寻宝", "img": "../thumbs/structure/nav-tuteng.jpg", "video": "../videos/structure/nav-tuteng.mp4", "window": "structure", "edges": [{"label": "返回商城", "x": 280, "y": 60, "to": "nav-shangcheng"}], "text": "永远的蔚蓝星球 499 12992 英雄招募 LV.2 156/1000 英雄兑换 5/10 擂鼓招募 星愿招募 0T/6 0/1 图腾寻宝 概率 剩余20次必定获得卓越图腾 返回 英雄 国王 领地 公会", "recharge": false}, "nav-hero": {"label": "英雄列表", "img": "../thumbs/structure/nav-hero.jpg", "video": "../videos/structure/nav-hero.mp4", "window": "structure", "edges": [{"label": "英雄详情/升级", "x": 64, "y": 653, "to": "nav-hero-detail"}, {"label": "返回主界面", "x": 152, "y": 1009, "to": "home"}], "text": "永远的蔚蓝星球 499 12992 8834/60 1 3 468 暴击伤害增幅： 177.0% 出战中 出战中 出战中 出战中 40/30 41/30 41/30 OT/O 蘑菇头 火焰法师 地鼠 火箭 10/10 360/30 350/30 101/30 卡卡 雅典娜 游侠 骑士 商城 返回 国王 领地 公会", "recharge": false}, "nav-hero-detail": {"label": "英雄详情/升级", "img": "../thumbs/structure/nav-hero-detail.jpg", "video": "../videos/structure/nav-hero-detail.mp4", "window": "structure", "edges": [{"label": "返回英雄列表", "x": 151, "y": 1007, "to": "nav-hero"}], "text": "00 永远的蔚蓝星球 499 X 蘑菇头 伤害 职业 707 射手 Lv.5 初始即获得[毒蘑菇选项 Lv.10 获得[顽强毒素]技能 [吹箭射击]对中毒怪物增伤效果 Lv.15 额外提升30% Lv.20 蘑菇头伤害+10% [次级飞镖]对中毒单位也会触发 Lv.25 对中毒怪物增伤效果 升级奖励：暴击伤害增幅+1.2% 升级 10 143/180 40/30 商城 返回 国王 领地", "recharge": false}, "nav-king": {"label": "国王（装备总览）", "img": "../thumbs/structure/nav-king.jpg", "video": "../videos/structure/nav-king.mp4", "window": "structure", "edges": [{"label": "装备强化", "x": 435, "y": 471, "to": "nav-king-strengthen"}, {"label": "返回主界面", "x": 263, "y": 1008, "to": "home"}], "text": "永远的蔚蓝星球 499 12992 8834/60 10级 10级 武器 图腾 +5 +7 10级 10级 披风 +6 +6 皮肤 10级 10级 +7 +8 468 强化 2 13 图腾 装备 材料 10级 10级 10级 10级 10级 10级 10级 10级 10级 10级 Y= 分解 商城 英雄 返回 领地 公会", "recharge": false}, "nav-king-strengthen": {"label": "装备强化", "img": "../thumbs/structure/nav-king-strengthen.jpg", "video": "../videos/structure/nav-king-strengthen.mp4", "window": "structure", "edges": [{"label": "返回装备总览", "x": 263, "y": 1008, "to": "nav-king"}], "text": "永远的蔚蓝星球 - 499 12992 Y+8834/60 彩虹乍现，好 铁皮项链 +5 +6 攻击力 1518 突破 射手英雄增伤+0.0% +15 射手英雄增伤+3.0% 强化 21/18 12992/900 10级 10级 10级 10级 10级 10级 +5 +7 +6 +6 +7 +8 强化 洗炼", "recharge": false}, "nav-city": {"label": "领地/城市全景", "img": "../thumbs/structure/nav-city.jpg", "video": "../videos/structure/nav-city.mp4", "window": "structure", "edges": [{"label": "城墙", "x": 454, "y": 107, "to": "city-wall"}, {"label": "竞技场", "x": 132, "y": 304, "to": "city-arena"}, {"label": "排行榜", "x": 444, "y": 411, "to": "city-rank"}, {"label": "食堂（烤肉宴会）", "x": 290, "y": 522, "to": "city-canteen"}, {"label": "矿鼠之家", "x": 61, "y": 531, "to": "city-mine"}, {"label": "图鉴", "x": 400, "y": 648, "to": "city-tujian"}, {"label": "玩法大厅", "x": 190, "y": 704, "to": "city-hall"}, {"label": "返回主界面", "x": 376, "y": 1008, "to": "home"}, {"label": "合作模式", "x": 309, "y": 198, "unrec": "第10关解锁，未解锁"}], "text": "永远的蔚蓝星球 ·-| 城墙 499 12992 8834/60 拥有： 合作模式 拥有： 竞技场 排行榜 食堂 矿鼠之家 会登顶吗？ 图鉴 玩法大厅 商城 英雄 国王 返回 公会", "recharge": false}, "city-wall": {"label": "城墙", "img": "../thumbs/city-daily/city-wall.jpg", "video": "../videos/city-daily/city-wall.mp4", "window": "city-daily", "edges": [{"label": "返回城市", "x": 376, "y": 1008, "to": "nav-city"}], "text": "永远的蔚蓝星球 ·-| 城墙 499 12992 8834/60 拥有： 合作模式 拥有： 竞技场 排行榜 食堂 矿鼠之家 欢迎光临！ 图鉴 玩法大斤 商城 英雄 国王 返回 公会", "recharge": false}, "city-arena": {"label": "竞技场", "img": "../thumbs/arena-season/city-arena.jpg", "video": "../videos/arena-season/city-arena.mp4", "window": "arena-season", "edges": [{"label": "竞技-排行", "x": 508, "y": 176, "to": "city-arena-rank"}, {"label": "竞技-商店", "x": 509, "y": 247, "to": "city-arena-shop"}, {"label": "返回城市", "x": 30, "y": 960, "to": "nav-city"}, {"label": "记录", "x": 508, "y": 313, "unrec": "未录制"}, {"label": "开始匹配", "x": 365, "y": 951, "unrec": "未录制（竞技场 PvP 战斗）"}, {"label": "防守", "x": 194, "y": 995, "unrec": "未录制"}], "text": "永远的蔚蓝星球 竞技场 良展有伴赛季倒计时：6天7小时 儒雅的鹅蛋 22 1327 0/50 +824.0/小时 排行 商店 23 所得即所想 1284 福星高照 +820.0/小时 记录 杀死那个她 24 1282 +816.0/小时 25 务实的香瓜 1035 +740.0/小时 26 战狼 1017 +736.0/小时 青铜川阶 1000/1020 参与战斗占领 开始匹配 防守 1", "recharge": false}, "city-arena-rank": {"label": "竞技-排行", "img": "../thumbs/arena-season/city-arena-rank.jpg", "video": "../videos/arena-season/city-arena-rank.mp4", "window": "arena-season", "edges": [{"label": "返回竞技场", "x": 508, "y": 313, "to": "city-arena"}], "text": "0O 永远的蔚蓝星球 竞技场 真展有伴赛季倒计时：6天7小时（？ 儒雅的鹅蛋 1327 竞技排行榜 X 2271 墨染、烟灰缸 +2400.0/小时 8133 2209 墨染、大熊猫 +2016.0/小时 5736 2204 放开怪让我来 +1728.0/小时 1378 2191 墨染、记忆 +1536.0/小时 13857 5 2171 拖拖小手 +1440.0/小时 1638 2115 申的苹罐 细心的土豆 00 +104.0/小时 排行 奖励 开始匹配 防守 1", "recharge": false}, "city-arena-shop": {"label": "竞技-商店", "img": "../thumbs/arena-season/city-arena-shop.jpg", "video": "../videos/arena-season/city-arena-shop.mp4", "window": "arena-season", "edges": [{"label": "返回竞技场", "x": 508, "y": 313, "to": "city-arena"}], "text": "00 永远的蔚蓝星球 - 竞技场 300 良质有伴赛季倒计时：6天7小时？ 儒雅的鹅蛋 1327 竞技场商店 X 装备锻造书 随机职业经验 精灵木 10 30 10 每日限购（10/10） 每日限购（10/10） 每日限购（10/10） 1500 1500 白银川阶解锁 白银罗盘 天赋石 黄金罗盘 1 10 1 每日限购（10/10） 每日限购（10/10） 每日限购（2/2） 白银川阶解锁 白银阶解锁 黄金川阶解锁 金币 炼器石 天赋石 1000 30 10 每日限购（10/10） 每日限购（20/20） 每日限购（10/10） 铂金川阶解锁 铂金阶解锁 钻石川阶解锁 宝锤 雪姬 开始匹配 防守 +1", "recharge": true}, "city-rank": {"label": "排行榜", "img": "../thumbs/social/city-rank.jpg", "video": "../videos/social/city-rank.mp4", "window": "social", "edges": [{"label": "返回城市", "x": 376, "y": 1008, "to": "nav-city"}], "text": "永远的蔚蓝星球 ·- 主线排行榜 剑心澄明 天下第 风谷旅人 4071 5202 13857 墨染、好运 墨染、陈冠希 墨染、记忆 第521关 第519关 第516关 墨染、大熊猫 第502关 剑心澄明 5736 哗哗咄人 5 第492关 水族贵客 6087 墨染、火花塞 6 第489关 风谷旅人 16477 第9关 进度奖励 主线榜 竞技榜 合作榜 金矿桥", "recharge": false}, "city-canteen": {"label": "食堂（烤肉宴会）", "img": "../thumbs/city-daily/city-canteen.jpg", "video": "../videos/city-daily/city-canteen.mp4", "window": "city-daily", "edges": [{"label": "返回城市", "x": 375, "y": 1008, "to": "nav-city"}, {"label": "每天6、12、18、21时可领取烤肉", "x": 290, "y": 262, "money": true}, {"label": "一键领取", "x": 290, "y": 778, "money": true}], "text": "00 永远的蔚蓝星球 499 12992 烤肉宴会 每天6、12、18、21时可领取烤肉 1小时30分 30 30 30 30 30 30 30 2S 存放烤肉上限：28/60 一键领取 点击空白处关闭 商城 英雄 国王 返回", "recharge": false}, "city-mine": {"label": "矿鼠之家", "img": "../thumbs/city-daily/city-mine.jpg", "video": "../videos/city-daily/city-mine.mp4", "window": "city-daily", "edges": [{"label": "返回城市", "x": 376, "y": 1008, "to": "nav-city"}], "text": "永远的蔚蓝星球 ·- 城墙 499 12992 8834/60 拥有： 合作模式 拥有： 竞技场 你敢！ 揍你哦！ 排行榜 食堂 矿鼠之家 图鉴 玩法大斤 商城 英雄 国王 返回 公会", "recharge": false}, "city-tujian": {"label": "图鉴", "img": "../thumbs/city-daily/city-tujian.jpg", "video": "../videos/city-daily/city-tujian.mp4", "window": "city-daily", "edges": [{"label": "返回城市", "x": 376, "y": 1008, "to": "nav-city"}], "text": "永远的蔚蓝星球 ·-| 城墙 499 12992 8834/60 拥有： 合作模式 拥有： 竞技场 你敢！ 揍你哦！ 排行榜 食堂 矿鼠之家 图鉴 玩法大厅 商城 英雄 国王 返回 公会", "recharge": false}, "city-hall": {"label": "玩法大厅", "img": "../thumbs/city-daily/city-hall.jpg", "video": "../videos/city-daily/city-hall.mp4", "window": "city-daily", "edges": [{"label": "返回城市", "x": 376, "y": 1008, "to": "nav-city"}], "text": "永远的蔚蓝星球 ·-| 城墙 499 12992 8834/60 拥有： 合作模式 拥有： 竞技场 排行榜 食堂 矿鼠之家 图鉴 玩法大斤 商城 英雄 国王 返回 公会", "recharge": false}}};
+const screen_el = document.getElementById('screen');
+const bgA = document.getElementById('bgA'), bgB = document.getElementById('bgB');
+const vid = document.getElementById('vid');
+const crumbs_el = document.getElementById('crumbs');
+const infoPanel = document.getElementById('infoPanel');
+const animBtn = document.getElementById('animBtn');
+const infoBtn = document.getElementById('infoBtn');
+const moneyBtn = document.getElementById('moneyBtn');
+let cur = DATA.home, trail = [DATA.home], showingA = true, moneyOn = true;
+
+function scr(id){ return DATA.screens[id]; }
+function show(id, push){
+  const s = scr(id); if(!s) return;
+  cur = id;
+  if(push){ trail.push(id); } 
+  const inEl = showingA ? bgB : bgA, outEl = showingA ? bgA : bgB;
+  inEl.src = s.img;
+  inEl.onload = () => { inEl.classList.add('on'); outEl.classList.remove('on'); };
+  if(inEl.complete && inEl.naturalWidth) { inEl.classList.add('on'); outEl.classList.remove('on'); }
+  showingA = !showingA;
+  vid.pause(); vid.style.display='none'; animBtn.classList.remove('on');
+  renderEdges(); renderCrumbs(); renderInfo();
+  location.hash = id;
+}
+function renderEdges(){
+  screen_el.querySelectorAll('.hs').forEach(e=>e.remove());
+  const s = scr(cur);
+  (s.edges||[]).forEach(e=>{
+    const d = document.createElement('div');
+    const w = e.w || 96, h = e.h || 64;
+    d.className = 'hs ' + (e.money ? 'money' : e.unrec ? 'unrec' : 'nav');
+    if(e.money && !moneyOn) d.style.display='none';
+    d.style.left = (e.x/561*100)+'%';
+    d.style.top = (e.y/1040*100)+'%';
+    d.style.width = (w/561*100)+'%';
+    d.style.height = (h/1040*100)+'%';
+    d.title = e.unrec ? (e.label+'（'+e.unrec+'）') : e.label;
+    const tag = document.createElement('span');
+    tag.className='tag'; tag.textContent = e.unrec ? e.label+' 🔒' : e.label;
+    d.appendChild(tag);
+    d.onclick = (ev)=>{ ev.stopPropagation();
+      if(e.to && scr(e.to)) show(e.to, true);
+    };
+    screen_el.appendChild(d);
+  });
+}
+function renderCrumbs(){
+  const names = trail.map(id=>scr(id)?scr(id).label:id);
+  let html = '';
+  trail.forEach((id,i)=>{
+    const nm = scr(id)?scr(id).label:id;
+    if(i===trail.length-1) html += '<b>'+nm+'</b>';
+    else html += '<span data-i="'+i+'">'+nm+'</span> › ';
+  });
+  crumbs_el.innerHTML = html;
+  crumbs_el.querySelectorAll('span').forEach(sp=>{
+    sp.onclick = ()=>{ const i=+sp.dataset.i; const target=trail[i]; trail=trail.slice(0,i+1); show(target,false); };
+  });
+}
+function renderInfo(){
+  const s = scr(cur);
+  infoPanel.textContent = s.label + '\n窗口：' + (DATA.windows[s.window]?DATA.windows[s.window].title:s.window) + '\n' + (s.text||'');
+}
+animBtn.onclick = ()=>{
+  const s = scr(cur);
+  if(!s.video) return;
+  if(vid.style.display==='none' || !vid.style.display){
+    vid.src = s.video; vid.style.display='block'; vid.play(); animBtn.classList.add('on');
+  } else { vid.pause(); vid.style.display='none'; animBtn.classList.remove('on'); }
+};
+infoBtn.onclick = ()=>{ infoPanel.classList.toggle('on'); infoBtn.classList.toggle('on'); };
+moneyBtn.onclick = ()=>{ moneyOn=!moneyOn; moneyBtn.classList.toggle('money-on', moneyOn); renderEdges(); };
+document.getElementById('homeBtn').onclick = ()=>{ trail=[DATA.home]; show(DATA.home,false); };
+document.getElementById('meta').textContent = DATA.generated + ' 实机采集 · ' + Object.keys(DATA.screens).length + ' 界面';
+const start = location.hash ? location.hash.slice(1) : DATA.home;
+show(scr(start)?start:DATA.home, false);
+</script></body></html>

@@ -1,0 +1,102 @@
+<!doctype html><html lang="zh"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>领地日常 · 永远的蔚蓝星球运营监控</title><style>
+:root { --fg:#e8e4da; --fg-dim:#a9a294; --fg-faint:#6d675c; --bg:#141210; --card:#1d1a16;
+  --border:#2e2a24; --accent:#e8b93e; --good:#7fc98a; --bad:#e08a8a; --new:#5ec6ff; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background:var(--bg); color:var(--fg); font:14px/1.7 -apple-system,"Segoe UI","Microsoft YaHei",sans-serif; }
+a { color:inherit; text-decoration:none; }
+.wrap { max-width:860px; margin:0 auto; padding:14px 14px 60px; }
+header.mh { padding:18px 0 10px; border-bottom:1px solid var(--border); margin-bottom:16px; }
+header.mh h1 { font-size:20px; letter-spacing:1px; }
+header.mh .sub { color:var(--fg-dim); font-size:12.5px; margin-top:4px; }
+header.mh .sub b { color:var(--accent); font-weight:600; }
+.stats { display:flex; gap:16px; margin-top:8px; font-size:12px; color:var(--fg-faint); flex-wrap:wrap; }
+.stats b { color:var(--fg); }
+.grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:12px; }
+.card { background:var(--card); border:1px solid var(--border); border-radius:12px; overflow:hidden;
+  display:flex; flex-direction:column; transition:border-color .15s; }
+.card:hover { border-color:var(--accent); }
+.card .thumbs { display:flex; height:86px; overflow:hidden; }
+.card .thumbs img { width:33.4%; object-fit:cover; object-position:top; flex:1; min-width:0;
+  border-right:1px solid var(--border); }
+.card .thumbs img:last-child { border-right:0; }
+.card .body { padding:10px 12px 12px; display:flex; flex-direction:column; gap:6px; flex:1; }
+.card h3 { font-size:15px; font-weight:600; display:flex; align-items:center; gap:6px; flex-wrap:wrap; }
+.card .desc { font-size:12px; color:var(--fg-dim); line-height:1.55; }
+.badges { display:flex; gap:5px; flex-wrap:wrap; margin-top:auto; padding-top:6px; }
+.b { font-size:10.5px; padding:1px 7px; border-radius:20px; border:1px solid var(--border); color:var(--fg-dim); }
+.b.act { color:var(--accent); border-color:#5a4a1e; background:#241d0d; }
+.b.new { color:var(--new); border-color:#1e4a5a; background:#0d2129; }
+.b.money { color:var(--bad); border-color:#5a2e2e; background:#291414; }
+.b.n { color:var(--fg-faint); }
+.daytag { font-size:11px; color:var(--fg-faint); margin:22px 0 10px; border-bottom:1px dashed var(--border); padding-bottom:6px; }
+/* detail */
+.clip { background:var(--card); border:1px solid var(--border); border-radius:12px; margin-bottom:14px; overflow:hidden; }
+.clip .head { padding:10px 12px; display:flex; align-items:center; gap:8px; flex-wrap:wrap;
+  border-bottom:1px solid var(--border); }
+.clip .head h4 { font-size:14px; font-weight:600; }
+.clip video { width:100%; max-width:340px; display:block; margin:0 auto; background:#000; }
+.clip .meta { padding:10px 12px; font-size:12px; color:var(--fg-dim); display:flex; flex-direction:column; gap:6px; }
+.clip .path { font-size:11.5px; color:var(--fg-faint); }
+.clip .path b { color:var(--accent); font-weight:500; }
+.clip .ocr { background:#161310; border:1px solid var(--border); border-radius:8px; padding:8px 10px;
+  font-size:11.5px; line-height:1.6; color:var(--fg-faint); max-height:120px; overflow:auto; white-space:pre-wrap; }
+.badge { font-size:10.5px; padding:1px 7px; border-radius:20px; border:1px solid var(--border); }
+.badge.money { color:var(--bad); border-color:#5a2e2e; background:#291414; }
+.badge.new { color:var(--new); border-color:#1e4a5a; background:#0d2129; }
+.badge.lock { color:var(--fg-faint); }
+.back { display:inline-block; margin-bottom:12px; color:var(--accent); font-size:13px; }
+footer { margin-top:30px; padding-top:12px; border-top:1px solid var(--border); color:var(--fg-faint); font-size:11.5px; }
+</style></head>
+<body><div class="wrap">
+<a class="back" href="../index.html">← 全部窗口</a>
+<header class="mh"><h1>领地日常</h1>
+<div class="sub">食堂/城墙/矿鼠之家/图鉴/玩法大厅</div>
+<div class="stats"><span>片段 <b>5</b></span><span>充值点 <b>0</b></span><span>采集 <b>2026-11-23 16:33:04</b></span></div>
+</header>
+<div class="clip">
+  <div class="head"><h4>城墙</h4><span class="badge new">新</span></div>
+  <video controls playsinline preload="metadata" poster="../thumbs/city-daily/city-wall.jpg"><source src="../videos/city-daily/city-wall.mp4" type="video/mp4"></video>
+  <div class="meta">
+    <div class="path">跳转路径：主界面 <b>(380,1011) → (454,107)</b></div>
+    <div class="ocr">永远的蔚蓝星球 ·-| 城墙 499 12992 8834/60 拥有： 合作模式 拥有： 竞技场 排行榜 食堂 矿鼠之家 欢迎光临！ 图鉴 玩法大斤 商城 英雄 国王 返回 公会</div>
+    
+  </div>
+</div>
+<div class="clip">
+  <div class="head"><h4>食堂（烤肉宴会）</h4><span class="badge new">新</span></div>
+  <video controls playsinline preload="metadata" poster="../thumbs/city-daily/city-canteen.jpg"><source src="../videos/city-daily/city-canteen.mp4" type="video/mp4"></video>
+  <div class="meta">
+    <div class="path">跳转路径：主界面 <b>(380,1011) → (290,522)</b></div>
+    <div class="ocr">00 永远的蔚蓝星球 499 12992 烤肉宴会 每天6、12、18、21时可领取烤肉 1小时30分 30 30 30 30 30 30 30 2S 存放烤肉上限：28/60 一键领取 点击空白处关闭 商城 英雄 国王 返回</div>
+    
+  </div>
+</div>
+<div class="clip">
+  <div class="head"><h4>矿鼠之家</h4><span class="badge new">新</span></div>
+  <video controls playsinline preload="metadata" poster="../thumbs/city-daily/city-mine.jpg"><source src="../videos/city-daily/city-mine.mp4" type="video/mp4"></video>
+  <div class="meta">
+    <div class="path">跳转路径：主界面 <b>(380,1011) → (61,531)</b></div>
+    <div class="ocr">永远的蔚蓝星球 ·- 城墙 499 12992 8834/60 拥有： 合作模式 拥有： 竞技场 你敢！ 揍你哦！ 排行榜 食堂 矿鼠之家 图鉴 玩法大斤 商城 英雄 国王 返回 公会</div>
+    
+  </div>
+</div>
+<div class="clip">
+  <div class="head"><h4>图鉴</h4><span class="badge new">新</span></div>
+  <video controls playsinline preload="metadata" poster="../thumbs/city-daily/city-tujian.jpg"><source src="../videos/city-daily/city-tujian.mp4" type="video/mp4"></video>
+  <div class="meta">
+    <div class="path">跳转路径：主界面 <b>(380,1011) → (400,648)</b></div>
+    <div class="ocr">永远的蔚蓝星球 ·-| 城墙 499 12992 8834/60 拥有： 合作模式 拥有： 竞技场 你敢！ 揍你哦！ 排行榜 食堂 矿鼠之家 图鉴 玩法大厅 商城 英雄 国王 返回 公会</div>
+    
+  </div>
+</div>
+<div class="clip">
+  <div class="head"><h4>玩法大厅</h4><span class="badge new">新</span></div>
+  <video controls playsinline preload="metadata" poster="../thumbs/city-daily/city-hall.jpg"><source src="../videos/city-daily/city-hall.mp4" type="video/mp4"></video>
+  <div class="meta">
+    <div class="path">跳转路径：主界面 <b>(380,1011) → (190,704)</b></div>
+    <div class="ocr">永远的蔚蓝星球 ·-| 城墙 499 12992 8834/60 拥有： 合作模式 拥有： 竞技场 排行榜 食堂 矿鼠之家 图鉴 玩法大斤 商城 英雄 国王 返回 公会</div>
+    
+  </div>
+</div><footer>永远的蔚蓝星球 · 运营监控 · 2026-11-23 采集</footer></div></body></html>
