@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>娱公细胞+修狗团队简介</title>
+<style>
+* { box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; max-width: 900px; margin: 40px auto; padding: 0 20px; line-height: 1.7; color: #222; }
+h1 { text-align: center; color: #2962ff; margin-bottom: 36px; }
+h2 { color: #2962ff; border-bottom: 2px solid #2962ff; padding-bottom: 8px; margin-top: 36px; }
+h3 { margin-top: 20px; color: #444; }
+.section { margin-bottom: 36px; }
+.item { margin: 10px 0; }
+.label { font-weight: 600; color: #000; }
+.value { color: #333; }
+.placeholder { color: #999; font-style: italic; }
+.links { margin: 10px 0; }
+.links a { display: block; color: #2962ff; text-decoration: none; margin: 6px 0; }
+.links a:hover { text-decoration: underline; }
+.screenshot { margin: 16px 0; max-width: 100%; border: 1px solid #ddd; border-radius: 8px; cursor: zoom-in; transition: transform 0.2s; }
+.screenshot:hover { transform: scale(1.01); }
+hr { border: none; border-top: 1px solid #ddd; margin: 36px 0; }
+
+/* Lightbox */
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.9);
+  justify-content: center;
+  align-items: center;
+  cursor: zoom-out;
+}
+.lightbox.active { display: flex; }
+.lightbox img {
+  max-width: 95%;
+  max-height: 95%;
+  object-fit: contain;
+  border-radius: 4px;
+}
+.lightbox .close {
+  position: absolute;
+  top: 16px; right: 24px;
+  color: #fff;
+  font-size: 36px;
+  font-weight: 300;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+
+<h1>娱公细胞+修狗团队简介</h1>
+
+<div class="section">
+<h2>项目代号：细胞</h2>
+<div class="item"><span class="label">人员配置：</span><span class="value">制作人+5策划+3前端+2服务器+3美术+假面技术/美术/音频中台支持</span></div>
+
+<h3>制作人履历介绍</h3>
+<div class="item"><span class="label">姓名：</span><span class="value">杨哲飏</span></div>
+<div class="item"><span class="label">过往代表作：</span><span class="value">《守望英雄》《魔卡之耀》《失落防线》《全职高手：重返巅峰》</span></div>
+<div class="item"><span class="label">成绩：</span><span class="value">《守望英雄》累计千万新增、流水接近 10 亿，至今仍在运营；《魔卡之耀》TapTap 8.0、千万月流水；曾带领 30 人团队从 0 到 1 完成多款手游。</span></div>
+
+<h3>细胞测试数据（测试内容：7天付费版本）</h3>
+<div class="item"><span class="label">测试时间：</span><span class="placeholder">待补充</span></div>
+<div class="item"><span class="label">测试数据截图：</span></div>
+<img src="细胞_新增用户指标.jpg" alt="细胞_新增用户指标" class="screenshot" onclick="openLightbox(this)">
+<img src="细胞_首日付费留存.jpg" alt="细胞_首日付费留存" class="screenshot" onclick="openLightbox(this)">
+</div>
+
+<hr>
+
+<div class="section">
+<h2>项目代号：修狗</h2>
+<div class="item"><span class="label">人员配置：</span><span class="value">制作人+3策划+3前端+2服务器+3美术+假面技术/美术/音频中台支持</span></div>
+
+<h3>制作人履历介绍</h3>
+<div class="item"><span class="label">姓名：</span><span class="value">刘士男</span></div>
+<div class="item"><span class="label">过往代表作：</span><span class="value">《守望英雄》（主策）、《魔卡之耀》（主策）、《英雄如约而至》（制作人）、《塔塔塔塔塔防》（制作人）</span></div>
+<div class="item"><span class="label">成绩：</span><span class="value">《守望英雄》累计千万新增、流水接近 10 亿，至今仍在运营；《英雄如约而至》海外测试次留 47%、七留 17%；《塔塔塔塔塔防》TapTap 热门+新品双榜第一、总下载 80 万+。</span></div>
+<div class="item"><span class="label">其他：</span><span class="value">业余爱好手搓独立游戏，做了不少，反响也不错。</span></div>
+
+<h3>往期独立作品链接</h3>
+<div class="links">
+<a href="https://www.taptap.cn/app/222245?os=android" target="_blank">塔塔塔塔塔防</a>
+<a href="https://www.taptap.cn/app/264844?os=android" target="_blank">踏访塔防</a>
+<a href="https://www.taptap.cn/app/386117?os=android" target="_blank">弹幕西游：防御小帅拿头撞我</a>
+<a href="https://www.taptap.cn/app/766035?os=android" target="_blank">守个蛋</a>
+</div>
+
+<h3>修狗测试数据（测试内容：3天付费版本）</h3>
+<div class="item"><span class="label">测试时间：</span><span class="placeholder">待补充</span></div>
+<div class="item"><span class="label">测试数据截图：</span></div>
+<img src="修狗_用户充值LTV.png" alt="修狗_用户充值LTV" class="screenshot" onclick="openLightbox(this)">
+<img src="修狗_新增付费设备留存.png" alt="修狗_新增付费设备留存" class="screenshot" onclick="openLightbox(this)">
+</div>
+
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <span class="close">&times;</span>
+  <img id="lightbox-img" src="" alt="">
+</div>
+
+<script>
+function openLightbox(img) {
+  document.getElementById('lightbox-img').src = img.src;
+  document.getElementById('lightbox').classList.add('active');
+}
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('active');
+}
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeLightbox();
+});
+</script>
+
+</body>
+</html>
